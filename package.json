@@ -1,0 +1,21 @@
+{
+  "name": "@jpyc/sdks",
+  "description": "A collection of SDKs to build applications on top of JPYC",
+  "keywords": [
+    "jpyc",
+    "stablecoin"
+  ],
+  "repository": "https://github.com/jcam1/sdks.git",
+  "license": "MIT",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "src/*"
+  ],
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "9.0.11"
+  }
+}
