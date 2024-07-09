@@ -1,6 +1,6 @@
 {
-  "name": "@jpyc/node-sdk-v0",
-  "description": "Node SDK (v0) for JPYC",
+  "name": "@jpyc/node-sdk-core",
+  "description": "Core Node SDK for JPYC",
   "repository": "https://github.com/jcam1/sdks.git",
   "license": "MIT",
   "version": "1.0.0",
