@@ -1,6 +1,6 @@
 {
-  "name": "@jpyc/node-sdk-v0",
-  "description": "Node SDK (v0) for JPYC",
+  "name": "@jpyc/sdk-v0",
+  "description": "SDK (v0) for JPYC",
   "repository": "https://github.com/jcam1/sdks.git",
   "license": "MIT",
   "version": "1.0.0",
@@ -13,6 +13,11 @@
     "gen": "run-s gen:*",
     "gen:abi": "cd ../../../JPYCv2 && npx hardhat compile",
     "gen:abi-types": "cd ../../../JPYCv2 && abi-types-generator hardhat && mv ethereum-abi-types ../packages/node/abi-types"
+  },
+  "dependencies": {
+    "@ethersproject/abi": "5.7.0",
+    "@ethersproject/solidity": "5.7.0",
+    "ethers": "6.13.1"
   },
   "devDependencies": {
     "@types/node": "20.14.9",
@@ -27,8 +32,5 @@
     "ts-node": "10.9.2",
     "tsconfig-paths": "4.2.0",
     "typescript": "5.5.3"
-  },
-  "dependencies": {
-    "ethers": "6.13.1"
   }
 }
