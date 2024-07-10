@@ -1,0 +1,50 @@
+{
+  "include": ["src/**/*.ts"],
+  "exclude": ["**/*.test.ts"],
+  "compilerOptions": {
+    // output settings
+    "module": "es2022",
+    "rootDir": "./",
+    "outDir": "./dist/src",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "incremental": true,
+    "preserveWatchOutput": true,
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "declaration": true,
+    "declarationDir": "./dist/src/types",
+    "declarationMap": true,
+    "lib": ["es2022"],
+    "skipLibCheck": true,
+    "target": "es2022",
+    "importHelpers": true,
+    // import settings
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    // strict options
+    "strict": true,
+    "strictPropertyInitialization": false,
+    // linter options
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": false,
+    "forceConsistentCasingInFileNames": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": false,
+    // misc
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}
