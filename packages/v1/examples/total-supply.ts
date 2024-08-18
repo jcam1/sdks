@@ -1,4 +1,4 @@
-import { jpyc } from '.';
+import { jpyc } from './';
 
 async function main() {
   // Check total supply

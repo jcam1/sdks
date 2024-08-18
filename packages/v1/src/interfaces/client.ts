@@ -3,10 +3,12 @@ import {
   WalletClient,
 } from 'viem';
 
+import { Address } from '../../../core/src';
+
 export interface ISdkClient {
   createPrivateKeyAccount(): PrivateKeyAccount;
 
   createLocalClient(params: {
-    account: PrivateKeyAccount,
+    account: Address | PrivateKeyAccount,
   }): WalletClient;
 }

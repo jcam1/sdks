@@ -1,11 +1,14 @@
 import { Uint256 } from 'soltypes';
 
-import { account, jpyc, RECEIVER_ADDRESS } from './';
+import { account, jpyc } from './';
+import { HARDHAT_PREDEFINED_ADDRESSES } from './constants';
 
 async function main() {
+  const receiver = HARDHAT_PREDEFINED_ADDRESSES[0];
+
   // 1. Transfer tokens
   await jpyc.transfer({
-    to: RECEIVER_ADDRESS,
+    to: receiver,
     value: Uint256.from('100'),
   });
 
@@ -16,7 +19,7 @@ async function main() {
   console.log(`balance (sender): ${balanceSender}`);
 
   const balanceReceiver = await jpyc.balanceOf({
-    account: RECEIVER_ADDRESS,
+    account: receiver,
   });
   console.log(`balance (receiver): ${balanceReceiver}`);
 }

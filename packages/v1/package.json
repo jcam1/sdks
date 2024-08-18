@@ -10,14 +10,15 @@
   },
   "private": true,
   "scripts": {
+    "env": "cp .env.example .env",
     "compile": "npx hardhat compile",
     "clean": "npx hardhat clean",
-    "run-node": "npx hardhat node",
+    "node": "npx hardhat node",
     "deploy": "npx hardhat run ./scripts/deployments.ts --network localhost",
-    "initialize": "npx hardhat run ./examples/initialize.ts --network localhost",
     "mint": "npx hardhat run ./examples/mint.ts --network localhost",
     "total-supply": "npx hardhat run ./examples/total-supply.ts --network localhost",
     "transfer": "npx hardhat run ./examples/transfer.ts --network localhost",
+    "approve": "npx hardhat run ./examples/approve.ts --network localhost",
     "transfer-from": "npx hardhat run ./examples/transfer-from.ts --network localhost"
   },
   "dependencies": {

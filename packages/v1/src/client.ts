@@ -45,7 +45,7 @@ export class SdkClient implements ISdkClient {
   }
 
   createLocalClient(params: {
-    account: PrivateKeyAccount,
+    account: Address | PrivateKeyAccount,
   }): WalletClient {
     this.client = createWalletClient({
       account: params.account,
