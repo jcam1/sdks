@@ -6,11 +6,11 @@ The following commands are available as npm scripts.
 
 | Command | Description |
 |--------:|:------------|
+| `env` | Generate `.env` file |
 | `compile` | Compile contracts |
-| `clean` | Delete artifacts & caches |
-| `run-node` | Run hardhat node locally |
+| `clean` | Delete artifacts |
+| `node` | Run hardhat node locally |
 | `deploy` | Deploy compiled contracts to local hardhat network |
-| `verify` | Verify locally-deployed contracts |
 
 #### How to Run Commands
 
