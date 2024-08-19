@@ -1,5 +1,5 @@
 {
-  "include": ["**/src/**/*.ts", "v1/ignition/modules/deployments.ts", "v1/examples/total-supply.ts"],
+  "include": ["**/src/**/*.ts", "v1/ignition/modules/deployments.ts", "v1/examples/total-supply.ts", "core/index.ts"],
   "exclude": ["**/*.test.ts"],
   "compilerOptions": {
     // output settings
