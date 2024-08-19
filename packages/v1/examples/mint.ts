@@ -2,7 +2,7 @@ import { Uint256 } from 'soltypes';
 
 import { account, jpyc } from './';
 
-async function main() {
+async function main(): Promise<void> {
   // 1. Configure a minter
   await jpyc.configureMinter({
     minter: account.address,

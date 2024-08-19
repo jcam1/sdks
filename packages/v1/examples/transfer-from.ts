@@ -1,13 +1,9 @@
 import { Uint256 } from 'soltypes';
 
-import {
-  account,
-  jpyc,
-  jpycSpender,
-} from './';
+import { account, jpyc, jpycSpender } from './';
 import { receiver, spender } from './constants';
 
-async function main() {
+async function main(): Promise<void> {
   // 1. Transfer tokens (from the approved address)
   await jpycSpender.transferFrom({
     from: account.address,
@@ -19,17 +15,17 @@ async function main() {
   const balanceSender = await jpyc.balanceOf({
     account: account.address,
   });
-  console.log(`balance (sender): ${balanceSender}`);
+  console.log(`balance (sender): ${balanceSender.toString()}`);
 
   const balanceSpender = await jpyc.balanceOf({
     account: spender,
   });
-  console.log(`balance (spender): ${balanceSpender}`);
+  console.log(`balance (spender): ${balanceSpender.toString()}`);
 
   const balanceReceiver = await jpyc.balanceOf({
     account: receiver,
   });
-  console.log(`balance (receiver): ${balanceReceiver}`);
+  console.log(`balance (receiver): ${balanceReceiver.toString()}`);
 }
 
 main()

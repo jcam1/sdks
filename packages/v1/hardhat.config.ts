@@ -1,23 +1,23 @@
-import "@nomicfoundation/hardhat-ignition";
-import "@nomicfoundation/hardhat-ignition-viem";
-import type { HardhatUserConfig } from "hardhat/config";
+import '@nomicfoundation/hardhat-ignition';
+import '@nomicfoundation/hardhat-ignition-viem';
+import type { HardhatUserConfig } from 'hardhat/config';
 
 const config: HardhatUserConfig = {
   solidity: {
     version: '0.8.11',
-      settings: {
-        optimizer: {
-          enabled: true,
-          runs: 3000,
-        },
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 3000,
       },
+    },
   },
   paths: {
-    root: "./",
-    sources: "./JPYCv2/contracts",
-    tests: "./JPYCv2/test",
-    artifacts: "./artifacts",
-    cache: "./cache",
+    root: './',
+    sources: './JPYCv2/contracts',
+    tests: './JPYCv2/test',
+    artifacts: './artifacts',
+    cache: './cache',
   },
 };
 

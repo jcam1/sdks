@@ -1,7 +1,4 @@
-import {
-  PrivateKeyAccount,
-  WalletClient,
-} from 'viem';
+import { PrivateKeyAccount, WalletClient } from 'viem';
 
 import { Address } from '../../../core';
 
@@ -12,9 +9,7 @@ export interface ISdkClient {
    * @param privateKey - Private key
    * @returns PrivateKeyAccount
    */
-  createPrivateKeyAccount(params: {
-    privateKey?: Address,
-  }): PrivateKeyAccount;
+  createPrivateKeyAccount(params: { privateKey?: Address }): PrivateKeyAccount;
 
   /**
    * Creates a client from an account.
@@ -22,7 +17,5 @@ export interface ISdkClient {
    * @param account - Account
    * @returns WalletClient
    */
-  createLocalClient(params: {
-    account: Address | PrivateKeyAccount,
-  }): WalletClient;
+  createLocalClient(params: { account: Address | PrivateKeyAccount }): WalletClient;
 }

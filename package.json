@@ -17,9 +17,24 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "devDependencies": {
-    "husky": "9.0.11"
+    "husky": "9.0.11",
+    "lint-staged": "15.2.9"
+  },
+  "lint-staged": {
+    "packages/core/**/*.{ts,js}": [
+      "npm run -w @jpyc/sdk-core lint"
+    ],
+    "packages/core/**/*.{ts,js,md,json}": [
+      "npm run -w @jpyc/sdk-core format"
+    ],
+    "packages/v1/**/*.{ts,js}": [
+      "npm run -w @jpyc/sdk-v1 lint"
+    ],
+    "packages/v1/**/*.{ts,js,md,json}": [
+      "npm run -w @jpyc/sdk-v1 format"
+    ]
   }
 }

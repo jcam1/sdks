@@ -4,13 +4,13 @@
 
 The following commands are available as npm scripts.
 
-| Command | Description |
-|--------:|:------------|
-| `env` | Generate `.env` file |
-| `compile` | Compile contracts |
-| `clean` | Delete artifacts |
-| `node` | Run hardhat node locally |
-| `deploy` | Deploy compiled contracts to local hardhat network |
+|   Command | Description                                        |
+| --------: | :------------------------------------------------- |
+|     `env` | Generate `.env` file                               |
+| `compile` | Compile contracts                                  |
+|   `clean` | Delete artifacts                                   |
+|    `node` | Run hardhat node locally                           |
+|  `deploy` | Deploy compiled contracts to local hardhat network |
 
 #### How to Run Commands
 

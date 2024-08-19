@@ -1,4 +1,4 @@
-import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
+import { buildModule } from '@nomicfoundation/hardhat-ignition/modules';
 import { Uint8 } from 'soltypes';
 import { encodeFunctionData } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
@@ -6,9 +6,9 @@ import { privateKeyToAccount } from 'viem/accounts';
 import { JPYC_V2_ABI } from '../../src';
 import { Address } from '../../../core/src';
 
-export const proxyModule = buildModule("ProxyModule", (m) => {
+export const proxyModule = buildModule('ProxyModule', (m) => {
   // Deploy JPYCv2 contract
-  const jpycV2Contract = m.contract("FiatTokenV1");
+  const jpycV2Contract = m.contract('FiatTokenV1');
 
   // Deploy proxy contract & initialize JPYCv2 contract
   const account = privateKeyToAccount(process.env.PRIVATE_KEY as Address);
@@ -28,10 +28,7 @@ export const proxyModule = buildModule("ProxyModule", (m) => {
     ],
   });
 
-  const proxyContract = m.contract("ERC1967Proxy", [
-    jpycV2Contract,
-    encodedInitializationCall,
-  ]);
+  const proxyContract = m.contract('ERC1967Proxy', [jpycV2Contract, encodedInitializationCall]);
 
   return { proxyContract };
 });

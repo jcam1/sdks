@@ -1,15 +1,6 @@
 import { spender } from './constants';
-import {
-  IJPYC,
-  ISdkClient,
-  JPYC,
-  SdkClient,
-} from '../src';
-import {
-  ChainName,
-  Endpoint,
-  NetworkName,
-} from '../../core';
+import { IJPYC, ISdkClient, JPYC, SdkClient } from '../src';
+import { ChainName, Endpoint, NetworkName } from '../../core';
 
 /**
  * SDK SetUp

@@ -1,32 +1,16 @@
 import { Bytes32, Uint256, Uint8 } from 'soltypes';
-import {
-  getContract,
-  GetContractReturnType,
-  Hash,
-  WalletClient,
-} from 'viem';
+import { getContract, GetContractReturnType, Hash, WalletClient } from 'viem';
 
-import {
-  Address,
-  isValidAddress,
-  LOCAL_PROXY_ADDRESS,
-  V2_PROXY_ADDRESS,
-} from '../../core';
-import {
-  IJPYC,
-  InvalidAddressError,
-  InvalidTransactionError,
-  JPYC_V2_ABI,
-} from './';
+import { Address, isValidAddress, LOCAL_PROXY_ADDRESS, V2_PROXY_ADDRESS } from '../../core';
+import { IJPYC, InvalidAddressError, InvalidTransactionError, JPYC_V2_ABI } from './';
 
 export class JPYC implements IJPYC {
-  private readonly contractAddress: Address = process.env.SDK_ENV === 'local' ? LOCAL_PROXY_ADDRESS: V2_PROXY_ADDRESS;
+  private readonly contractAddress: Address =
+    process.env.SDK_ENV === 'local' ? LOCAL_PROXY_ADDRESS : V2_PROXY_ADDRESS;
   private readonly contractAbi: unknown[] = JPYC_V2_ABI;
   private readonly contract: GetContractReturnType<typeof this.contractAbi, WalletClient>;
 
-  constructor(params: {
-    client: WalletClient,
-  }) {
+  constructor(params: { client: WalletClient }) {
     if (!isValidAddress({ address: this.contractAddress })) {
       throw new InvalidAddressError(this.contractAddress);
     }
@@ -41,22 +25,14 @@ export class JPYC implements IJPYC {
    * View Functions
    */
 
-  async isMinter(params: {
-    account: Address,
-  }): Promise<boolean> {
-    const resp = await this.contract.read.isMinter([
-      params.account,
-    ]);
+  async isMinter(params: { account: Address }): Promise<boolean> {
+    const resp = await this.contract.read.isMinter([params.account]);
 
     return resp as boolean;
   }
 
-  async minterAllowance(params: {
-    minter: Address,
-  }): Promise<Uint256> {
-    const resp = await this.contract.read.minterAllowance([
-      params.minter,
-    ]);
+  async minterAllowance(params: { minter: Address }): Promise<Uint256> {
+    const resp = await this.contract.read.minterAllowance([params.minter]);
 
     return Uint256.from((resp as bigint).toString());
   }
@@ -67,24 +43,14 @@ export class JPYC implements IJPYC {
     return Uint256.from((resp as bigint).toString());
   }
 
-  async balanceOf(params: {
-    account: Address,
-  }): Promise<Uint256> {
-    const resp = await this.contract.read.balanceOf([
-      params.account,
-    ]);
+  async balanceOf(params: { account: Address }): Promise<Uint256> {
+    const resp = await this.contract.read.balanceOf([params.account]);
 
     return Uint256.from((resp as bigint).toString());
   }
 
-  async allowance(params: {
-    owner: Address,
-    spender: Address,
-  }): Promise<Uint256> {
-    const resp = await this.contract.read.allowance([
-      params.owner,
-      params.spender,
-    ]);
+  async allowance(params: { owner: Address; spender: Address }): Promise<Uint256> {
+    const resp = await this.contract.read.allowance([params.owner, params.spender]);
 
     return Uint256.from((resp as bigint).toString());
   }
@@ -93,14 +59,8 @@ export class JPYC implements IJPYC {
    * Regular Functions
    */
 
-  async configureMinter(params: {
-    minter: Address,
-    minterAllowedAmount: Uint256,
-  }): Promise<Hash> {
-    const args = [
-      params.minter,
-      params.minterAllowedAmount,
-    ];
+  async configureMinter(params: { minter: Address; minterAllowedAmount: Uint256 }): Promise<Hash> {
+    const args = [params.minter, params.minterAllowedAmount];
 
     try {
       await this.contract.simulate.configureMinter(args);
@@ -111,14 +71,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.configureMinter(args);
   }
 
-  async mint(params: {
-    to: Address,
-    amount: Uint256,
-  }): Promise<Hash> {
-    const args = [
-      params.to,
-      params.amount,
-    ];
+  async mint(params: { to: Address; amount: Uint256 }): Promise<Hash> {
+    const args = [params.to, params.amount];
 
     try {
       await this.contract.simulate.mint(args);
@@ -129,14 +83,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.mint(args);
   }
 
-  async transfer(params: {
-    to: Address,
-    value: Uint256,
-  }): Promise<Hash> {
-    const args = [
-      params.to,
-      params.value,
-    ];
+  async transfer(params: { to: Address; value: Uint256 }): Promise<Hash> {
+    const args = [params.to, params.value];
 
     try {
       await this.contract.simulate.transfer(args);
@@ -147,16 +95,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.transfer(args);
   }
 
-  async transferFrom(params: {
-    from: Address,
-    to: Address,
-    value: Uint256,
-  }): Promise<Hash> {
-    const args = [
-      params.from,
-      params.to,
-      params.value,
-    ];
+  async transferFrom(params: { from: Address; to: Address; value: Uint256 }): Promise<Hash> {
+    const args = [params.from, params.to, params.value];
 
     try {
       await this.contract.simulate.transferFrom(args);
@@ -168,15 +108,15 @@ export class JPYC implements IJPYC {
   }
 
   async transferWithAuthorization(params: {
-    from: Address,
-    to: Address,
-    value: Uint256,
-    validAfter: Uint256,
-    validBefore: Uint256,
-    nonce: Bytes32,
-    v: Uint8,
-    r: Bytes32,
-    s: Bytes32,
+    from: Address;
+    to: Address;
+    value: Uint256;
+    validAfter: Uint256;
+    validBefore: Uint256;
+    nonce: Bytes32;
+    v: Uint8;
+    r: Bytes32;
+    s: Bytes32;
   }): Promise<Hash> {
     const args = [
       params.from,
@@ -200,15 +140,15 @@ export class JPYC implements IJPYC {
   }
 
   async receiveWithAuthorization(params: {
-    from: Address,
-    to: Address,
-    value: Uint256,
-    validAfter: Uint256,
-    validBefore: Uint256,
-    nonce: Bytes32,
-    v: Uint8,
-    r: Bytes32,
-    s: Bytes32,
+    from: Address;
+    to: Address;
+    value: Uint256;
+    validAfter: Uint256;
+    validBefore: Uint256;
+    nonce: Bytes32;
+    v: Uint8;
+    r: Bytes32;
+    s: Bytes32;
   }): Promise<Hash> {
     const args = [
       params.from,
@@ -232,19 +172,13 @@ export class JPYC implements IJPYC {
   }
 
   async cancelAuthorization(params: {
-    authorizer: Address,
-    nonce: Bytes32,
-    v: number,
-    r: Bytes32,
-    s: Bytes32,
+    authorizer: Address;
+    nonce: Bytes32;
+    v: number;
+    r: Bytes32;
+    s: Bytes32;
   }): Promise<Hash> {
-    const args = [
-      params.authorizer,
-      params.nonce,
-      params.v,
-      params.r,
-      params.s,
-    ];
+    const args = [params.authorizer, params.nonce, params.v, params.r, params.s];
 
     try {
       await this.contract.simulate.cancelAuthorization(args);
@@ -255,14 +189,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.cancelAuthorization(args);
   }
 
-  async approve(params: {
-    spender: Address,
-    value: Uint256,
-  }): Promise<Hash> {
-    const args = [
-      params.spender,
-      params.value,
-    ];
+  async approve(params: { spender: Address; value: Uint256 }): Promise<Hash> {
+    const args = [params.spender, params.value];
 
     try {
       await this.contract.simulate.approve(args);
@@ -273,14 +201,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.approve(args);
   }
 
-  async increaseAllowance(params: {
-    spender: Address,
-    increment: Uint256,
-  }): Promise<Hash> {
-    const args = [
-      params.spender,
-      params.increment,
-    ];
+  async increaseAllowance(params: { spender: Address; increment: Uint256 }): Promise<Hash> {
+    const args = [params.spender, params.increment];
 
     try {
       await this.contract.simulate.increaseAllowance(args);
@@ -291,14 +213,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.increaseAllowance(args);
   }
 
-  async decreaseAllowance(params: {
-    spender: Address,
-    decrement: Uint256,
-  }): Promise<Hash> {
-    const args = [
-      params.spender,
-      params.decrement,
-    ];
+  async decreaseAllowance(params: { spender: Address; decrement: Uint256 }): Promise<Hash> {
+    const args = [params.spender, params.decrement];
 
     try {
       await this.contract.simulate.decreaseAllowance(args);
@@ -310,13 +226,13 @@ export class JPYC implements IJPYC {
   }
 
   async permit(params: {
-    owner: Address,
-    spender: Address,
-    value: Uint256,
-    deadline: Uint256,
-    v: Uint8,
-    r: Bytes32,
-    s: Bytes32,
+    owner: Address;
+    spender: Address;
+    value: Uint256;
+    deadline: Uint256;
+    v: Uint8;
+    r: Bytes32;
+    s: Bytes32;
   }): Promise<Hash> {
     const args = [
       params.owner,

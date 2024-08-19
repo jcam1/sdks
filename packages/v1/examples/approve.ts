@@ -1,12 +1,9 @@
 import { Uint256 } from 'soltypes';
 
-import {
-  account,
-  jpyc,
-} from './';
+import { account, jpyc } from './';
 import { HARDHAT_PREDEFINED_ADDRESSES } from './constants';
 
-async function main() {
+async function main(): Promise<void> {
   const spender = HARDHAT_PREDEFINED_ADDRESSES[1];
 
   // 1. Approve to spend allowance
@@ -20,7 +17,7 @@ async function main() {
     owner: account.address,
     spender: spender,
   });
-  console.log(`spender allowance: ${allowance}`);
+  console.log(`spender allowance: ${allowance.toString()}`);
 }
 
 main()

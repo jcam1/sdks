@@ -1,9 +1,9 @@
 import { jpyc } from './';
 
-async function main() {
+async function main(): Promise<void> {
   // Check total supply
   const totalSupply = await jpyc.totalSupply();
-  console.log(`totalSupply: ${totalSupply}`);
+  console.log(`totalSupply: ${totalSupply.toString()}`);
 }
 
 main()

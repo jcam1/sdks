@@ -1,8 +1,8 @@
-import hre from "hardhat";
+import hre from 'hardhat';
 
 import { jpycV2Module } from '../ignition/modules/jpyc-v2';
 
-async function main() {
+async function main(): Promise<void> {
   await hre.ignition.deploy(jpycV2Module);
 }
 

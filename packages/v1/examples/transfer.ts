@@ -3,7 +3,7 @@ import { Uint256 } from 'soltypes';
 import { account, jpyc } from './';
 import { HARDHAT_PREDEFINED_ADDRESSES } from './constants';
 
-async function main() {
+async function main(): Promise<void> {
   const receiver = HARDHAT_PREDEFINED_ADDRESSES[0];
 
   // 1. Transfer tokens
@@ -16,12 +16,12 @@ async function main() {
   const balanceSender = await jpyc.balanceOf({
     account: account.address,
   });
-  console.log(`balance (sender): ${balanceSender}`);
+  console.log(`balance (sender): ${balanceSender.toString()}`);
 
   const balanceReceiver = await jpyc.balanceOf({
     account: receiver,
   });
-  console.log(`balance (receiver): ${balanceReceiver}`);
+  console.log(`balance (receiver): ${balanceReceiver.toString()}`);
 }
 
 main()
