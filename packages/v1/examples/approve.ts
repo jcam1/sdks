@@ -3,7 +3,7 @@ import { Uint256 } from 'soltypes';
 import {
   account,
   jpyc,
-} from '.';
+} from './';
 import { HARDHAT_PREDEFINED_ADDRESSES } from './constants';
 
 async function main() {

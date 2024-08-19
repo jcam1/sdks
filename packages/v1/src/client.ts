@@ -11,16 +11,21 @@ import {
   Address,
   ChainName,
   Endpoint,
+  isValidChainName,
+  isValidNetworkName,
   NetworkName,
   SUPPORTED_CHAINS,
-} from '../../core/src';
-import { ISdkClient } from './';
+} from '../../core';
+import {
+  ISdkClient,
+  InvalidChainNameError,
+  InvalidNetworkNameError,
+} from './';
 
 export class SdkClient implements ISdkClient {
   private readonly chainName: ChainName;
   private readonly networkName: NetworkName;
   private readonly rpcEndpoint: Endpoint;
-  private readonly testPrivateKey?: Address;
   private account: PrivateKeyAccount;
   private client: WalletClient;
 
@@ -28,17 +33,23 @@ export class SdkClient implements ISdkClient {
     chainName: ChainName,
     networkName: NetworkName,
     rpcEndpoint: Endpoint,
-    testPrivateKey?: Address,
   }) {
+    if (!isValidChainName({ chainName: params.chainName })) {
+      throw new InvalidChainNameError(params.chainName);
+    }
+    if (!isValidNetworkName({ chainName: params.chainName, networkName: params.networkName })) {
+      throw new InvalidNetworkNameError(params.chainName, params.networkName);
+    }
     this.chainName = params.chainName;
     this.networkName = params.networkName;
     this.rpcEndpoint = params.rpcEndpoint;
-    this.testPrivateKey = params.testPrivateKey;
   }
 
-  createPrivateKeyAccount(): PrivateKeyAccount {
+  createPrivateKeyAccount(params: {
+    privateKey?: Address,
+  }): PrivateKeyAccount {
     this.account = privateKeyToAccount(
-      this.testPrivateKey ?? process.env.PRIVATE_KEY as Address,
+      params.privateKey ?? process.env.PRIVATE_KEY as Address,
     );
 
     return this.account;

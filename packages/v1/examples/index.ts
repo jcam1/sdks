@@ -9,7 +9,7 @@ import {
   ChainName,
   Endpoint,
   NetworkName,
-} from '../../core/src';
+} from '../../core';
 
 /**
  * SDK SetUp
@@ -23,7 +23,7 @@ const sdkClient: ISdkClient = new SdkClient({
 });
 
 // 2. Generate an account
-export const account = sdkClient.createPrivateKeyAccount();
+export const account = sdkClient.createPrivateKeyAccount({});
 
 // 3. Generate local clients
 const client = sdkClient.createLocalClient({

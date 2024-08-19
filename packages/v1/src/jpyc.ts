@@ -6,8 +6,18 @@ import {
   WalletClient,
 } from 'viem';
 
-import { Address, LOCAL_PROXY_ADDRESS, V2_PROXY_ADDRESS } from '../../core/src';
-import { JPYC_V2_ABI, IJPYC } from './';
+import {
+  Address,
+  isValidAddress,
+  LOCAL_PROXY_ADDRESS,
+  V2_PROXY_ADDRESS,
+} from '../../core';
+import {
+  IJPYC,
+  InvalidAddressError,
+  InvalidTransactionError,
+  JPYC_V2_ABI,
+} from './';
 
 export class JPYC implements IJPYC {
   private readonly contractAddress: Address = process.env.SDK_ENV === 'local' ? LOCAL_PROXY_ADDRESS: V2_PROXY_ADDRESS;
@@ -17,6 +27,9 @@ export class JPYC implements IJPYC {
   constructor(params: {
     client: WalletClient,
   }) {
+    if (!isValidAddress({ address: this.contractAddress })) {
+      throw new InvalidAddressError(this.contractAddress);
+    }
     this.contract = getContract({
       address: this.contractAddress,
       abi: this.contractAbi,
@@ -80,38 +93,6 @@ export class JPYC implements IJPYC {
    * Regular Functions
    */
 
-  async initialize(params: {
-    tokenName: string,
-    tokenSymbol: string,
-    tokenCurrency: string,
-    tokenDecimals: Uint8,
-    newMinterAdmin: Address,
-    newPauser: Address,
-    newBlocklister: Address,
-    newRescuer: Address,
-    newOwner: Address,
-  }): Promise<Hash> {
-    const args = [
-      params.tokenName,
-      params.tokenSymbol,
-      params.tokenCurrency,
-      params.tokenDecimals,
-      params.newMinterAdmin,
-      params.newPauser,
-      params.newBlocklister,
-      params.newRescuer,
-      params.newOwner,
-    ];
-
-    try {
-      await this.contract.simulate.initialize(args);
-    } catch (error) {
-      console.log(`Simulation failed: ${error}`);
-    }
-
-    return await this.contract.write.initialize(args);
-  }
-
   async configureMinter(params: {
     minter: Address,
     minterAllowedAmount: Uint256,
@@ -124,7 +105,7 @@ export class JPYC implements IJPYC {
     try {
       await this.contract.simulate.configureMinter(args);
     } catch (error) {
-      console.log(`Simulation failed: ${error}`);
+      throw new InvalidTransactionError(error);
     }
 
     return await this.contract.write.configureMinter(args);
@@ -142,7 +123,7 @@ export class JPYC implements IJPYC {
     try {
       await this.contract.simulate.mint(args);
     } catch (error) {
-      console.log(`Simulation failed: ${error}`);
+      throw new InvalidTransactionError(error);
     }
 
     return await this.contract.write.mint(args);
@@ -160,7 +141,7 @@ export class JPYC implements IJPYC {
     try {
       await this.contract.simulate.transfer(args);
     } catch (error) {
-      console.log(`Simulation failed: ${error}`);
+      throw new InvalidTransactionError(error);
     }
 
     return await this.contract.write.transfer(args);
@@ -180,7 +161,7 @@ export class JPYC implements IJPYC {
     try {
       await this.contract.simulate.transferFrom(args);
     } catch (error) {
-      console.log(`Simulation failed: ${error}`);
+      throw new InvalidTransactionError(error);
     }
 
     return await this.contract.write.transferFrom(args);
@@ -212,7 +193,7 @@ export class JPYC implements IJPYC {
     try {
       await this.contract.simulate.transferWithAuthorization(args);
     } catch (error) {
-      console.log(`Simulation failed: ${error}`);
+      throw new InvalidTransactionError(error);
     }
 
     return await this.contract.write.transferWithAuthorization(args);
@@ -244,7 +225,7 @@ export class JPYC implements IJPYC {
     try {
       await this.contract.simulate.receiveWithAuthorization(args);
     } catch (error) {
-      console.log(`Simulation failed: ${error}`);
+      throw new InvalidTransactionError(error);
     }
 
     return await this.contract.write.receiveWithAuthorization(args);
@@ -268,7 +249,7 @@ export class JPYC implements IJPYC {
     try {
       await this.contract.simulate.cancelAuthorization(args);
     } catch (error) {
-      console.log(`Simulation failed: ${error}`);
+      throw new InvalidTransactionError(error);
     }
 
     return await this.contract.write.cancelAuthorization(args);
@@ -286,7 +267,7 @@ export class JPYC implements IJPYC {
     try {
       await this.contract.simulate.approve(args);
     } catch (error) {
-      console.log(`Simulation failed: ${error}`);
+      throw new InvalidTransactionError(error);
     }
 
     return await this.contract.write.approve(args);
@@ -304,7 +285,7 @@ export class JPYC implements IJPYC {
     try {
       await this.contract.simulate.increaseAllowance(args);
     } catch (error) {
-      console.log(`Simulation failed: ${error}`);
+      throw new InvalidTransactionError(error);
     }
 
     return await this.contract.write.increaseAllowance(args);
@@ -322,7 +303,7 @@ export class JPYC implements IJPYC {
     try {
       await this.contract.simulate.decreaseAllowance(args);
     } catch (error) {
-      console.log(`Simulation failed: ${error}`);
+      throw new InvalidTransactionError(error);
     }
 
     return await this.contract.write.decreaseAllowance(args);
@@ -350,7 +331,7 @@ export class JPYC implements IJPYC {
     try {
       await this.contract.simulate.permit(args);
     } catch (error) {
-      console.log(`Simulation failed: ${error}`);
+      throw new InvalidTransactionError(error);
     }
 
     return await this.contract.write.permit(args);
