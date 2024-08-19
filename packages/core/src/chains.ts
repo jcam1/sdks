@@ -60,26 +60,22 @@ export function getSupportedChainNames(): string[] {
   return Object.keys(SUPPORTED_CHAINS);
 }
 
-export function isValidChainName(params: {
-  chainName: string,
-}): boolean {
-  if (Object.keys(SUPPORTED_CHAINS).some(e => e === params.chainName)) {
+export function isValidChainName(params: { chainName: string }): boolean {
+  if (Object.keys(SUPPORTED_CHAINS).some((e) => e === params.chainName)) {
     return true;
   }
   return false;
 }
 
-export function getSupportedNetworkNames(params: {
-  chainName: string,
-}): string[] {
+export function getSupportedNetworkNames(params: { chainName: string }): string[] {
   return Object.keys(SUPPORTED_CHAINS[params.chainName]);
 }
 
-export function isValidNetworkName(params: {
-  chainName: string,
-  networkName: string,
-}): boolean {
-  if (Object.keys(SUPPORTED_CHAINS[params.chainName]).some(e => e === params.networkName)) {
+export function isValidNetworkName(params: { chainName: string; networkName: string }): boolean {
+  if (
+    params.chainName in SUPPORTED_CHAINS &&
+    Object.keys(SUPPORTED_CHAINS[params.chainName]).some((e) => e === params.networkName)
+  ) {
     return true;
   }
   return false;
