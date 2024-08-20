@@ -1,6 +1,6 @@
-# JPYC SDKs
+# JPYC Node SDKs
 
-Monorepo for JPYC SDKs.
+Monorepo for JPYC Node SDKs.
 
 ## 🔨 Development
 
@@ -26,12 +26,6 @@ To run NPM scripts defined in workspaces, run the following.
 $ npm run -w <workspace name> <command name>
 ```
 
-Please see a list of NPM scripts below.
-
-| Command | Workspace | Description |
-|--------:|:----------|:------------|
-| `gen` | `@jpyc/node-sdk-v0` | Generate types for ABIs |
-
 ### Dependencies
 
 To add dependencies, run one of the following. To prevent unexpected behaviors, always pin the exact versions of the dependencies to be installed.  
@@ -56,3 +50,16 @@ $ yarn workspace <workspace name> remove <dependencies>
 # Remove dependencies from the workspaces root
 $ yarn remove -W <dependencies>
 ```
+
+## 🌈 Available SDKs
+
+Please refer to `README`s of each SDK for version specific details.
+
+| SDK | `README` |
+|----:|:---------|
+| `core` | [packages/core](./packages/core/README.md) |
+| `v1` | [packages/v1](./packages/v1/README.md) |
+
+## 🔥 How to Contribute
+
+Feel free to create new issues from [here](https://github.com/jcam1/sdks/issues/new/choose) to propose/request new features or report bugs.
