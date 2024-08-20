@@ -61,6 +61,12 @@ export class JPYC implements IJPYC {
     return Uint256.from((resp as bigint).toString());
   }
 
+  async nonces(params: { owner: Address }): Promise<Uint256> {
+    const resp = await this.contract.read.nonces([params.owner]);
+
+    return Uint256.from((resp as bigint).toString());
+  }
+
   /**
    * Regular Functions
    */

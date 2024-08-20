@@ -4,7 +4,6 @@ import { hexToNumber, slice } from 'viem';
 import { account, client, jpyc, spender } from './';
 import { LOCAL_PROXY_ADDRESS, SUPPORTED_CHAINS } from '../../core';
 
-// TODO: fix this
 async function main(): Promise<void> {
   // 1. Prepare typed data
   const domain = {
@@ -24,11 +23,13 @@ async function main(): Promise<void> {
       { name: 'owner', type: 'address' },
       { name: 'spender', type: 'address' },
       { name: 'value', type: 'uint256' },
+      { name: 'nonce', type: 'uint256' },
       { name: 'deadline', type: 'uint256' },
     ],
   } as const;
   const value = 100n;
   const deadline = BigInt(Date.now()) / 1000n + 3600n;
+  const nonce = await jpyc.nonces({ owner: account.address });
 
   // 2. Sign data
   const signature = await client.signTypedData({
@@ -40,6 +41,7 @@ async function main(): Promise<void> {
       owner: account.address,
       spender: spender,
       value: value,
+      nonce: BigInt(nonce.toString()),
       deadline: deadline,
     },
   });

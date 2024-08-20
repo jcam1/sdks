@@ -49,6 +49,14 @@ export interface IJPYC {
   allowance(params: { owner: Address; spender: Address }): Promise<Uint256>;
 
   /**
+   * Returns nonce for EIP2612's `permit`.
+   *
+   * @param owner - Owner address
+   * @returns owner nonce
+   */
+  nonces(params: { owner: Address }): Promise<Uint256>;
+
+  /**
    * Regular Functions
    */
 
