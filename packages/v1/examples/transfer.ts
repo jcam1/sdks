@@ -1,11 +1,8 @@
 import { Uint256 } from 'soltypes';
 
-import { account, jpyc } from './';
-import { HARDHAT_PREDEFINED_ADDRESSES } from './constants';
+import { account, jpyc, receiver } from './';
 
 async function main(): Promise<void> {
-  const receiver = HARDHAT_PREDEFINED_ADDRESSES[0];
-
   // 1. Transfer tokens
   await jpyc.transfer({
     to: receiver,

@@ -1,7 +1,6 @@
 import { Uint256 } from 'soltypes';
 
-import { account, jpyc, jpycSpender } from './';
-import { receiver, spender } from './constants';
+import { account, jpyc, jpycSpender, receiver, spender } from './';
 
 async function main(): Promise<void> {
   // 1. Transfer tokens (from the approved address)

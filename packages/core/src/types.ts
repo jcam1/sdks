@@ -1,4 +1,5 @@
 export type Address = `0x${string}`;
+export type Bytes32 = `0x${string}`;
 
 export type Endpoint = string;
 

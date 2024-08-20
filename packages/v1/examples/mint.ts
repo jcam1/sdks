@@ -9,11 +9,19 @@ async function main(): Promise<void> {
     minterAllowedAmount: Uint256.from('1000000'),
   });
 
-  // 2. Mint tokens
+  // 2. Check minter allowance
+  const minterAllowance = await jpyc.minterAllowance({ minter: account.address });
+  console.log(`minterAllowance: ${minterAllowance.toString()}`);
+
+  // 3. Mint tokens
   await jpyc.mint({
     to: account.address,
     amount: Uint256.from('10000'),
   });
+
+  // 4. Check total supply
+  const totalSupply = await jpyc.totalSupply();
+  console.log(`new totalSupply: ${totalSupply.toString()}`);
 }
 
 main()

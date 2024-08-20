@@ -1,11 +1,8 @@
 import { Uint256 } from 'soltypes';
 
-import { account, jpyc } from './';
-import { HARDHAT_PREDEFINED_ADDRESSES } from './constants';
+import { account, jpyc, spender } from './';
 
 async function main(): Promise<void> {
-  const spender = HARDHAT_PREDEFINED_ADDRESSES[1];
-
   // 1. Approve to spend allowance
   await jpyc.approve({
     spender: spender,

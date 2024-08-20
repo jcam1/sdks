@@ -1,7 +1,7 @@
-import { Bytes32, Uint256, Uint8 } from 'soltypes';
+import { Uint256, Uint8 } from 'soltypes';
 import { Hash } from 'viem';
 
-import { Address } from '../../../core';
+import { Address, Bytes32 } from '../../../core';
 
 export interface IJPYC {
   /**
@@ -154,7 +154,7 @@ export interface IJPYC {
   cancelAuthorization(params: {
     authorizer: Address;
     nonce: Bytes32;
-    v: number;
+    v: Uint8;
     r: Bytes32;
     s: Bytes32;
   }): Promise<Hash>;

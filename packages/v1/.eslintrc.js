@@ -39,7 +39,7 @@ module.exports = {
       { selector: 'enumMember', format: ['StrictPascalCase'] },
       { selector: 'typeLike', format: ['PascalCase'] },
       { selector: 'typeParameter', format: ['strictCamelCase', 'UPPER_CASE'] },
-      { selector: 'property', format: ['strictCamelCase'] },
+      { selector: 'property', format: ['strictCamelCase', 'PascalCase'] },
       { selector: 'method', format: ['strictCamelCase'] },
     ],
     '@typescript-eslint/no-unused-vars': [
@@ -51,5 +51,6 @@ module.exports = {
         destructuredArrayIgnorePattern: '^_',
       },
     ],
+    '@typescript-eslint/restrict-template-expressions': 'off',
   },
 };

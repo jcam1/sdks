@@ -1,4 +1,4 @@
-import { spender } from './constants';
+import { HARDHAT_PREDEFINED_ADDRESSES } from './constants';
 import { IJPYC, ISdkClient, JPYC, SdkClient } from '../src';
 import { ChainName, Endpoint, NetworkName } from '../../core';
 
@@ -13,15 +13,19 @@ const sdkClient: ISdkClient = new SdkClient({
   rpcEndpoint: process.env.RPC_ENDPOINT as Endpoint,
 });
 
-// 2. Generate an account
+// 2. Generate accounts
 export const account = sdkClient.createPrivateKeyAccount({});
+export const receiver = HARDHAT_PREDEFINED_ADDRESSES[0];
+export const spender = HARDHAT_PREDEFINED_ADDRESSES[1];
 
 // 3. Generate local clients
-const client = sdkClient.createLocalClient({
+export const client = sdkClient.createLocalClient({
   account: account,
 });
-
-const clientSpender = sdkClient.createLocalClient({
+export const clientReceiver = sdkClient.createLocalClient({
+  account: receiver,
+});
+export const clientSpender = sdkClient.createLocalClient({
   account: spender,
 });
 
@@ -29,7 +33,9 @@ const clientSpender = sdkClient.createLocalClient({
 export const jpyc: IJPYC = new JPYC({
   client: client,
 });
-
+export const jpycReceiver: IJPYC = new JPYC({
+  client: clientReceiver,
+});
 export const jpycSpender: IJPYC = new JPYC({
   client: clientSpender,
 });

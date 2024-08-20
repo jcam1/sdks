@@ -1,7 +1,13 @@
-import { Bytes32, Uint256, Uint8 } from 'soltypes';
+import { Uint256, Uint8 } from 'soltypes';
 import { getContract, GetContractReturnType, Hash, WalletClient } from 'viem';
 
-import { Address, isValidAddress, LOCAL_PROXY_ADDRESS, V2_PROXY_ADDRESS } from '../../core';
+import {
+  Address,
+  Bytes32,
+  isValidAddress,
+  LOCAL_PROXY_ADDRESS,
+  V2_PROXY_ADDRESS,
+} from '../../core';
 import { IJPYC, InvalidAddressError, InvalidTransactionError, JPYC_V2_ABI } from './';
 
 export class JPYC implements IJPYC {
@@ -174,7 +180,7 @@ export class JPYC implements IJPYC {
   async cancelAuthorization(params: {
     authorizer: Address;
     nonce: Bytes32;
-    v: number;
+    v: Uint8;
     r: Bytes32;
     s: Bytes32;
   }): Promise<Hash> {

@@ -24,7 +24,11 @@
     "total-supply": "npx hardhat run ./examples/total-supply.ts --network localhost",
     "transfer": "npx hardhat run ./examples/transfer.ts --network localhost",
     "approve": "npx hardhat run ./examples/approve.ts --network localhost",
-    "transfer-from": "npx hardhat run ./examples/transfer-from.ts --network localhost"
+    "permit": "npx hardhat run ./examples/permit.ts --network localhost",
+    "transfer-from": "npx hardhat run ./examples/transfer-from.ts --network localhost",
+    "transfer-with-authorization": "npx hardhat run ./examples/transfer-with-authorization.ts --network localhost",
+    "receive-with-authorization": "npx hardhat run ./examples/receive-with-authorization.ts --network localhost",
+    "cancel-authorization": "npx hardhat run ./examples/cancel-authorization.ts --network localhost"
   },
   "dependencies": {
     "@ethersproject/abi": "5.7.0",
@@ -45,6 +49,7 @@
     "@typescript-eslint/eslint-plugin": "7.15.0",
     "@typescript-eslint/parser": "7.15.0",
     "chai": "5.1.1",
+    "crypto": "1.0.1",
     "dotenv": "16.4.5",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
