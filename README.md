@@ -27,9 +27,18 @@ $ git clone --recursive https://github.com/jcam1/sdks.git
 
 This repo uses [Yarn Workspaces](https://yarnpkg.com/features/workspaces) primarily as a monorepo management tool. Please refer to the inserted link for details.
 
+To install dependencies for all the workspaces, run the following.
+
+```sh
+# cd into this repo
+$ cd sdks
+# Install dependencies
+$ yarn
+```
+
 ### NPM Scripts
 
-To run NPM scripts defined in workspaces, run the following. 
+To run npm scripts defined in workspaces, run the following. 
 
 ```sh
 $ npm run -w <workspace name> <command name>
