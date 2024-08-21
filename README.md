@@ -6,18 +6,18 @@ Monorepo for JPYC Node SDKs.
 
 Please refer to `README`s of each SDK for version specific details.
 
-| SDK | `README` |
-|----:|:---------|
+|    SDK | `README`                                   |
+| -----: | :----------------------------------------- |
 | `core` | [packages/core](./packages/core/README.md) |
-| `v1` | [packages/v1](./packages/v1/README.md) |
+|   `v1` | [packages/v1](./packages/v1/README.md)     |
 
 ## 🔨 Development
 
 ### Git Submodules
 
-This repo uses [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to be in sync with [JPYCv2](https://github.com/jcam1/JPYCv2/tree/main) repo.  
+This repo uses [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to be in sync with [JPYCv2](https://github.com/jcam1/JPYCv2/tree/main) repo.
 
-To include submodules when cloning the repo, add `--recursive` option like below. 
+To include submodules when cloning the repo, add `--recursive` option like below.
 
 ```sh
 $ git clone --recursive https://github.com/jcam1/sdks.git
@@ -36,17 +36,17 @@ $ cd sdks
 $ yarn
 ```
 
-### NPM Scripts
+### Yarn Scripts
 
-To run npm scripts defined in workspaces, run the following. 
+To run yarn scripts defined in workspaces, run the following.
 
 ```sh
-$ npm run -w <workspace name> <command name>
+$ yarn workspace <workspace name> run <command name>
 ```
 
 ### Dependencies
 
-To add dependencies, run one of the following. To prevent unexpected behaviors, always pin the exact versions of the dependencies to be installed.  
+To add dependencies, run one of the following. To prevent unexpected behaviors, always pin the exact versions of the dependencies to be installed.
 
 ```sh
 # Add dependencies to the specified workspace

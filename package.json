@@ -17,24 +17,38 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "format": "prettier --write",
+    "format:dry-run": "prettier --check"
   },
   "devDependencies": {
     "husky": "9.0.11",
-    "lint-staged": "15.2.9"
+    "lint-staged": "15.2.9",
+    "prettier": "3.3.3"
   },
   "lint-staged": {
-    "packages/core/**/*.{ts,js}": [
-      "npm run -w @jpyc/sdk-core lint"
+    "*.{md,json,yml}": [
+      "yarn run format README.md yarnrc.yml"
     ],
-    "packages/core/**/*.{ts,js,md,json}": [
-      "npm run -w @jpyc/sdk-core format"
+    ".github/**/*.{md,json,yml}": [
+      "yarn run format .github"
+    ],
+    ".docs/**/*.{md,json,yml}": [
+      "yarn run format docs"
+    ],
+    "packages/core/**/*.{ts,js}": [
+      "yarn workspace @jpyc/sdk-core run lint",
+      "yarn workspace @jpyc/sdk-core run format"
+    ],
+    "packages/core/**/*.{md,json}": [
+      "yarn workspace @jpyc/sdk-core run format"
     ],
     "packages/v1/**/*.{ts,js}": [
-      "npm run -w @jpyc/sdk-v1 lint"
+      "yarn workspace @jpyc/sdk-v1 run lint",
+      "yarn workspace @jpyc/sdk-v1 run format"
     ],
-    "packages/v1/**/*.{ts,js,md,json}": [
-      "npm run -w @jpyc/sdk-v1 format"
+    "packages/v1/**/*.{md,json}": [
+      "yarn workspace @jpyc/sdk-v1 run format"
     ]
   }
 }

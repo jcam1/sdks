@@ -8,7 +8,7 @@ Please follow the following steps to configure our SDK.
 
 #### 1. Install Packages
 
-Install npm packages.
+Install packages.
 
 ```sh
 # yarn
@@ -78,7 +78,7 @@ For your reference, we provide code examples in `examples` directory. Please fol
 
 ## 🤖 Available Commands
 
-The following commands are available as npm scripts for local development & testing.
+The following commands are available as yarn scripts for local development & testing.
 
 |                       Command | Description                                             |
 | ----------------------------: | :------------------------------------------------------ |

@@ -8,7 +8,7 @@
 
 <!-- Provide a detailed description of the changes -->
 
-- 
+-
 
 ## 📚 References
 

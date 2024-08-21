@@ -4,6 +4,9 @@
   "repository": "https://github.com/jcam1/sdks.git",
   "license": "MIT",
   "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": "^20.12.0",
     "yarn": "^1.22.22"
