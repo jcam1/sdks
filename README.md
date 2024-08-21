@@ -1,6 +1,15 @@
-# JPYC SDKs
+# JPYC Node SDKs
 
-Monorepo for JPYC SDKs.
+Monorepo for JPYC Node SDKs.
+
+## 🌈 Available SDKs
+
+Please refer to `README`s of each SDK for version specific details.
+
+| SDK | `README` |
+|----:|:---------|
+| `core` | [packages/core](./packages/core/README.md) |
+| `v1` | [packages/v1](./packages/v1/README.md) |
 
 ## 🔨 Development
 
@@ -18,19 +27,22 @@ $ git clone --recursive https://github.com/jcam1/sdks.git
 
 This repo uses [Yarn Workspaces](https://yarnpkg.com/features/workspaces) primarily as a monorepo management tool. Please refer to the inserted link for details.
 
+To install dependencies for all the workspaces, run the following.
+
+```sh
+# cd into this repo
+$ cd sdks
+# Install dependencies
+$ yarn
+```
+
 ### NPM Scripts
 
-To run NPM scripts defined in workspaces, run the following. 
+To run npm scripts defined in workspaces, run the following. 
 
 ```sh
 $ npm run -w <workspace name> <command name>
 ```
-
-Please see a list of NPM scripts below.
-
-| Command | Workspace | Description |
-|--------:|:----------|:------------|
-| `gen` | `@jpyc/node-sdk-v0` | Generate types for ABIs |
 
 ### Dependencies
 
@@ -56,3 +68,7 @@ $ yarn workspace <workspace name> remove <dependencies>
 # Remove dependencies from the workspaces root
 $ yarn remove -W <dependencies>
 ```
+
+## 🔥 How to Contribute
+
+Feel free to create new issues from [here](https://github.com/jcam1/sdks/issues/new/choose) to propose/request new features or report bugs.

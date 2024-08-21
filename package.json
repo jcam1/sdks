@@ -1,21 +1,40 @@
 {
   "name": "@jpyc/sdks",
-  "description": "A collection of SDKs to build applications on top of JPYC",
+  "description": "Node SDKs to build applications on top of JPYC protocol",
   "keywords": [
     "jpyc",
     "stablecoin"
   ],
   "repository": "https://github.com/jcam1/sdks.git",
   "license": "MIT",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "engines": {
+    "node": "^20.12.0",
+    "yarn": "^1.22.22"
+  },
   "private": true,
   "workspaces": [
-    "packages/**/*"
+    "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "devDependencies": {
-    "husky": "9.0.11"
+    "husky": "9.0.11",
+    "lint-staged": "15.2.9"
+  },
+  "lint-staged": {
+    "packages/core/**/*.{ts,js}": [
+      "npm run -w @jpyc/sdk-core lint"
+    ],
+    "packages/core/**/*.{ts,js,md,json}": [
+      "npm run -w @jpyc/sdk-core format"
+    ],
+    "packages/v1/**/*.{ts,js}": [
+      "npm run -w @jpyc/sdk-v1 lint"
+    ],
+    "packages/v1/**/*.{ts,js,md,json}": [
+      "npm run -w @jpyc/sdk-v1 format"
+    ]
   }
 }

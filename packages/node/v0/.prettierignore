@@ -1,4 +1,0 @@
-.gitkeep
-.env*
-*.lock
-dist

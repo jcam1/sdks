@@ -1,0 +1,49 @@
+name: static checks for core package
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+    paths:
+      - "packages/core/**"
+      - ".github/workflows/check-core.yml"
+
+defaults:
+  run:
+    working-directory: ./packages/core
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Dependencies
+        run: yarn
+      - name: Compile
+        run: npm run compile
+      - name: Lint
+        run: npm run lint:dry-run
+      - name: Format
+        run: npm run format:dry-run
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Dependencies
+        run: yarn
+      - name: Run tests
+        run: npm run test
