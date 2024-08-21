@@ -2,8 +2,8 @@ import { randomBytes } from 'crypto';
 import { Uint8, Uint256 } from 'soltypes';
 import { hexToNumber, slice, toHex } from 'viem';
 
+import { LOCAL_PROXY_ADDRESS, SUPPORTED_CHAINS } from '@jpyc/sdk-core';
 import { account, client, jpyc, jpycSpender, receiver, spender } from './';
-import { LOCAL_PROXY_ADDRESS, SUPPORTED_CHAINS } from '../../core';
 
 async function main(): Promise<void> {
   // 1. Prepare typed data

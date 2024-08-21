@@ -1,6 +1,6 @@
+import { ChainName, Endpoint, NetworkName } from '@jpyc/sdk-core';
+import { IJPYC, ISdkClient, JPYC, SdkClient } from '@jpyc/sdk-v1';
 import { HARDHAT_PREDEFINED_ADDRESSES } from './constants';
-import { IJPYC, ISdkClient, JPYC, SdkClient } from '../src';
-import { ChainName, Endpoint, NetworkName } from '../../core';
 
 /**
  * SDK SetUp

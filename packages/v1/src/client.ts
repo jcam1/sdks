@@ -9,7 +9,7 @@ import {
   isValidNetworkName,
   NetworkName,
   SUPPORTED_CHAINS,
-} from '../../core';
+} from '@jpyc/sdk-core';
 import { ISdkClient, InvalidChainNameError, InvalidNetworkNameError } from './';
 
 export class SdkClient implements ISdkClient {

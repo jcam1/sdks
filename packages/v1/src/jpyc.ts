@@ -7,7 +7,7 @@ import {
   isValidAddress,
   LOCAL_PROXY_ADDRESS,
   V2_PROXY_ADDRESS,
-} from '../../core';
+} from '@jpyc/sdk-core';
 import { IJPYC, InvalidAddressError, InvalidTransactionError, JPYC_V2_ABI } from './';
 
 export class JPYC implements IJPYC {

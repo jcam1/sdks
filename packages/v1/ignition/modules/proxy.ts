@@ -3,8 +3,8 @@ import { Uint8 } from 'soltypes';
 import { encodeFunctionData } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
 
-import { JPYC_V2_ABI } from '../../src';
-import { Address } from '../../../core/src';
+import { Address } from '@jpyc/sdk-core';
+import { JPYC_V2_ABI } from '@jpyc/sdk-v1';
 
 export const proxyModule = buildModule('ProxyModule', (m) => {
   // Deploy JPYCv2 contract
