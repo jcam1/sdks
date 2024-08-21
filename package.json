@@ -25,16 +25,16 @@
   },
   "lint-staged": {
     "packages/core/**/*.{ts,js}": [
-      "npm run -w @jpyc/sdk-core lint"
+      "yarn workspace @jpyc/sdk-core run lint"
     ],
     "packages/core/**/*.{ts,js,md,json}": [
-      "npm run -w @jpyc/sdk-core format"
+      "yarn workspace @jpyc/sdk-core run format"
     ],
     "packages/v1/**/*.{ts,js}": [
-      "npm run -w @jpyc/sdk-v1 lint"
+      "yarn workspace @jpyc/sdk-v1 run lint"
     ],
     "packages/v1/**/*.{ts,js,md,json}": [
-      "npm run -w @jpyc/sdk-v1 format"
+      "yarn workspace @jpyc/sdk-v1 run format"
     ]
   }
 }

@@ -7,7 +7,7 @@ We provide code examples that use JPYC V1 SDK as an interface to locally-deploye
 Run the following command to start running local Hardhat network and its accompanying node.
 
 ```sh
-$ npm run node
+$ yarn run node
 ```
 
 ### 2. Deploy Contracts
@@ -15,7 +15,7 @@ $ npm run node
 **Open a different window** and run the following command to deploy JPYCv2 contracts to the local network. Once successfully deployed, a new directory will be created, and you can find deployed contract addresses at `/packages/v1/ignition/deployments/chain-31337/deployed_addresses.json`.
 
 ```sh
-$ npm run deploy
+$ yarn run deploy
 ```
 
 ### 3. Set Environment Variables
@@ -26,7 +26,7 @@ Run the following commands, and edit the generated `.env` file accordingly. Set 
 # cd into this directory
 $ cd /packages/v1
 # copy `.env.example` to `.env`
-$ npm run env
+$ yarn run env
 ```
 
 ### 4. Run Code Examples
@@ -48,5 +48,5 @@ Run the following commands to execute our code examples.
 For example, to mint JPYC tokens on local network, run the following.
 
 ```sh
-$ npm run mint
+$ yarn run mint
 ```

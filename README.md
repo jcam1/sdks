@@ -36,12 +36,12 @@ $ cd sdks
 $ yarn
 ```
 
-### NPM Scripts
+### Yarn Scripts
 
-To run npm scripts defined in workspaces, run the following. 
+To run yarn scripts defined in workspaces, run the following. 
 
 ```sh
-$ npm run -w <workspace name> <command name>
+$ yarn workspace <workspace name> run <command name>
 ```
 
 ### Dependencies

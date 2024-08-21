@@ -4,7 +4,7 @@ JPYC core SDK implements a set of constants, types and functions, commonly used 
 
 ## 🤖 Available Commands
 
-The following commands are available as npm scripts for local development & testing.
+The following commands are available as yarn scripts for local development & testing.
 
 |          Command | Description                          |
 | ---------------: | :----------------------------------- |

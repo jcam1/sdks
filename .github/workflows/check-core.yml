@@ -26,14 +26,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install Dependencies
-        run: yarn
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
       - name: Compile
-        run: npm run compile
+        run: yarn run compile
       - name: Lint
-        run: npm run lint:dry-run
+        run: yarn run lint:dry-run
       - name: Format
-        run: npm run format:dry-run
+        run: yarn run format:dry-run
 
   test:
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install Dependencies
-        run: yarn
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
       - name: Run tests
-        run: npm run test
+        run: yarn run test
