@@ -28,10 +28,13 @@
   },
   "lint-staged": {
     "*.{md,json,yml}": [
-      "yarn run format"
+      "yarn run format README.md yarnrc.yml"
     ],
     ".github/**/*.{md,json,yml}": [
-      "yarn run format"
+      "yarn run format .github"
+    ],
+    ".docs/**/*.{md,json,yml}": [
+      "yarn run format docs"
     ],
     "packages/core/**/*.{ts,js}": [
       "yarn workspace @jpyc/sdk-core run lint",
