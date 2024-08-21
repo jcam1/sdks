@@ -2,6 +2,15 @@
 
 Monorepo for JPYC Node SDKs.
 
+## 🌈 Available SDKs
+
+Please refer to `README`s of each SDK for version specific details.
+
+| SDK | `README` |
+|----:|:---------|
+| `core` | [packages/core](./packages/core/README.md) |
+| `v1` | [packages/v1](./packages/v1/README.md) |
+
 ## 🔨 Development
 
 ### Git Submodules
@@ -50,15 +59,6 @@ $ yarn workspace <workspace name> remove <dependencies>
 # Remove dependencies from the workspaces root
 $ yarn remove -W <dependencies>
 ```
-
-## 🌈 Available SDKs
-
-Please refer to `README`s of each SDK for version specific details.
-
-| SDK | `README` |
-|----:|:---------|
-| `core` | [packages/core](./packages/core/README.md) |
-| `v1` | [packages/v1](./packages/v1/README.md) |
 
 ## 🔥 How to Contribute
 
