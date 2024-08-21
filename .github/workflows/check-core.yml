@@ -10,8 +10,8 @@ on:
       - main
       - develop
     paths:
-      - "packages/core/**"
-      - ".github/workflows/check-core.yml"
+      - 'packages/core/**'
+      - '.github/workflows/check-core.yml'
 
 defaults:
   run:

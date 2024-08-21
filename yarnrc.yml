@@ -1,3 +1,3 @@
 npmAlwaysAuth: true
-npmAuthToken: "${NODE_AUTH_TOKEN}"
-npmPublishRegistry: "https://registry.npmjs.org"
+npmAuthToken: '${NODE_AUTH_TOKEN}'
+npmPublishRegistry: 'https://registry.npmjs.org'
