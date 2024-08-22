@@ -31,4 +31,4 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: Format
-        run: yarn run format:dry-run .github docs README.md yarnrc.yml
+        run: yarn run format:dry-run .github docs README.md
