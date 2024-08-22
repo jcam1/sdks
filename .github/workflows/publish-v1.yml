@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-  paths:
-    - 'packages/v1/**'
+    paths:
+      - 'packages/v1/**'
 
 defaults:
   run:
