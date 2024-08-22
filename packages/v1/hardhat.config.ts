@@ -4,13 +4,26 @@ import type { HardhatUserConfig } from 'hardhat/config';
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: '0.8.11',
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 3000,
+    compilers: [
+      {
+        version: '0.8.11',
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 3000,
+          },
+        },
       },
-    },
+      {
+        version: '0.4.24',
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 3000,
+          },
+        },
+      },
+    ],
   },
   paths: {
     root: './',
