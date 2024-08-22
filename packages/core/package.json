@@ -14,10 +14,10 @@
   "private": true,
   "scripts": {
     "compile": "tsc",
-    "lint": "eslint . --fix ",
-    "lint:dry-run": "eslint .",
-    "format": "prettier . --write",
-    "format:dry-run": "prettier . --check",
+    "lint": "eslint --fix ./src",
+    "lint:dry-run": "eslint ./src",
+    "format": "prettier --write .",
+    "format:dry-run": "prettier --check .",
     "test": "jest"
   },
   "devDependencies": {
