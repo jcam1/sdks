@@ -27,7 +27,7 @@ async function main(): Promise<void> {
       { name: 'deadline', type: 'uint256' },
     ],
   } as const;
-  const value = 100n;
+  const value = 300n;
   const deadline = BigInt(Date.now()) / 1000n + 3600n;
   const nonce = await jpyc.nonces({ owner: account.address });
 
