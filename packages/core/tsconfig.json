@@ -1,11 +1,11 @@
 {
-  "include": ["**/*.ts"],
-  "exclude": ["**/*.test.ts", "node_modules", "dist"],
+  "include": ["./src/**/*.ts"],
+  "exclude": ["./src/**/*.test.ts", "node_modules", "dist"],
   "compilerOptions": {
     // output settings
     "module": "commonjs",
     "rootDir": "./",
-    "outDir": "./dist/src",
+    "outDir": "./dist",
     "removeComments": true,
     "preserveConstEnums": true,
     "incremental": true,
@@ -13,7 +13,7 @@
     "sourceMap": true,
     "inlineSourceMap": false,
     "declaration": true,
-    "declarationDir": "./dist/src/types",
+    "declarationDir": "./dist/types",
     "declarationMap": true,
     "lib": ["es2022"],
     "skipLibCheck": true,
