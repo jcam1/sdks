@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: 3.3
-      - name: git-pr-release
+      - name: Create a release PR
         env:
           GIT_PR_RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_PR_RELEASE_BRANCH_PRODUCTION: main
