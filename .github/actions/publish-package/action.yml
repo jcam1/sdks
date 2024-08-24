@@ -10,5 +10,6 @@ runs:
   steps:
     - name: Publish package
       run: yarn publish
+      shell: bash
       env:
         NODE_AUTH_TOKEN: ${{ inputs.node-auth-token }}

@@ -10,4 +10,5 @@ runs:
         registry-url: 'https://registry.npmjs.org'
         scope: '@jpyc'
     - name: Install dependencies
+      shell: bash
       run: yarn --frozen-lockfile
