@@ -1,0 +1,59 @@
+name: publish packages to npm registry
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/core/**'
+      - 'packages/v1/**'
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      pull-requests: read
+    outputs:
+      core: ${{ steps.filter.outputs.core }}
+      v1: ${{ steps.filter.outputs.v1 }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            core:
+              - 'packages/core/**'
+            v1:
+              - 'packages/v1/**'
+
+  publish-core:
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.core == 'true' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/core
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/install-dependencies
+      - uses: ./.github/actions/publish-package
+        with:
+          node-auth-token: ${{ secrets.NPM_TOKEN }}
+
+  publish-v1:
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.v1 == 'true' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/v1
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/install-dependencies
+      - uses: ./.github/actions/publish-package
+        with:
+          node-auth-token: ${{ secrets.NPM_TOKEN }}
