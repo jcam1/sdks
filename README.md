@@ -75,6 +75,14 @@ $ yarn workspace <workspace name> remove <dependencies>
 $ yarn remove -W <dependencies>
 ```
 
+### Documentation
+
+To generate Markdown documentation from source code, run the following.
+
+```sh
+$ yarn run docs
+```
+
 ## 🔥 How to Contribute
 
 Feel free to create new issues from [here](https://github.com/jcam1/sdks/issues/new/choose) to propose/request new features or report bugs.
