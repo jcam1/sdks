@@ -13,6 +13,7 @@
   },
   "private": true,
   "scripts": {
+    "docs": "typedoc",
     "env": "cp .env.example .env",
     "lint": "eslint --fix ./src",
     "lint:dry-run": "eslint ./src",
@@ -65,6 +66,8 @@
     "soltypes": "2.0.0",
     "ts-node": "10.9.2",
     "tsconfig-paths": "4.2.0",
+    "typedoc": "0.26.6",
+    "typedoc-plugin-markdown": "4.2.6",
     "typescript": "5.5.3",
     "viem": "2.19.4"
   }

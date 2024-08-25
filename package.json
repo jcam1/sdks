@@ -19,7 +19,8 @@
   "scripts": {
     "prepare": "husky",
     "format": "prettier --write",
-    "format:dry-run": "prettier --check"
+    "format:dry-run": "prettier --check",
+    "docs": "yarn workspace @jpyc/sdk-core run docs && yarn workspace @jpyc/sdk-v1 run docs"
   },
   "devDependencies": {
     "husky": "9.0.11",

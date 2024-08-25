@@ -1,3 +1,7 @@
+**@jpyc/sdk-core** • [**Docs**](globals.md)
+
+---
+
 # JPYC Core SDK
 
 ![build](https://github.com/jcam1/sdks/actions/workflows/check.yml/badge.svg)
@@ -21,4 +25,4 @@ The following commands are available as yarn scripts for local development & tes
 
 ## 📚 Documentation
 
-You can find the auto-generated documentation of this SDK [here](../../docs/core/globals.md).
+You can find the auto-generated documentation of this SDK [here](_media/globals.md).
