@@ -1,1 +1,2 @@
+yarn run docs
 npx lint-staged

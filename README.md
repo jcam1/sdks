@@ -1,6 +1,6 @@
 # JPYC Node SDKs
 
-[![HitCount](https://hits.dwyl.com/jcam1/sdks.svg?style=flat-square)](http://hits.dwyl.com/jcam1/sdks)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/jcam1/sdks/issues/new/choose)
 
 Monorepo for JPYC Node SDKs.
@@ -29,6 +29,9 @@ $ git clone --recursive https://github.com/jcam1/sdks.git
 ### Yarn Workspaces
 
 This repo uses [Yarn Workspaces](https://yarnpkg.com/features/workspaces) primarily as a monorepo management tool. Please refer to the inserted link for details.
+
+> [!NOTE]
+> Please use Node `v20.12.0` for this repo.
 
 To install dependencies for all the workspaces, run the following.
 

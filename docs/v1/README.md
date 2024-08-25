@@ -1,3 +1,7 @@
+**@jpyc/sdk-v1** • [**Docs**](globals.md)
+
+---
+
 # JPYC V1 SDK
 
 ![build](https://github.com/jcam1/sdks/actions/workflows/check.yml/badge.svg)
@@ -77,7 +81,7 @@ console.log(`totalSupply: ${totalSupply.toString()}`);
 
 ## ✨ Code Examples
 
-For your reference, we provide code examples in `examples` directory. Please follow the instructions on [`README`](./examples/README.md) file.
+For your reference, we provide code examples in `examples` directory. Please follow the instructions on [`README`](_media/README.md) file.
 
 ## 🤖 Available Commands
 
@@ -85,7 +89,6 @@ The following commands are available as yarn scripts for local development & tes
 
 |                       Command | Description                                             |
 | ----------------------------: | :------------------------------------------------------ |
-|                        `docs` | Generate Markdown documents from TSDoc-style comments   |
 |                         `env` | Generate `.env` file                                    |
 |                        `lint` | Run Eslint                                              |
 |                `lint:dry-run` | Run Eslint without fixing                               |
