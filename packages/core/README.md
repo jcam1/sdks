@@ -18,3 +18,7 @@ The following commands are available as yarn scripts for local development & tes
 |         `format` | Run Prettier                                          |
 | `format:dry-run` | Run Prettier without fixing                           |
 |           `test` | Run unit tests (via jest)                             |
+
+## 📚 Documentation
+
+You can find the auto-generated documentation of this SDK [here](../../docs/core/globals.md).

@@ -89,6 +89,7 @@ The following commands are available as yarn scripts for local development & tes
 
 |                       Command | Description                                             |
 | ----------------------------: | :------------------------------------------------------ |
+|                        `docs` | Generate Markdown documents from TSDoc-style comments   |
 |                         `env` | Generate `.env` file                                    |
 |                        `lint` | Run Eslint                                              |
 |                `lint:dry-run` | Run Eslint without fixing                               |
@@ -108,3 +109,7 @@ The following commands are available as yarn scripts for local development & tes
 | `transfer-with-authorization` | Example code: transfer tokens with signatures (EIP3009) |
 |  `receive-with-authorization` | Example code: receive tokens with signatures (EIP3009)  |
 |        `cancel-authorization` | Example code: cancel token authorization (EIP3009)      |
+
+## 📚 Documentation
+
+You can find the auto-generated documentation of this SDK [here](_media/globals.md).

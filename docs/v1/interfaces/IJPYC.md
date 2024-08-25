@@ -30,7 +30,7 @@ spender allowance
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:49](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L49)
+[packages/v1/src/interfaces/jpyc.ts:49](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L49)
 
 ---
 
@@ -56,7 +56,7 @@ transaction hash
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:177](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L177)
+[packages/v1/src/interfaces/jpyc.ts:177](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L177)
 
 ---
 
@@ -80,7 +80,7 @@ account balance
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:40](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L40)
+[packages/v1/src/interfaces/jpyc.ts:40](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L40)
 
 ---
 
@@ -112,7 +112,7 @@ transaction hash
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:162](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L162)
+[packages/v1/src/interfaces/jpyc.ts:162](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L162)
 
 ---
 
@@ -138,7 +138,7 @@ transaction hash
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:70](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L70)
+[packages/v1/src/interfaces/jpyc.ts:70](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L70)
 
 ---
 
@@ -164,7 +164,7 @@ transaction hash
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:195](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L195)
+[packages/v1/src/interfaces/jpyc.ts:195](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L195)
 
 ---
 
@@ -190,7 +190,7 @@ transaction hash
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:186](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L186)
+[packages/v1/src/interfaces/jpyc.ts:186](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L186)
 
 ---
 
@@ -214,7 +214,7 @@ true if minter, false otherwise
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:17](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L17)
+[packages/v1/src/interfaces/jpyc.ts:17](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L17)
 
 ---
 
@@ -240,7 +240,7 @@ transaction hash
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:79](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L79)
+[packages/v1/src/interfaces/jpyc.ts:79](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L79)
 
 ---
 
@@ -264,7 +264,7 @@ minter allowance
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:25](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L25)
+[packages/v1/src/interfaces/jpyc.ts:25](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L25)
 
 ---
 
@@ -288,7 +288,7 @@ owner nonce
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:57](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L57)
+[packages/v1/src/interfaces/jpyc.ts:57](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L57)
 
 ---
 
@@ -324,7 +324,7 @@ transaction hash
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:209](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L209)
+[packages/v1/src/interfaces/jpyc.ts:209](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L209)
 
 ---
 
@@ -364,7 +364,7 @@ transaction hash
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:140](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L140)
+[packages/v1/src/interfaces/jpyc.ts:140](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L140)
 
 ---
 
@@ -382,7 +382,7 @@ total supply
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:32](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L32)
+[packages/v1/src/interfaces/jpyc.ts:32](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L32)
 
 ---
 
@@ -408,7 +408,7 @@ transaction hash
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:88](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L88)
+[packages/v1/src/interfaces/jpyc.ts:88](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L88)
 
 ---
 
@@ -436,7 +436,7 @@ transaction hash
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:98](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L98)
+[packages/v1/src/interfaces/jpyc.ts:98](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L98)
 
 ---
 
@@ -476,4 +476,4 @@ transaction hash
 
 #### Defined in
 
-[packages/v1/src/interfaces/jpyc.ts:114](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/jpyc.ts#L114)
+[packages/v1/src/interfaces/jpyc.ts:114](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/jpyc.ts#L114)

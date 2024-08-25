@@ -903,7 +903,7 @@ const hash = await client.writeContract(request)
 
 #### Defined in
 
-[packages/v1/src/interfaces/client.ts:20](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/client.ts#L20)
+[packages/v1/src/interfaces/client.ts:20](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/client.ts#L20)
 
 ---
 
@@ -1027,4 +1027,4 @@ PrivateKeyAccount
 
 #### Defined in
 
-[packages/v1/src/interfaces/client.ts:12](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/interfaces/client.ts#L12)
+[packages/v1/src/interfaces/client.ts:12](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/interfaces/client.ts#L12)

@@ -105,3 +105,7 @@ The following commands are available as yarn scripts for local development & tes
 | `transfer-with-authorization` | Example code: transfer tokens with signatures (EIP3009) |
 |  `receive-with-authorization` | Example code: receive tokens with signatures (EIP3009)  |
 |        `cancel-authorization` | Example code: cancel token authorization (EIP3009)      |
+
+## 📚 Documentation
+
+You can find the auto-generated documentation of this SDK [here](../../docs/v1/globals.md).

@@ -1,4 +1,4 @@
 {
   "plugin": ["typedoc-plugin-markdown"],
-  "cleanOutputDir": true
+  "cleanOutputDir": false
 }

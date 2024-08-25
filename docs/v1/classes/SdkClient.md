@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[packages/v1/src/client.ts:22](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/client.ts#L22)
+[packages/v1/src/client.ts:22](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/client.ts#L22)
 
 ## Methods
 
@@ -935,7 +935,7 @@ const hash = await client.writeContract(request)
 
 #### Defined in
 
-[packages/v1/src/client.ts:40](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/client.ts#L40)
+[packages/v1/src/client.ts:40](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/client.ts#L40)
 
 ---
 
@@ -1063,4 +1063,4 @@ PrivateKeyAccount
 
 #### Defined in
 
-[packages/v1/src/client.ts:34](https://github.com/jcam1/sdks/blob/3c4d067b0c17fecc9e33503f90e696b032f41531/packages/v1/src/client.ts#L34)
+[packages/v1/src/client.ts:34](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/client.ts#L34)
