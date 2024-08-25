@@ -1,5 +1,8 @@
 # JPYC Node SDKs
 
+[![HitCount](https://hits.dwyl.com/jcam1/sdks.svg?style=flat-square)](http://hits.dwyl.com/jcam1/sdks)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/jcam1/sdks/issues/new/choose)
+
 Monorepo for JPYC Node SDKs.
 
 ## 🌈 Available SDKs

@@ -1,5 +1,8 @@
 # JPYC V1 SDK
 
+![build](https://github.com/jcam1/sdks/actions/workflows/check/badge.svg)
+[![Node version](https://img.shields.io/node/v/@jpyc/sdk-v1.svg?style=flat)](https://nodejs.org/download/)
+
 JPYC V1 SDK implements an interface to interact with [JPYCv2 contracts](https://github.com/jcam1/JPYCv2) on different chains. Supported chains are Ethereum, Polygon, Gnosis, Avalanche, and Astar. Please note that **Shiden Network is not yet supported**.
 
 ## 💡 How to Use
