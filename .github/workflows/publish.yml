@@ -28,8 +28,50 @@ jobs:
             v1:
               - 'packages/v1/**'
 
+  push-git-tag:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
+    timeout-minutes: 3
+    outputs:
+      tag-name: ${{ 'v' }}${{ env.GIT_TAG_VERSION }}
+      tag-version: ${{ env.GIT_TAG_VERSION }}
+      tag-exists: ${{ steps.create-tag.outputs.tag_exists }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/install-dependencies
+      - name: get version from `package.json`
+        run: node -p -e '`GIT_TAG_VERSION=${require("./package.json").version}`' >> $GITHUB_ENV
+      - uses: rickstaa/action-create-tag@v1
+        id: create-tag
+        with:
+          tag: ${{ 'v' }}${{ env.GIT_TAG_VERSION }}
+
+  publish-release-note:
+    needs: push-git-tag
+    if: ${{ needs.push-git-tag.outputs.tag-exists == 'false' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: release-drafter/release-drafter@v6
+        with:
+          name: ${{ needs.push-git-tag.outputs.tag-name }}
+          tag: ${{ needs.push-git-tag.outputs.tag-name }}
+          version: ${{ needs.push-git-tag.outputs.tag-version }}
+          publish: 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   publish-core:
-    needs: detect-changes
+    needs: [detect-changes, publish-release-note]
     if: ${{ needs.detect-changes.outputs.core == 'true' }}
     runs-on: ubuntu-latest
     defaults:
@@ -44,7 +86,7 @@ jobs:
           node-auth-token: ${{ secrets.NPM_TOKEN }}
 
   publish-v1:
-    needs: detect-changes
+    needs: [detect-changes, publish-release-note]
     if: ${{ needs.detect-changes.outputs.v1 == 'true' }}
     runs-on: ubuntu-latest
     defaults:
