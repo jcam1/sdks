@@ -28,7 +28,7 @@
   },
   "lint-staged": {
     "*.{md,json,yml}": [
-      "yarn run format README.md yarnrc.yml"
+      "yarn run format README.md"
     ],
     ".github/**/*.{md,json,yml}": [
       "yarn run format .github"
@@ -40,14 +40,14 @@
       "yarn workspace @jpyc/sdk-core run lint",
       "yarn workspace @jpyc/sdk-core run format"
     ],
-    "packages/core/**/*.{md,json}": [
+    "packages/core/**/*.{md,json,yml}": [
       "yarn workspace @jpyc/sdk-core run format"
     ],
     "packages/v1/**/*.{ts,js}": [
       "yarn workspace @jpyc/sdk-v1 run lint",
       "yarn workspace @jpyc/sdk-v1 run format"
     ],
-    "packages/v1/**/*.{md,json}": [
+    "packages/v1/**/*.{md,json,yml}": [
       "yarn workspace @jpyc/sdk-v1 run format"
     ]
   }

@@ -1,4 +1,4 @@
-name: create a release PR from `develop` to `main`
+name: create a release pr from `develop` to `main`
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 jobs:
   create-release-pr:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1

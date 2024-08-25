@@ -7,7 +7,7 @@ Monorepo for JPYC Node SDKs.
 
 ## 🌈 Available SDKs
 
-Please refer to `README`s of each SDK for version specific details.
+Please refer to `README`s of each SDK for the version specific details.
 
 |    SDK | `README`                                   |
 | -----: | :----------------------------------------- |
