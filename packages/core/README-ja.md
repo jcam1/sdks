@@ -1,1 +1,0 @@
-# JPYC Core SDK
