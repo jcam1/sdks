@@ -100,6 +100,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/install-dependencies
+      - name: Build package
+        run: yarn run compile:sdk
       - uses: ./.github/actions/publish-package
         with:
           working-directory: ./packages/v1

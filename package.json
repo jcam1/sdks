@@ -7,7 +7,7 @@
   ],
   "repository": "https://github.com/jcam1/sdks.git",
   "license": "MIT",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "engines": {
     "node": "^20.12.0",
     "yarn": "^1.22.22"

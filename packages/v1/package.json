@@ -3,7 +3,7 @@
   "description": "SDK v1 for JPYC v2 protocol",
   "repository": "https://github.com/jcam1/sdks.git",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -11,6 +11,11 @@
     "node": "^20.12.0",
     "yarn": "^1.22.22"
   },
+  "main": "dist/src",
+  "types": "dist/types/src",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "docs": "typedoc",
     "env": "cp .env.example .env",
@@ -35,7 +40,8 @@
   },
   "dependencies": {
     "@ethersproject/abi": "5.7.0",
-    "@ethersproject/solidity": "5.7.0"
+    "@ethersproject/solidity": "5.7.0",
+    "@jpyc/sdk-core": "1.3.0"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "3.0.6",

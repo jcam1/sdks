@@ -128,3 +128,4 @@ out
 # Misc
 .DS_Store
 .vscode
+tsconfig.tsbuildinfo
