@@ -1,11 +1,18 @@
 {
   "name": "@jpyc/sdk-v1",
-  "description": "SDK v1 for JPYC v2 protocol",
-  "repository": "https://github.com/jcam1/sdks.git",
+  "version": "1.2.1",
   "license": "MIT",
-  "version": "1.2.0",
-  "publishConfig": {
-    "access": "public"
+  "description": "SDK v1 for JPYC v2 protocol",
+  "keywords": [
+    "jpyc",
+    "jpy",
+    "stablecoin",
+    "ethereum"
+  ],
+  "repository": "https://github.com/jcam1/sdks.git",
+  "homepage": "https://github.com/jcam1/sdks.git#readme",
+  "bugs": {
+    "url": "https://github.com/jcam1/sdks/issues/new/choose"
   },
   "engines": {
     "node": "^20.12.0",
@@ -14,8 +21,13 @@
   "main": "dist/src",
   "types": "dist/types/src",
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "!**/*.tsbuildinfo"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "docs": "typedoc",
     "env": "cp .env.example .env",
@@ -39,12 +51,12 @@
     "cancel-authorization": "hardhat run ./examples/cancel-authorization.ts --network localhost"
   },
   "dependencies": {
-    "@ethersproject/abi": "5.7.0",
-    "@ethersproject/solidity": "5.7.0",
-    "@jpyc/sdk-core": "1.3.0"
+    "@jpyc/sdk-core": "1.3.0",
+    "dotenv": "16.4.5",
+    "soltypes": "2.0.0",
+    "viem": "2.20.0"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-ethers": "3.0.6",
     "@nomicfoundation/hardhat-ignition": "0.15.5",
     "@nomicfoundation/hardhat-ignition-viem": "0.15.5",
     "@nomicfoundation/hardhat-toolbox": "5.0.0",
@@ -52,28 +64,19 @@
     "@nomicfoundation/hardhat-verify": "2.0.9",
     "@nomicfoundation/hardhat-viem": "2.0.3",
     "@nomicfoundation/ignition-core": "0.15.5",
-    "@types/chai": "4.3.17",
-    "@types/mocha": "10.0.7",
     "@types/node": "20.14.9",
     "@typescript-eslint/eslint-plugin": "7.15.0",
     "@typescript-eslint/parser": "7.15.0",
-    "chai": "5.1.1",
     "crypto": "1.0.1",
-    "dotenv": "16.4.5",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "5.1.3",
     "hardhat": "2.22.8",
     "hardhat-gas-reporter": "2.2.1",
-    "npm-run-all": "4.1.5",
     "prettier": "3.3.2",
-    "solidity-coverage": "0.8.12",
-    "soltypes": "2.0.0",
     "ts-node": "10.9.2",
-    "tsconfig-paths": "4.2.0",
     "typedoc": "0.26.6",
     "typedoc-plugin-markdown": "4.2.6",
-    "typescript": "5.5.3",
-    "viem": "2.19.4"
+    "typescript": "5.5.3"
   }
 }

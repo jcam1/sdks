@@ -31,7 +31,7 @@ $ yarn run deploy
 
 ### 4. Set Environment Variables
 
-Run the following commands and edit the generated `.env` file accordingly. Set `LOCAL_PROXY_ADDRESS` to the value of `JPYCV2Module#FiatTokenV1` at [here](../ignition/deployments/chain-31337/deployed_addresses.json). See [here](../README.md/) for more details.
+Run the following commands and edit the generated `.env` file accordingly. Set `LOCAL_PROXY_ADDRESS` to the value of `JPYCV2Module#FiatTokenV1` at [here](../ignition/deployments/chain-31337/deployed_addresses.json). See [here](../README.md) for more details.
 
 ```sh
 $ yarn run env

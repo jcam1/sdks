@@ -1,5 +1,6 @@
 # JPYC Core SDK
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 ![build](https://github.com/jcam1/sdks/actions/workflows/check.yml/badge.svg)
 [![npm version](https://badge.fury.io/js/@jpyc%2Fsdk-core.svg)](https://badge.fury.io/js/@jpyc%2Fsdk-core)
 
