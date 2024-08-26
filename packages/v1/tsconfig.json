@@ -43,7 +43,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "paths": {
-      "@jpyc/sdk-core/*": ["../core/"],
+      "@jpyc/sdk-core/*": ["../core/src/"],
       "@jpyc/sdk-v1/*": ["./src/"]
     }
   },
