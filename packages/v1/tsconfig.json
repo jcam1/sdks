@@ -41,11 +41,7 @@
     // misc
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "paths": {
-      "@jpyc/sdk-core/*": ["../core/dist/types/src/"],
-      "@jpyc/sdk-v1/*": ["./dist/types/src/"]
-    }
+    "emitDecoratorMetadata": true
   },
   "ts-node": {
     "require": ["tsconfig-paths/register"]

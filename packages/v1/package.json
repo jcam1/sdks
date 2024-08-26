@@ -37,7 +37,8 @@
   },
   "dependencies": {
     "@ethersproject/abi": "5.7.0",
-    "@ethersproject/solidity": "5.7.0"
+    "@ethersproject/solidity": "5.7.0",
+    "@jpyc/sdk-core": "1.0.0"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "3.0.6",
