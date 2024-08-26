@@ -12,7 +12,7 @@ The following commands are available as yarn scripts for local development & tes
 |          Command | Description                                           |
 | ---------------: | :---------------------------------------------------- |
 |           `docs` | Generate Markdown documents from TSDoc-style comments |
-|        `compile` | Compile (transpile) TypeScript files                  |
+|        `compile` | Compile (transpile) SDK                               |
 |           `lint` | Run Eslint                                            |
 |   `lint:dry-run` | Run Eslint without fixing                             |
 |         `format` | Run Prettier                                          |

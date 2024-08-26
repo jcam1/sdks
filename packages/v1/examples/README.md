@@ -2,15 +2,26 @@
 
 We provide code examples that use JPYC V1 SDK as an interface to locally-deployed `JPYCv2` contracts. Please read and follow the instructions below to learn how to set up local environment as well as how to run our code examples.
 
-### 1. Run Local Network
+> [!NOTE]
+> Please run the following commands in `/packages/v1` directory.
 
-Run the following command to start running local Hardhat network and its accompanying node.
+### 1. Build Packages
+
+The first thing to do is to build packages.
+
+```sh
+$ yarn run compile
+```
+
+### 2. Run Local Network
+
+Start running local Hardhat network and its accompanying node.
 
 ```sh
 $ yarn run node
 ```
 
-### 2. Deploy Contracts
+### 3. Deploy Contracts
 
 **Open a different window** and run the following command to deploy JPYCv2 contracts to the local network. Once successfully deployed, a new directory will be created, and you can find deployed contract addresses at `/packages/v1/ignition/deployments/chain-31337/deployed_addresses.json`.
 
@@ -18,20 +29,17 @@ $ yarn run node
 $ yarn run deploy
 ```
 
-### 3. Set Environment Variables
+### 4. Set Environment Variables
 
-Run the following commands, and edit the generated `.env` file accordingly. Set `LOCAL_PROXY_ADDRESS` to the value of `JPYCV2Module#FiatTokenV1` at [here](../ignition/deployments/chain-31337/deployed_addresses.json). See [here](../README.md/) for more details.
+Run the following commands and edit the generated `.env` file accordingly. Set `LOCAL_PROXY_ADDRESS` to the value of `JPYCV2Module#FiatTokenV1` at [here](../ignition/deployments/chain-31337/deployed_addresses.json). See [here](../README.md/) for more details.
 
 ```sh
-# cd into this directory
-$ cd /packages/v1
-# copy `.env.example` to `.env`
 $ yarn run env
 ```
 
-### 4. Run Code Examples
+### 5. Run Code Examples
 
-Run the following commands to execute our code examples.
+Finally, let's execute our code examples!
 
 |                       Command | Description                                             |
 | ----------------------------: | :------------------------------------------------------ |
