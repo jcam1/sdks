@@ -42,8 +42,5 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  },
-  "ts-node": {
-    "require": ["tsconfig-paths/register"]
   }
 }
