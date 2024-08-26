@@ -84,6 +84,7 @@ jobs:
       - uses: ./.github/actions/install-dependencies
       - uses: ./.github/actions/publish-package
         with:
+          working-directory: ./packages/core
           node-auth-token: ${{ secrets.NPM_TOKEN }}
 
   publish-v1:
@@ -99,4 +100,5 @@ jobs:
       - uses: ./.github/actions/install-dependencies
       - uses: ./.github/actions/publish-package
         with:
+          working-directory: ./packages/v1
           node-auth-token: ${{ secrets.NPM_TOKEN }}
