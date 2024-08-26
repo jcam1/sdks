@@ -43,8 +43,8 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "paths": {
-      "@jpyc/sdk-core/*": ["../core/dist/src/"],
-      "@jpyc/sdk-v1/*": ["./dist/src/"]
+      "@jpyc/sdk-core/*": ["../core/dist/types/src/"],
+      "@jpyc/sdk-v1/*": ["./dist/types/src/"]
     }
   },
   "ts-node": {
