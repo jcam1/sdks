@@ -72,14 +72,16 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./packages/v1
+        working-directory: ./
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/install-dependencies
       - name: Compile
-        run: yarn run compile:sdk
+        run: |
+          yarn workspace @jpyc/sdk-core run compile
+          yarn workspace @jpyc/sdk-v1 run compile:sdk
       - name: Lint
-        run: yarn run lint:dry-run
+        run: yarn workspace @jpyc/sdk-v1 run lint:dry-run
       - name: Format
-        run: yarn run format:dry-run
+        run: yarn workspace @jpyc/sdk-v1 run format:dry-run
