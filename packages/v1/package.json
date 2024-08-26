@@ -3,7 +3,7 @@
   "description": "SDK v1 for JPYC v2 protocol",
   "repository": "https://github.com/jcam1/sdks.git",
   "license": "MIT",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publishConfig": {
     "access": "public"
   },
