@@ -22,9 +22,13 @@ jobs:
       v1: ${{ steps.filter.outputs.v1 }}
     steps:
       - uses: actions/checkout@v4
+      - name: get git metadata
+        id: get-base
+        run: echo "value=$(git rev-parse HEAD~1)" >> $GITHUB_OUTPUT
       - uses: dorny/paths-filter@v3
         id: filter
         with:
+          base: ${{ steps.get-base.outputs.value }}
           filters: |
             root:
               - '.github/**'
