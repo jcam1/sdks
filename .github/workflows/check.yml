@@ -1,14 +1,11 @@
 name: static checks
 
 on:
-  push:
-    branches:
-      - main
-      - develop
   pull_request:
     branches:
       - main
       - develop
+    types: [opened, synchronize, reopened, closed]
 
 jobs:
   detect-changes:
