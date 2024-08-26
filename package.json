@@ -1,18 +1,15 @@
 {
   "name": "@jpyc/sdks",
-  "description": "Node SDKs to build applications on top of JPYC protocol",
-  "keywords": [
-    "jpyc",
-    "stablecoin"
-  ],
-  "repository": "https://github.com/jcam1/sdks.git",
+  "version": "1.7.1",
+  "private": true,
   "license": "MIT",
-  "version": "1.7.0",
+  "description": "Node SDKs to build applications on top of JPYC protocol",
+  "repository": "https://github.com/jcam1/sdks.git",
+  "homepage": "https://github.com/jcam1/sdks.git#readme",
   "engines": {
     "node": "^20.12.0",
     "yarn": "^1.22.22"
   },
-  "private": true,
   "workspaces": [
     "packages/*"
   ],
