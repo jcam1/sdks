@@ -91,7 +91,7 @@ The following commands are available as yarn scripts for local development & tes
 |                `lint:dry-run` | Run Eslint without fixing                               |
 |                      `format` | Run Prettier                                            |
 |              `format:dry-run` | Run Prettier without fixing                             |
-|                 `compile:sdk` | Compile (transpile) TypeScript files                    |
+|                     `compile` | Compile (transpile) SDK                                 |
 |           `compile:contracts` | Compile contracts                                       |
 |                       `clean` | Delete contract artifacts                               |
 |                        `node` | Run hardhat network & node locally                      |
