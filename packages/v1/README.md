@@ -1,5 +1,6 @@
 # JPYC V1 SDK
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 ![build](https://github.com/jcam1/sdks/actions/workflows/check.yml/badge.svg)
 [![npm version](https://badge.fury.io/js/@jpyc%2Fsdk-v1.svg)](https://badge.fury.io/js/@jpyc%2Fsdk-v1)
 
@@ -36,7 +37,7 @@ Some data, such as configuration variables (e.g., chain name) or sensitive data 
 
 #### 3. Instantiate SDK
 
-Initialize an SDK instance that implements an abstracted interface to JPYCv2 contracts.
+Initialize an SDK instance that implements an abstracted interface to the JPYCv2 contracts.
 
 ```ts
 import { ChainName, Endpoint, NetworkName } from '@jpyc/sdk-core';
