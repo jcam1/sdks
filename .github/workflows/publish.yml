@@ -95,11 +95,15 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./packages/v1
+        working-directory: ./
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/install-dependencies
+      - name: Build package
+        run: |
+          yarn workspace @jpyc/sdk-core run compile
+          yarn workspace @jpyc/sdk-v1 run compile:sdk
       - uses: ./.github/actions/publish-package
         with:
           working-directory: ./packages/v1
