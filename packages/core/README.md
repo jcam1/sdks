@@ -1,7 +1,7 @@
 # JPYC Core SDK
 
 ![build](https://github.com/jcam1/sdks/actions/workflows/check.yml/badge.svg)
-[![Node version](https://img.shields.io/node/v/@jpyc/sdk-core.svg?style=flat)](https://nodejs.org/download/)
+[![npm version](https://badge.fury.io/js/@jpyc%2Fsdk-core.svg)](https://badge.fury.io/js/@jpyc%2Fsdk-core)
 
 JPYC core SDK implements a set of constants, types and functions, commonly used across different SDK versions.
 
