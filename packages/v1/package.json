@@ -1,6 +1,6 @@
 {
   "name": "@jpyc/sdk-v1",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "license": "MIT",
   "description": "SDK v1 for JPYC v2 protocol",
   "keywords": [
@@ -21,9 +21,7 @@
   "main": "dist/src",
   "types": "dist/types/src",
   "files": [
-    "dist",
-    "src",
-    "!**/*.tsbuildinfo"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"

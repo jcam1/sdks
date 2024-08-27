@@ -1,6 +1,6 @@
 {
   "name": "@jpyc/sdk-core",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "license": "MIT",
   "description": "Core SDK for JPYC protocol",
   "keywords": [
@@ -21,9 +21,7 @@
   "main": "dist/src",
   "types": "dist/types/src",
   "files": [
-    "dist",
-    "src",
-    "!**/*.tsbuildinfo"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
