@@ -16,10 +16,10 @@ Install packages.
 
 ```sh
 # yarn
-$ yarn add @jpyc/sdk-core @jpyc/sdk-v1
+$ yarn add @jpyc/sdk-v1
 
 # npm
-$ npm i @jpyc/sdk-core @jpyc/sdk-v1
+$ npm i @jpyc/sdk-v1
 ```
 
 #### 2. Set Environment Variables
@@ -78,34 +78,20 @@ console.log(`totalSupply: ${totalSupply.toString()}`);
 
 ## ✨ Code Examples
 
-For your reference, we provide code examples in `examples` directory. Please follow the instructions on [`README`](./examples/README.md) file.
+For your reference, we provide code examples in the separate [`sdk-examples` repository](https://github.com/jcam1/sdk-examples). Please follow the instructions specified in `README` files.
 
 ## 🤖 Available Commands
 
 The following commands are available as yarn scripts for local development & testing.
 
-|                       Command | Description                                             |
-| ----------------------------: | :------------------------------------------------------ |
-|                        `docs` | Generate Markdown documents from TSDoc-style comments   |
-|                         `env` | Generate `.env` file                                    |
-|                        `lint` | Run Eslint                                              |
-|                `lint:dry-run` | Run Eslint without fixing                               |
-|                      `format` | Run Prettier                                            |
-|              `format:dry-run` | Run Prettier without fixing                             |
-|                     `compile` | Compile (transpile) SDK                                 |
-|           `compile:contracts` | Compile contracts                                       |
-|                       `clean` | Delete contract artifacts                               |
-|                        `node` | Run hardhat network & node locally                      |
-|                      `deploy` | Deploy compiled contracts to local hardhat network      |
-|                        `mint` | Example code: mint new tokens                           |
-|                `total-supply` | Example code: get total-supply                          |
-|                    `transfer` | Example code: transfer tokens                           |
-|                     `approve` | Example code: approve allowance                         |
-|                      `permit` | Example code: permit allowance (EIP2612)                |
-|               `transfer-from` | Example code: transfer tokens from spender              |
-| `transfer-with-authorization` | Example code: transfer tokens with signatures (EIP3009) |
-|  `receive-with-authorization` | Example code: receive tokens with signatures (EIP3009)  |
-|        `cancel-authorization` | Example code: cancel token authorization (EIP3009)      |
+|          Command | Description                                           |
+| ---------------: | :---------------------------------------------------- |
+|           `docs` | Generate Markdown documents from TSDoc-style comments |
+|           `lint` | Run Eslint                                            |
+|   `lint:dry-run` | Run Eslint without fixing                             |
+|         `format` | Run Prettier                                          |
+| `format:dry-run` | Run Prettier without fixing                           |
+|        `compile` | Compile (transpile) SDK                               |
 
 ## 📚 Documentation
 

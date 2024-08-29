@@ -1,6 +1,6 @@
 {
   "name": "@jpyc/sdks",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "private": true,
   "license": "MIT",
   "description": "Node SDKs to build applications on top of JPYC protocol",
