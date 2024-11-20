@@ -16,6 +16,7 @@ describe('Unit tests of chain utility functions', () => {
         'gnosis',
         'avalanche',
         'astar',
+        'shiden',
       ]);
     });
   });
@@ -60,6 +61,11 @@ describe('Unit tests of chain utility functions', () => {
 
     test('returns correct networks for "astar" chain', () => {
       const supportedNetworkNames = getSupportedNetworkNames({ chainName: 'astar' });
+      expect(supportedNetworkNames).toStrictEqual(['mainnet']);
+    });
+
+    test('returns correct networks for "shiden" chain', () => {
+      const supportedNetworkNames = getSupportedNetworkNames({ chainName: 'shiden' });
       expect(supportedNetworkNames).toStrictEqual(['mainnet']);
     });
   });

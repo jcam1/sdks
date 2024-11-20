@@ -1,6 +1,6 @@
 {
   "name": "@jpyc/sdk-core",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "license": "MIT",
   "description": "Core SDK for JPYC protocol",
   "keywords": [
@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "dotenv": "16.4.5",
-    "viem": "2.20.0"
+    "viem": "2.21.48"
   },
   "devDependencies": {
     "@types/jest": "29.5.12",
