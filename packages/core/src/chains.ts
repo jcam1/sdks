@@ -10,6 +10,7 @@ import {
   avalanche,
   avalancheFuji,
   astar,
+  shiden,
 } from 'viem/chains';
 
 // Hardhat (local) network
@@ -29,7 +30,6 @@ const hardhat = defineChain({
   },
 });
 
-// TODO: Support Shiden network
 export const SUPPORTED_CHAINS: Record<string, Record<string, Chain>> = {
   local: {
     mainnet: hardhat,
@@ -53,6 +53,9 @@ export const SUPPORTED_CHAINS: Record<string, Record<string, Chain>> = {
   },
   astar: {
     mainnet: astar,
+  },
+  shiden: {
+    mainnet: shiden,
   },
 };
 
