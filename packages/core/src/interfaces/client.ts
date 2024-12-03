@@ -1,6 +1,6 @@
 import { PrivateKeyAccount, WalletClient } from 'viem';
 
-import { Address } from '@jpyc/sdk-core';
+import { Address } from '../utils';
 
 export interface ISdkClient {
   /**

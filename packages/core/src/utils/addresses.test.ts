@@ -1,4 +1,4 @@
-import { isValidAddress } from './';
+import { isValidAddress } from './addresses';
 
 describe('Unit tests of isValidAddress()', () => {
   test('returns true if given zero address', () => {

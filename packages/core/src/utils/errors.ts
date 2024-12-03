@@ -1,4 +1,4 @@
-import { getSupportedChainNames, getSupportedNetworkNames } from '@jpyc/sdk-core';
+import { getSupportedChainNames, getSupportedNetworkNames } from './';
 
 /**
  * Custom error abstract class

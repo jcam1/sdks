@@ -1,16 +1,18 @@
 import { createWalletClient, http, PrivateKeyAccount, publicActions, WalletClient } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
 
+import { ISdkClient } from './interfaces';
 import {
   Address,
   ChainName,
   Endpoint,
+  InvalidChainNameError,
+  InvalidNetworkNameError,
   isValidChainName,
   isValidNetworkName,
   NetworkName,
   SUPPORTED_CHAINS,
-} from '@jpyc/sdk-core';
-import { ISdkClient, InvalidChainNameError, InvalidNetworkNameError } from './';
+} from './utils';
 
 export class SdkClient implements ISdkClient {
   private readonly chainName: ChainName;

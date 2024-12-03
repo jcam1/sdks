@@ -2,6 +2,7 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-export * from './addresses';
-export * from './chains';
-export * from './types';
+export * from './client';
+export * from './interfaces';
+export * from './jpyc';
+export * from './utils';

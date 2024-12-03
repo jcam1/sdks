@@ -1,7 +1,7 @@
 import { Uint256, Uint8 } from 'soltypes';
 import { Hash } from 'viem';
 
-import { Address, Bytes32 } from '@jpyc/sdk-core';
+import { Address, Bytes32 } from '../utils';
 
 export interface IJPYC {
   /**

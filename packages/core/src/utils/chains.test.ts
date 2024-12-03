@@ -3,7 +3,7 @@ import {
   getSupportedNetworkNames,
   isValidChainName,
   isValidNetworkName,
-} from './';
+} from './chains';
 
 describe('Unit tests of chain utility functions', () => {
   describe('Unit tests of getSupportedChainNames()', () => {

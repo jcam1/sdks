@@ -1,14 +1,16 @@
 import { Uint256, Uint8 } from 'soltypes';
 import { getContract, GetContractReturnType, Hash, WalletClient } from 'viem';
 
+import { IJPYC, JPYC_V2_ABI } from './interfaces';
 import {
   Address,
   Bytes32,
+  InvalidAddressError,
+  InvalidTransactionError,
   isValidAddress,
   LOCAL_PROXY_ADDRESS,
   V2_PROXY_ADDRESS,
-} from '@jpyc/sdk-core';
-import { IJPYC, InvalidAddressError, InvalidTransactionError, JPYC_V2_ABI } from './';
+} from './utils';
 
 export class JPYC implements IJPYC {
   private readonly contractAddress: Address =
