@@ -16,7 +16,6 @@ jobs:
     outputs:
       root: ${{ steps.filter.outputs.root }}
       core: ${{ steps.filter.outputs.core }}
-      v1: ${{ steps.filter.outputs.v1 }}
     steps:
       - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v3
@@ -29,8 +28,6 @@ jobs:
               - 'README.md'
             core:
               - 'packages/core/**'
-            v1:
-              - 'packages/v1/**'
 
   check-root:
     needs: detect-changes
@@ -65,21 +62,3 @@ jobs:
         run: yarn run format:dry-run
       - name: Run tests
         run: yarn run test
-
-  check-v1:
-    needs: detect-changes
-    if: ${{ needs.detect-changes.outputs.v1 == 'true' }}
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./packages/v1
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/install-dependencies
-      - name: Compile
-        run: yarn run compile
-      - name: Lint
-        run: yarn run lint:dry-run
-      - name: Format
-        run: yarn run format:dry-run
