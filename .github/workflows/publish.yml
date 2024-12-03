@@ -7,7 +7,6 @@ on:
     types: [closed]
     paths:
       - 'packages/core/**'
-      - 'packages/v1/**'
 
 jobs:
   detect-changes:
@@ -17,7 +16,6 @@ jobs:
       pull-requests: read
     outputs:
       core: ${{ steps.filter.outputs.core }}
-      v1: ${{ steps.filter.outputs.v1 }}
     steps:
       - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v3
@@ -26,8 +24,6 @@ jobs:
           filters: |
             core:
               - 'packages/core/**'
-            v1:
-              - 'packages/v1/**'
 
   push-git-tag:
     runs-on: ubuntu-latest
@@ -87,22 +83,4 @@ jobs:
       - uses: ./.github/actions/publish-package
         with:
           working-directory: ./packages/core
-          node-auth-token: ${{ secrets.NPM_TOKEN }}
-
-  publish-v1:
-    needs: [detect-changes, publish-release-note]
-    if: ${{ needs.detect-changes.outputs.v1 == 'true' }}
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./packages/v1
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/install-dependencies
-      - name: Build package
-        run: yarn run compile
-      - uses: ./.github/actions/publish-package
-        with:
-          working-directory: ./packages/v1
           node-auth-token: ${{ secrets.NPM_TOKEN }}

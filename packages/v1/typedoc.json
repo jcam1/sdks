@@ -1,6 +1,0 @@
-{
-  "extends": ["../../typedoc.json"],
-  "entryPoints": ["./src/index.ts"],
-  "exclude": ["./src/**/*.test.ts"],
-  "out": "../../docs/v1"
-}

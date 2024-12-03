@@ -1,9 +1,9 @@
 {
   "name": "@jpyc/sdks",
-  "version": "1.7.3",
+  "version": "1.8.0",
   "private": true,
   "license": "MIT",
-  "description": "Node SDKs to build applications on top of JPYC protocol",
+  "description": "SDKs to build applications on top of JPYC protocol",
   "repository": "https://github.com/jcam1/sdks.git",
   "homepage": "https://github.com/jcam1/sdks.git#readme",
   "engines": {
@@ -17,7 +17,7 @@
     "prepare": "husky",
     "format": "prettier --write",
     "format:dry-run": "prettier --check",
-    "docs": "yarn workspace @jpyc/sdk-core run docs && yarn workspace @jpyc/sdk-v1 run docs"
+    "docs": "yarn workspace @jpyc/sdk-core run docs"
   },
   "devDependencies": {
     "husky": "9.0.11",
@@ -40,13 +40,6 @@
     ],
     "packages/core/**/*.{md,json,yml}": [
       "yarn workspace @jpyc/sdk-core run format"
-    ],
-    "packages/v1/**/*.{ts,js}": [
-      "yarn workspace @jpyc/sdk-v1 run lint",
-      "yarn workspace @jpyc/sdk-v1 run format"
-    ],
-    "packages/v1/**/*.{md,json,yml}": [
-      "yarn workspace @jpyc/sdk-v1 run format"
     ]
   }
 }

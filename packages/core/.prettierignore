@@ -2,4 +2,7 @@
 .env*
 *.lock
 dist
+cache
+artifacts
 node_modules
+JPYCv2

@@ -1,9 +1,9 @@
-# JPYC Node SDKs
+# JPYC SDKs
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/jcam1/sdks/issues/new/choose)
 
-Monorepo for JPYC Node SDKs.
+Monorepo for JPYC SDKs.
 
 ## 🌈 Available SDKs
 
@@ -12,7 +12,6 @@ Please refer to `README`s of each SDK for the version specific details.
 |    SDK | `README`                                   |
 | -----: | :----------------------------------------- |
 | `core` | [packages/core](./packages/core/README.md) |
-|   `v1` | [packages/v1](./packages/v1/README.md)     |
 
 ## 🔨 Development
 
@@ -52,17 +51,20 @@ $ yarn workspace ${workspace_name} run ${command_name}
 
 ### Dependencies
 
-To add dependencies, run one of the following. To prevent unexpected behaviors, always pin the exact versions of the dependencies to be installed.
+To add dependencies, run one of the following.
 
 ```sh
 # Add dependencies to the specified workspace
-$ yarn workspace ${workspace_name} add -E ${dependencies}
+$ yarn workspace ${workspace_name} add ${dependencies}
 
 # Add dev dependencies to the specified workspace
-$ yarn workspace ${workspace_name} add -E -D ${dependencies}
+$ yarn workspace ${workspace_name} add -D ${dependencies}
+
+# Add dependencies to the workspaces root
+$ yarn add -W ${dependencies}
 
 # Add dev dependencies to the workspaces root
-$ yarn add -E -D -W ${dependencies}
+$ yarn add -W -D ${dependencies}
 ```
 
 To remove dependencies, run one of the following.
@@ -113,4 +115,4 @@ Now, write code to implement the proposed features and/or to fix bugs.
 
 ### 5. Open a Pull Request
 
-Finally, open a new PR from your branch to `develop` branch to describe what you'll have done.
+Finally, open a new PR from your branch to `develop` branch, and describe what you'll have done.
