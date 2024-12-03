@@ -26,6 +26,8 @@ jobs:
               - '.github/**'
               - 'docs/**'
               - 'README.md'
+              - 'package.json'
+              - 'yarn.lock'
             core:
               - 'packages/core/**'
 
