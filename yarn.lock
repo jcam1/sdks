@@ -1552,6 +1552,15 @@
   resolved "https://registry.yarnpkg.com/@scure/base/-/base-1.1.9.tgz#e5e142fbbfe251091f9c5f1dd4c834ac04c3dbd1"
   integrity sha512-8YKhl8GHiNI/pU2VMaofa2Tor7PJRAjwQLBBuilkJ9L5+13yVbC7JO/wS7piioAvPSwR3JKM1IJ/u4xQzbcXKg==
 
+"@scure/bip32@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@scure/bip32/-/bip32-1.4.0.tgz#4e1f1e196abedcef395b33b9674a042524e20d67"
+  integrity sha512-sVUpc0Vq3tXCkDGYVWGIZTRfnvu8LoTDaev7vbwh0omSvVORONr960MQWdKqJDCReIEmTj3PAr73O3aoxz7OPg==
+  dependencies:
+    "@noble/curves" "~1.4.0"
+    "@noble/hashes" "~1.4.0"
+    "@scure/base" "~1.1.6"
+
 "@scure/bip32@1.5.0", "@scure/bip32@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@scure/bip32/-/bip32-1.5.0.tgz#dd4a2e1b8a9da60e012e776d954c4186db6328e6"
@@ -1560,6 +1569,14 @@
     "@noble/curves" "~1.6.0"
     "@noble/hashes" "~1.5.0"
     "@scure/base" "~1.1.7"
+
+"@scure/bip39@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@scure/bip39/-/bip39-1.3.0.tgz#0f258c16823ddd00739461ac31398b4e7d6a18c3"
+  integrity sha512-disdg7gHuTDZtY+ZdkmLpPCk7fxZSu3gBiEGuoC1XYxv9cGx3Z6cpTggCgW6odSOOIXCiDjuGejW+aJKCY/pIQ==
+  dependencies:
+    "@noble/hashes" "~1.4.0"
+    "@scure/base" "~1.1.6"
 
 "@scure/bip39@1.4.0", "@scure/bip39@^1.4.0":
   version "1.4.0"
@@ -7606,7 +7623,6 @@ v8-to-istanbul@^9.0.1:
     "@types/istanbul-lib-coverage" "^2.0.1"
     convert-source-map "^2.0.0"
 
-<<<<<<< HEAD
 valtio@1.11.2:
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/valtio/-/valtio-1.11.2.tgz#b8049c02dfe65620635d23ebae9121a741bb6530"
@@ -7634,12 +7650,6 @@ viem@^2.21.53:
   version "2.21.53"
   resolved "https://registry.yarnpkg.com/viem/-/viem-2.21.53.tgz#a5ba6da48e5edded27dde286e431ae97034f4fc4"
   integrity sha512-0pY8clBacAwzc59iV1vY4a6U4xvRlA5tAuhClJCKvqA6rXJzmNMMvxQ0EG79lkHr7WtBEruXz8nAmONXwnq4EQ==
-=======
-viem@2.21.48:
-  version "2.21.48"
-  resolved "https://registry.yarnpkg.com/viem/-/viem-2.21.48.tgz#f8f1d0bf5381282e22e6a1f8b72ebd6e64426480"
-  integrity sha512-/hBHyG1gdIIuiQv0z9YmzXl5eWJa0UCZGwkeuQzH2Bmg6FIEwZeEcxgiytXZydip+p2wMBFa1jdr7o5O1+mrIg==
->>>>>>> develop
   dependencies:
     "@noble/curves" "1.6.0"
     "@noble/hashes" "1.5.0"
@@ -7686,7 +7696,6 @@ webauthn-p256@0.0.10:
     "@noble/curves" "^1.4.0"
     "@noble/hashes" "^1.4.0"
 
-<<<<<<< HEAD
 "webextension-polyfill@>=0.10.0 <1.0":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/webextension-polyfill/-/webextension-polyfill-0.12.0.tgz#f62c57d2cd42524e9fbdcee494c034cae34a3d69"
@@ -7766,8 +7775,6 @@ which-typed-array@^1.1.14, which-typed-array@^1.1.15, which-typed-array@^1.1.2:
     gopd "^1.0.1"
     has-tostringtag "^1.0.2"
 
-=======
->>>>>>> develop
 which@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/which/-/which-2.0.2.tgz#7c6a8dd0a636a0327e10b59c9286eee93f3f51b1"
