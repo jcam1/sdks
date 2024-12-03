@@ -1,8 +1,8 @@
-[**@jpyc/sdk-v1**](../README.md) • **Docs**
+[**@jpyc/sdk-core**](../README.md)
 
 ---
 
-[@jpyc/sdk-v1](../globals.md) / InvalidAddressError
+[@jpyc/sdk-core](../globals.md) / InvalidAddressError
 
 # Class: InvalidAddressError
 
@@ -18,7 +18,9 @@
 
 #### Parameters
 
-• **address**: `string`
+##### address
+
+`string`
 
 #### Returns
 
@@ -30,7 +32,7 @@
 
 #### Defined in
 
-[packages/v1/src/errors.ts:30](https://github.com/jcam1/sdks/blob/30a458097273f9153f1e5c47ec2aa6b486eaf784/packages/v1/src/errors.ts#L30)
+packages/core/src/utils/errors.ts:30
 
 ## Properties
 
@@ -44,7 +46,7 @@
 
 #### Defined in
 
-node_modules/typescript/lib/lib.es2022.error.d.ts:24
+node_modules/typescript/lib/lib.es2022.error.d.ts:26
 
 ---
 
@@ -98,9 +100,13 @@ Optional override for formatting stack traces
 
 #### Parameters
 
-• **err**: `Error`
+##### err
 
-• **stackTraces**: `CallSite`[]
+`Error`
+
+##### stackTraces
+
+`CallSite`[]
 
 #### Returns
 
@@ -116,7 +122,7 @@ https://v8.dev/docs/stack-trace-api#customizing-stack-traces
 
 #### Defined in
 
-packages/v1/node_modules/@types/node/globals.d.ts:28
+node_modules/@types/node/globals.d.ts:143
 
 ---
 
@@ -130,7 +136,7 @@ packages/v1/node_modules/@types/node/globals.d.ts:28
 
 #### Defined in
 
-packages/v1/node_modules/@types/node/globals.d.ts:30
+node_modules/@types/node/globals.d.ts:145
 
 ## Methods
 
@@ -142,9 +148,13 @@ Create .stack property on a target object
 
 #### Parameters
 
-• **targetObject**: `object`
+##### targetObject
 
-• **constructorOpt?**: `Function`
+`object`
+
+##### constructorOpt?
+
+`Function`
 
 #### Returns
 
@@ -156,4 +166,4 @@ Create .stack property on a target object
 
 #### Defined in
 
-packages/v1/node_modules/@types/node/globals.d.ts:21
+node_modules/@types/node/globals.d.ts:136
