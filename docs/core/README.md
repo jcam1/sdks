@@ -1,4 +1,4 @@
-**@jpyc/sdk-core**
+**@jpyc/sdk-core** • [**Docs**](globals.md)
 
 ---
 

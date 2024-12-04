@@ -1,4 +1,4 @@
-[**@jpyc/sdk-core**](../README.md)
+[**@jpyc/sdk-core**](../README.md) • **Docs**
 
 ---
 
@@ -6,8 +6,8 @@
 
 # Variable: JPYC_V2_ABI
 
-> `const` **JPYC_V2_ABI**: (\{`anonymous`: `boolean`;`inputs`: `object`[];`name`: `string`;`outputs`: `undefined`;`stateMutability`: `undefined`;`type`: `string`; \} \| \{`anonymous`: `undefined`;`inputs`: `object`[];`name`: `string`;`outputs`: `object`[];`stateMutability`: `string`;`type`: `string`; \})[] = `artifacts.abi`
+> `const` **JPYC_V2_ABI**: (`object` \| `object`)[] = `artifacts.abi`
 
 ## Defined in
 
-packages/core/src/interfaces/abis.ts:3
+[packages/core/src/interfaces/abis.ts:3](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/abis.ts#L3)

@@ -1,4 +1,4 @@
-[**@jpyc/sdk-core**](../README.md)
+[**@jpyc/sdk-core**](../README.md) • **Docs**
 
 ---
 
@@ -18,21 +18,15 @@
 
 #### Parameters
 
-##### params
+• **params**
 
-###### client
+• **params.client**
 
-\{`account`: `undefined` \| `Account`;`addChain`: (`args`) => `Promise`\<`void`\>;`batch`: \{`multicall`: `boolean` \| \{`batchSize`: `number`;`wait`: `number`; \}; \};`cacheTime`: `number`;`ccipRead`: `false` \| \{`request`: (`parameters`) => `Promise`\<\`0x$\{string\}\`\>; \};`chain`: `undefined` \| `Chain`;`deployContract`: \<`abi`, `chainOverride`\>(`args`) => `Promise`\<\`0x$\{string\}\`\>;`extend`: \<`client`\>(`fn`) => `Client`\<`Transport`, `undefined` \| `Chain`, `undefined` \| `Account`, `WalletRpcSchema`, \{ \[K in string \| number \| symbol\]: client\[K\] \} & `WalletActions`\<`undefined` \| `Chain`, `undefined` \| `Account`\>\>;`getAddresses`: () => `Promise`\<`GetAddressesReturnType`\>;`getChainId`: () => `Promise`\<`number`\>;`getPermissions`: () => `Promise`\<`GetPermissionsReturnType`\>;`key`: `string`;`name`: `string`;`pollingInterval`: `number`;`prepareTransactionRequest`: \<`request`, `chainOverride`, `accountOverride`\>(`args`) => `Promise`\<\{ \[K in string \| number \| symbol\]: (UnionRequiredBy\<Extract\<(...) & (...) & (...), (...) extends (...) ? (...) : (...)\> & \{ chainId?: (...) \| (...) \}, ParameterTypeToParameters\<(...)\[(...)\] extends readonly (...)\[\] ? (...)\[(...)\] : (...) \| (...) \| (...) \| (...) \| (...) \| (...)\>\> & (unknown extends request\["kzg"\] ? \{\} : Pick\<request, "kzg"\>))\[K\] \}\>;`request`: `EIP1193RequestFn`\<`WalletRpcSchema`\>;`requestAddresses`: () => `Promise`\<`RequestAddressesReturnType`\>;`requestPermissions`: (`args`) => `Promise`\<`RequestPermissionsReturnType`\>;`sendRawTransaction`: (`args`) => `Promise`\<\`0x$\{string\}\`\>;`sendTransaction`: \<`request`, `chainOverride`\>(`args`) => `Promise`\<\`0x$\{string\}\`\>;`signMessage`: (`args`) => `Promise`\<\`0x$\{string\}\`\>;`signTransaction`: \<`chainOverride`, `request`\>(`args`) => `Promise`\<`TransactionSerialized`\<`GetTransactionType`\<`request`, `request` *extends* `LegacyProperties` ? `"legacy"` : `never` \| `request` *extends* `EIP1559Properties` ? `"eip1559"` : `never` \| `request` *extends* `EIP2930Properties` ? `"eip2930"` : `never` \| `request` *extends* `EIP4844Properties` ? `"eip4844"` : `never` \| `request` *extends* `EIP7702Properties` ? `"eip7702"` : `never` \| `request`\[`"type"`\] *extends* `undefined` \| `string` ? `Extract`\<`any`\[`any`\], `string`\> : `never`\>, `GetTransactionType`\<`request`, `request` *extends* `LegacyProperties` ? `"legacy"` : `never` \| `request` *extends* `EIP1559Properties` ? `"eip1559"` : `never` \| `request` *extends* `EIP2930Properties` ? `"eip2930"` : `never` \| `request` *extends* `EIP4844Properties` ? `"eip4844"` : `never` \| `request` *extends* `EIP7702Properties` ? `"eip7702"` : `never` \| ...\[...\] *extends* ... \| ... ? `Extract`\<..., ...\> : `never`\> *extends* `"eip1559"` ? \`0x02$\{string\}\` : `never` \| `GetTransactionType`\<`request`, `request` _extends_ `LegacyProperties` ? `"legacy"` : `never` \| `request` _extends_ `EIP1559Properties` ? `"eip1559"` : `never` \| `request` _extends_ `EIP2930Properties` ? `"eip2930"` : `never` \| `request` _extends_ `EIP4844Properties` ? `"eip4844"` : `never` \| `request` _extends_ `EIP7702Properties` ? `"eip7702"` : `never` \| ...\[...\] _extends_ ... \| ... ? `Extract`\<..., ...\> : `never`\> _extends_ `"eip2930"` ? \`0x01$\{string\}\` : `never` \| `GetTransactionType`\<`request`, `request` *extends* `LegacyProperties` ? `"legacy"` : `never` \| `request` *extends* `EIP1559Properties` ? `"eip1559"` : `never` \| `request` *extends* `EIP2930Properties` ? `"eip2930"` : `never` \| `request` *extends* `EIP4844Properties` ? `"eip4844"` : `never` \| `request` *extends* `EIP7702Properties` ? `"eip7702"` : `never` \| ...\[...\] *extends* ... \| ... ? `Extract`\<..., ...\> : `never`\> *extends* `"eip4844"` ? \`0x03$\{string\}\` : `never` \| `GetTransactionType`\<`request`, `request` _extends_ `LegacyProperties` ? `"legacy"` : `never` \| `request` _extends_ `EIP1559Properties` ? `"eip1559"` : `never` \| `request` _extends_ `EIP2930Properties` ? `"eip2930"` : `never` \| `request` _extends_ `EIP4844Properties` ? `"eip4844"` : `never` \| `request` _extends_ `EIP7702Properties` ? `"eip7702"` : `never` \| ...\[...\] _extends_ ... \| ... ? `Extract`\<..., ...\> : `never`\> _extends_ `"eip7702"` ? \`0x04$\{string\}\` : `never` \| `GetTransactionType`\<`request`, `request` *extends* `LegacyProperties` ? `"legacy"` : `never` \| `request` *extends* `EIP1559Properties` ? `"eip1559"` : `never` \| `request` *extends* `EIP2930Properties` ? `"eip2930"` : `never` \| `request` *extends* `EIP4844Properties` ? `"eip4844"` : `never` \| `request` *extends* `EIP7702Properties` ? `"eip7702"` : `never` \| ...\[...\] *extends* ... \| ... ? `Extract`\<..., ...\> : `never`\> *extends* `"legacy"` ? `TransactionSerializedLegacy` : `never`\>\>;`signTypedData`: \<`typedData`, `primaryType`\>(`args`) => `Promise`\<\`0x$\{string\}\`\>;`switchChain`: (`args`) => `Promise`\<`void`\>;`transport`: `TransportConfig`\<`string`, `EIP1193RequestFn`\> & `Record`\<`string`, `any`\>;`type`: `string`;`uid`: `string`;`watchAsset`: (`args`) => `Promise`\<`boolean`\>;`writeContract`: \<`abi`, `functionName`, `args`, `chainOverride`\>(`args`) => `Promise`\<\`0x$\{string\}\`\>; \}
-
-###### client.account
-
-`undefined` \| `Account`
+• **params.client.account**: `undefined` \| `Account`
 
 The Account of the Client.
 
-###### client.addChain
-
-(`args`) => `Promise`\<`void`\>
+• **params.client.addChain**
 
 Adds an EVM chain to the wallet.
 
@@ -51,39 +45,27 @@ const client = createWalletClient({
 await client.addChain({ chain: optimism });
 ```
 
-###### client.batch
-
-\{`multicall`: `boolean` \| \{`batchSize`: `number`;`wait`: `number`; \}; \}
+• **params.client.batch?**
 
 Flags for batch settings.
 
-###### client.batch.multicall
-
-`boolean` \| \{`batchSize`: `number`;`wait`: `number`; \}
+• **params.client.batch.multicall?**: `boolean` \| `object`
 
 Toggle to enable `eth_call` multicall aggregation.
 
-###### client.cacheTime
-
-`number`
+• **params.client.cacheTime**: `number`
 
 Time (in ms) that cached data will remain in memory.
 
-###### client.ccipRead
-
-`false` \| \{`request`: (`parameters`) => `Promise`\<\`0x$\{string\}\`\>; \}
+• **params.client.ccipRead?**: `false` \| `object`
 
 [CCIP Read](https://eips.ethereum.org/EIPS/eip-3668) configuration.
 
-###### client.chain
-
-`undefined` \| `Chain`
+• **params.client.chain**: `undefined` \| `Chain`
 
 Chain for the client.
 
-###### client.deployContract
-
-\<`abi`, `chainOverride`\>(`args`) => `Promise`\<\`0x$\{string\}\`\>
+• **params.client.deployContract**
 
 Deploys a contract to the network, given bytecode and constructor arguments.
 
@@ -109,13 +91,9 @@ const hash = await client.deployContract({
 })
 ```
 
-###### client.extend
+• **params.client.extend**
 
-\<`client`\>(`fn`) => `Client`\<`Transport`, `undefined` \| `Chain`, `undefined` \| `Account`, `WalletRpcSchema`, \{ \[K in string \| number \| symbol\]: client\[K\] \} & `WalletActions`\<`undefined` \| `Chain`, `undefined` \| `Account`\>\>
-
-###### client.getAddresses
-
-() => `Promise`\<`GetAddressesReturnType`\>
+• **params.client.getAddresses**
 
 Returns a list of account addresses owned by the wallet or client.
 
@@ -135,9 +113,7 @@ const client = createWalletClient({
 const accounts = await client.getAddresses();
 ```
 
-###### client.getChainId
-
-() => `Promise`\<`number`\>
+• **params.client.getChainId**
 
 Returns the chain ID associated with the current network.
 
@@ -158,9 +134,7 @@ const chainId = await client.getChainId();
 // 1
 ```
 
-###### client.getPermissions
-
-() => `Promise`\<`GetPermissionsReturnType`\>
+• **params.client.getPermissions**
 
 Gets the wallets current permissions.
 
@@ -180,27 +154,19 @@ const client = createWalletClient({
 const permissions = await client.getPermissions();
 ```
 
-###### client.key
-
-`string`
+• **params.client.key**: `string`
 
 A key for the client.
 
-###### client.name
-
-`string`
+• **params.client.name**: `string`
 
 A name for the client.
 
-###### client.pollingInterval
-
-`number`
+• **params.client.pollingInterval**: `number`
 
 Frequency (in ms) for polling enabled actions & events. Defaults to 4_000 milliseconds.
 
-###### client.prepareTransactionRequest
-
-\<`request`, `chainOverride`, `accountOverride`\>(`args`) => `Promise`\<\{ \[K in string \| number \| symbol\]: (UnionRequiredBy\<Extract\<(...) & (...) & (...), (...) extends (...) ? (...) : (...)\> & \{ chainId?: (...) \| (...) \}, ParameterTypeToParameters\<(...)\[(...)\] extends readonly (...)\[\] ? (...)\[(...)\] : (...) \| (...) \| (...) \| (...) \| (...) \| (...)\>\> & (unknown extends request\["kzg"\] ? \{\} : Pick\<request, "kzg"\>))\[K\] \}\>
+• **params.client.prepareTransactionRequest**
 
 Prepares a transaction request for signing.
 
@@ -240,15 +206,11 @@ const request = await client.prepareTransactionRequest({
 });
 ```
 
-###### client.request
-
-`EIP1193RequestFn`\<`WalletRpcSchema`\>
+• **params.client.request**: `EIP1193RequestFn`\<`WalletRpcSchema`\>
 
 Request function wrapped with friendly error handling
 
-###### client.requestAddresses
-
-() => `Promise`\<`RequestAddressesReturnType`\>
+• **params.client.requestAddresses**
 
 Requests a list of accounts managed by a wallet.
 
@@ -272,9 +234,7 @@ const client = createWalletClient({
 const accounts = await client.requestAddresses();
 ```
 
-###### client.requestPermissions
-
-(`args`) => `Promise`\<`RequestPermissionsReturnType`\>
+• **params.client.requestPermissions**
 
 Requests permissions for a wallet.
 
@@ -296,9 +256,7 @@ const permissions = await client.requestPermissions({
 });
 ```
 
-###### client.sendRawTransaction
-
-(`args`) => `Promise`\<\`0x$\{string\}\`\>
+• **params.client.sendRawTransaction**
 
 Sends a **signed** transaction to the network
 
@@ -323,9 +281,7 @@ const hash = await client.sendRawTransaction({
 });
 ```
 
-###### client.sendTransaction
-
-\<`request`, `chainOverride`\>(`args`) => `Promise`\<\`0x$\{string\}\`\>
+• **params.client.sendTransaction**
 
 Creates, signs, and sends a new transaction to the network.
 
@@ -369,9 +325,7 @@ const hash = await client.sendTransaction({
 });
 ```
 
-###### client.signMessage
-
-(`args`) => `Promise`\<\`0x$\{string\}\`\>
+• **params.client.signMessage**
 
 Calculates an Ethereum-specific signature in [EIP-191 format](https://eips.ethereum.org/EIPS/eip-191): `keccak256("\x19Ethereum Signed Message:\n" + len(message) + message))`.
 
@@ -417,9 +371,7 @@ const signature = await client.signMessage({
 });
 ```
 
-###### client.signTransaction
-
-\<`chainOverride`, `request`\>(`args`) => `Promise`\<`TransactionSerialized`\<`GetTransactionType`\<`request`, `request` _extends_ `LegacyProperties` ? `"legacy"` : `never` \| `request` _extends_ `EIP1559Properties` ? `"eip1559"` : `never` \| `request` _extends_ `EIP2930Properties` ? `"eip2930"` : `never` \| `request` _extends_ `EIP4844Properties` ? `"eip4844"` : `never` \| `request` _extends_ `EIP7702Properties` ? `"eip7702"` : `never` \| `request`\[`"type"`\] _extends_ `undefined` \| `string` ? `Extract`\<`any`\[`any`\], `string`\> : `never`\>, `GetTransactionType`\<`request`, `request` _extends_ `LegacyProperties` ? `"legacy"` : `never` \| `request` _extends_ `EIP1559Properties` ? `"eip1559"` : `never` \| `request` _extends_ `EIP2930Properties` ? `"eip2930"` : `never` \| `request` _extends_ `EIP4844Properties` ? `"eip4844"` : `never` \| `request` _extends_ `EIP7702Properties` ? `"eip7702"` : `never` \| ...\[...\] _extends_ ... \| ... ? `Extract`\<..., ...\> : `never`\> _extends_ `"eip1559"` ? \`0x02$\{string\}\` : `never` \| `GetTransactionType`\<`request`, `request` *extends* `LegacyProperties` ? `"legacy"` : `never` \| `request` *extends* `EIP1559Properties` ? `"eip1559"` : `never` \| `request` *extends* `EIP2930Properties` ? `"eip2930"` : `never` \| `request` *extends* `EIP4844Properties` ? `"eip4844"` : `never` \| `request` *extends* `EIP7702Properties` ? `"eip7702"` : `never` \| ...\[...\] *extends* ... \| ... ? `Extract`\<..., ...\> : `never`\> *extends* `"eip2930"` ? \`0x01$\{string\}\` : `never` \| `GetTransactionType`\<`request`, `request` _extends_ `LegacyProperties` ? `"legacy"` : `never` \| `request` _extends_ `EIP1559Properties` ? `"eip1559"` : `never` \| `request` _extends_ `EIP2930Properties` ? `"eip2930"` : `never` \| `request` _extends_ `EIP4844Properties` ? `"eip4844"` : `never` \| `request` _extends_ `EIP7702Properties` ? `"eip7702"` : `never` \| ...\[...\] _extends_ ... \| ... ? `Extract`\<..., ...\> : `never`\> _extends_ `"eip4844"` ? \`0x03$\{string\}\` : `never` \| `GetTransactionType`\<`request`, `request` *extends* `LegacyProperties` ? `"legacy"` : `never` \| `request` *extends* `EIP1559Properties` ? `"eip1559"` : `never` \| `request` *extends* `EIP2930Properties` ? `"eip2930"` : `never` \| `request` *extends* `EIP4844Properties` ? `"eip4844"` : `never` \| `request` *extends* `EIP7702Properties` ? `"eip7702"` : `never` \| ...\[...\] *extends* ... \| ... ? `Extract`\<..., ...\> : `never`\> *extends* `"eip7702"` ? \`0x04$\{string\}\` : `never` \| `GetTransactionType`\<`request`, `request` _extends_ `LegacyProperties` ? `"legacy"` : `never` \| `request` _extends_ `EIP1559Properties` ? `"eip1559"` : `never` \| `request` _extends_ `EIP2930Properties` ? `"eip2930"` : `never` \| `request` _extends_ `EIP4844Properties` ? `"eip4844"` : `never` \| `request` _extends_ `EIP7702Properties` ? `"eip7702"` : `never` \| ...\[...\] _extends_ ... \| ... ? `Extract`\<..., ...\> : `never`\> _extends_ `"legacy"` ? `TransactionSerializedLegacy` : `never`\>\>
+• **params.client.signTransaction**
 
 Signs a transaction.
 
@@ -464,9 +416,7 @@ const request = await client.prepareTransactionRequest({
 const signature = await client.signTransaction(request);
 ```
 
-###### client.signTypedData
-
-\<`typedData`, `primaryType`\>(`args`) => `Promise`\<\`0x$\{string\}\`\>
+• **params.client.signTypedData**
 
 Signs typed data and calculates an Ethereum-specific signature in [EIP-191 format](https://eips.ethereum.org/EIPS/eip-191): `keccak256("\x19Ethereum Signed Message:\n" + len(message) + message))`.
 
@@ -563,9 +513,7 @@ const signature = await client.signTypedData({
 });
 ```
 
-###### client.switchChain
-
-(`args`) => `Promise`\<`void`\>
+• **params.client.switchChain**
 
 Switch the target chain in a wallet.
 
@@ -585,27 +533,19 @@ const client = createWalletClient({
 await client.switchChain({ id: optimism.id });
 ```
 
-###### client.transport
-
-`TransportConfig`\<`string`, `EIP1193RequestFn`\> & `Record`\<`string`, `any`\>
+• **params.client.transport**: `TransportConfig`\<`string`, `EIP1193RequestFn`\> & `Record`\<`string`, `any`\>
 
 The RPC transport
 
-###### client.type
-
-`string`
+• **params.client.type**: `string`
 
 The type of client.
 
-###### client.uid
-
-`string`
+• **params.client.uid**: `string`
 
 A unique ID for the client.
 
-###### client.watchAsset
-
-(`args`) => `Promise`\<`boolean`\>
+• **params.client.watchAsset**
 
 Adds an EVM chain to the wallet.
 
@@ -632,9 +572,7 @@ const success = await client.watchAsset({
 });
 ```
 
-###### client.writeContract
-
-\<`abi`, `functionName`, `args`, `chainOverride`\>(`args`) => `Promise`\<\`0x$\{string\}\`\>
+• **params.client.writeContract**
 
 Executes a write function on a contract.
 
@@ -689,7 +627,7 @@ const hash = await client.writeContract(request)
 
 #### Defined in
 
-packages/core/src/jpyc.ts:21
+[packages/core/src/jpyc.ts:21](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L21)
 
 ## Methods
 
@@ -701,15 +639,11 @@ Returns allowance of a spender over owner's tokens (for transferring).
 
 #### Parameters
 
-##### params
+• **params**
 
-###### owner
+• **params.owner**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
-
-###### spender
-
-\`0x$\{string\}\`
+• **params.spender**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -723,7 +657,7 @@ spender allowance
 
 #### Defined in
 
-packages/core/src/jpyc.ts:60
+[packages/core/src/jpyc.ts:60](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L60)
 
 ---
 
@@ -735,15 +669,11 @@ Sets allowance of a spender over owner's tokens.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### spender
+• **params.spender**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -757,7 +687,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/jpyc.ts:206
+[packages/core/src/jpyc.ts:206](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L206)
 
 ---
 
@@ -769,11 +699,9 @@ Returns balance of an account.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### account
-
-\`0x$\{string\}\`
+• **params.account**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -787,7 +715,7 @@ account balance
 
 #### Defined in
 
-packages/core/src/jpyc.ts:54
+[packages/core/src/jpyc.ts:54](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L54)
 
 ---
 
@@ -799,27 +727,17 @@ Cancels authorization.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### authorizer
+• **params.authorizer**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.nonce**: \`0x$\{string\}\`
 
-###### nonce
+• **params.r**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.s**: \`0x$\{string\}\`
 
-###### r
-
-\`0x$\{string\}\`
-
-###### s
-
-\`0x$\{string\}\`
-
-###### v
-
-`Uint8`
+• **params.v**: `Uint8`
 
 #### Returns
 
@@ -833,7 +751,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/jpyc.ts:188
+[packages/core/src/jpyc.ts:188](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L188)
 
 ---
 
@@ -845,15 +763,11 @@ Regular Functions
 
 #### Parameters
 
-##### params
+• **params**
 
-###### minter
+• **params.minter**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
-
-###### minterAllowedAmount
-
-`Uint256`
+• **params.minterAllowedAmount**: `Uint256`
 
 #### Returns
 
@@ -865,7 +779,7 @@ Regular Functions
 
 #### Defined in
 
-packages/core/src/jpyc.ts:76
+[packages/core/src/jpyc.ts:76](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L76)
 
 ---
 
@@ -877,15 +791,11 @@ Decreases allowance.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### decrement
+• **params.decrement**: `Uint256`
 
-`Uint256`
-
-###### spender
-
-\`0x$\{string\}\`
+• **params.spender**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -899,7 +809,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/jpyc.ts:230
+[packages/core/src/jpyc.ts:230](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L230)
 
 ---
 
@@ -911,15 +821,11 @@ Increases allowance.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### increment
+• **params.increment**: `Uint256`
 
-`Uint256`
-
-###### spender
-
-\`0x$\{string\}\`
+• **params.spender**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -933,7 +839,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/jpyc.ts:218
+[packages/core/src/jpyc.ts:218](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L218)
 
 ---
 
@@ -945,11 +851,9 @@ View Functions
 
 #### Parameters
 
-##### params
+• **params**
 
-###### account
-
-\`0x$\{string\}\`
+• **params.account**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -961,7 +865,7 @@ View Functions
 
 #### Defined in
 
-packages/core/src/jpyc.ts:36
+[packages/core/src/jpyc.ts:36](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L36)
 
 ---
 
@@ -973,15 +877,11 @@ Mints tokens.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### amount
+• **params.amount**: `Uint256`
 
-`Uint256`
-
-###### to
-
-\`0x$\{string\}\`
+• **params.to**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -995,7 +895,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/jpyc.ts:88
+[packages/core/src/jpyc.ts:88](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L88)
 
 ---
 
@@ -1007,11 +907,9 @@ Returns allowance of a minter (for minting).
 
 #### Parameters
 
-##### params
+• **params**
 
-###### minter
-
-\`0x$\{string\}\`
+• **params.minter**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -1025,7 +923,7 @@ minter allowance
 
 #### Defined in
 
-packages/core/src/jpyc.ts:42
+[packages/core/src/jpyc.ts:42](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L42)
 
 ---
 
@@ -1037,11 +935,9 @@ Returns nonce for EIP2612's `permit`.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### owner
-
-\`0x$\{string\}\`
+• **params.owner**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -1055,7 +951,7 @@ owner nonce
 
 #### Defined in
 
-packages/core/src/jpyc.ts:66
+[packages/core/src/jpyc.ts:66](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L66)
 
 ---
 
@@ -1067,35 +963,21 @@ Sets allowance of a spender over owner's tokens, given owner's signed approval.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### deadline
+• **params.deadline**: `Uint256`
 
-`Uint256`
+• **params.owner**: \`0x$\{string\}\`
 
-###### owner
+• **params.r**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.s**: \`0x$\{string\}\`
 
-###### r
+• **params.spender**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.v**: `Uint8`
 
-###### s
-
-\`0x$\{string\}\`
-
-###### spender
-
-\`0x$\{string\}\`
-
-###### v
-
-`Uint8`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -1109,7 +991,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/jpyc.ts:242
+[packages/core/src/jpyc.ts:242](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L242)
 
 ---
 
@@ -1121,43 +1003,25 @@ Receives tokens with authorization.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### from
+• **params.from**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.nonce**: \`0x$\{string\}\`
 
-###### nonce
+• **params.r**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.s**: \`0x$\{string\}\`
 
-###### r
+• **params.to**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.v**: `Uint8`
 
-###### s
+• **params.validAfter**: `Uint256`
 
-\`0x$\{string\}\`
+• **params.validBefore**: `Uint256`
 
-###### to
-
-\`0x$\{string\}\`
-
-###### v
-
-`Uint8`
-
-###### validAfter
-
-`Uint256`
-
-###### validBefore
-
-`Uint256`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -1171,7 +1035,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/jpyc.ts:156
+[packages/core/src/jpyc.ts:156](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L156)
 
 ---
 
@@ -1193,7 +1057,7 @@ total supply
 
 #### Defined in
 
-packages/core/src/jpyc.ts:48
+[packages/core/src/jpyc.ts:48](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L48)
 
 ---
 
@@ -1205,15 +1069,11 @@ Transfers tokens (directly).
 
 #### Parameters
 
-##### params
+• **params**
 
-###### to
+• **params.to**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -1227,7 +1087,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/jpyc.ts:100
+[packages/core/src/jpyc.ts:100](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L100)
 
 ---
 
@@ -1239,19 +1099,13 @@ Transfers tokens (from spender).
 
 #### Parameters
 
-##### params
+• **params**
 
-###### from
+• **params.from**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.to**: \`0x$\{string\}\`
 
-###### to
-
-\`0x$\{string\}\`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -1265,7 +1119,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/jpyc.ts:112
+[packages/core/src/jpyc.ts:112](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L112)
 
 ---
 
@@ -1277,43 +1131,25 @@ Transfers tokens with authorization.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### from
+• **params.from**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.nonce**: \`0x$\{string\}\`
 
-###### nonce
+• **params.r**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.s**: \`0x$\{string\}\`
 
-###### r
+• **params.to**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.v**: `Uint8`
 
-###### s
+• **params.validAfter**: `Uint256`
 
-\`0x$\{string\}\`
+• **params.validBefore**: `Uint256`
 
-###### to
-
-\`0x$\{string\}\`
-
-###### v
-
-`Uint8`
-
-###### validAfter
-
-`Uint256`
-
-###### validBefore
-
-`Uint256`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -1327,4 +1163,4 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/jpyc.ts:124
+[packages/core/src/jpyc.ts:124](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/jpyc.ts#L124)

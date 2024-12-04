@@ -1,4 +1,4 @@
-[**@jpyc/sdk-core**](../README.md)
+[**@jpyc/sdk-core**](../README.md) • **Docs**
 
 ---
 
@@ -10,15 +10,11 @@
 
 ## Parameters
 
-### params
+• **params**
 
-#### chainName
+• **params.chainName**: `string`
 
-`string`
-
-#### networkName
-
-`string`
+• **params.networkName**: `string`
 
 ## Returns
 
@@ -26,4 +22,4 @@
 
 ## Defined in
 
-packages/core/src/utils/chains.ts:77
+[packages/core/src/utils/chains.ts:77](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/utils/chains.ts#L77)

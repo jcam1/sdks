@@ -1,4 +1,4 @@
-[**@jpyc/sdk-core**](../README.md)
+[**@jpyc/sdk-core**](../README.md) • **Docs**
 
 ---
 
@@ -10,11 +10,9 @@
 
 ## Parameters
 
-### params
+• **params**
 
-#### address
-
-`string`
+• **params.address**: `string`
 
 ## Returns
 
@@ -22,4 +20,4 @@
 
 ## Defined in
 
-packages/core/src/utils/addresses.ts:9
+[packages/core/src/utils/addresses.ts:9](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/utils/addresses.ts#L9)

@@ -1,4 +1,4 @@
-[**@jpyc/sdk-core**](../README.md)
+[**@jpyc/sdk-core**](../README.md) • **Docs**
 
 ---
 
@@ -18,13 +18,9 @@
 
 #### Parameters
 
-##### chainName
+• **chainName**: `string`
 
-`string`
-
-##### networkName
-
-`string`
+• **networkName**: `string`
 
 #### Returns
 
@@ -36,7 +32,7 @@
 
 #### Defined in
 
-packages/core/src/utils/errors.ts:22
+[packages/core/src/utils/errors.ts:22](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/utils/errors.ts#L22)
 
 ## Properties
 
@@ -50,7 +46,7 @@ packages/core/src/utils/errors.ts:22
 
 #### Defined in
 
-node_modules/typescript/lib/lib.es2022.error.d.ts:26
+node_modules/typescript/lib/lib.es2022.error.d.ts:24
 
 ---
 
@@ -104,13 +100,9 @@ Optional override for formatting stack traces
 
 #### Parameters
 
-##### err
+• **err**: `Error`
 
-`Error`
-
-##### stackTraces
-
-`CallSite`[]
+• **stackTraces**: `CallSite`[]
 
 #### Returns
 
@@ -126,7 +118,7 @@ https://v8.dev/docs/stack-trace-api#customizing-stack-traces
 
 #### Defined in
 
-node_modules/@types/node/globals.d.ts:143
+packages/core/node_modules/@types/node/globals.d.ts:28
 
 ---
 
@@ -140,7 +132,7 @@ node_modules/@types/node/globals.d.ts:143
 
 #### Defined in
 
-node_modules/@types/node/globals.d.ts:145
+packages/core/node_modules/@types/node/globals.d.ts:30
 
 ## Methods
 
@@ -152,13 +144,9 @@ Create .stack property on a target object
 
 #### Parameters
 
-##### targetObject
+• **targetObject**: `object`
 
-`object`
-
-##### constructorOpt?
-
-`Function`
+• **constructorOpt?**: `Function`
 
 #### Returns
 
@@ -170,4 +158,4 @@ Create .stack property on a target object
 
 #### Defined in
 
-node_modules/@types/node/globals.d.ts:136
+packages/core/node_modules/@types/node/globals.d.ts:21

@@ -1,4 +1,4 @@
-[**@jpyc/sdk-core**](../README.md)
+[**@jpyc/sdk-core**](../README.md) • **Docs**
 
 ---
 
@@ -18,19 +18,13 @@
 
 #### Parameters
 
-##### params
+• **params**
 
-###### chainName
+• **params.chainName**: [`ChainName`](../type-aliases/ChainName.md)
 
-[`ChainName`](../type-aliases/ChainName.md)
+• **params.networkName**: [`NetworkName`](../type-aliases/NetworkName.md)
 
-###### networkName
-
-[`NetworkName`](../type-aliases/NetworkName.md)
-
-###### rpcEndpoint
-
-`string`
+• **params.rpcEndpoint**: `string`
 
 #### Returns
 
@@ -38,7 +32,7 @@
 
 #### Defined in
 
-packages/core/src/client.ts:24
+[packages/core/src/client.ts:24](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/client.ts#L24)
 
 ## Methods
 
@@ -50,11 +44,9 @@ Creates a client from an account.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### account
-
-\`0x$\{string\}\` \| \{`address`: \`0x$\{string\}\`;`experimental_signAuthorization`: (`parameters`) => `Promise`\<`SignAuthorizationReturnType`\>;`nonceManager`: `NonceManager`;`publicKey`: \`0x$\{string\}\`;`sign`: (`parameters`) => `Promise`\<\`0x$\{string\}\`\>;`signMessage`: (`__namedParameters`) => `Promise`\<\`0x$\{string\}\`\>;`signTransaction`: \<`serializer`, `transaction`\>(`transaction`, `options`?) => `Promise`\<`IsNarrowable`\<`TransactionSerialized`\<`GetTransactionType`\<`transaction`\>\>, \`0x$\{string\}\`\> _extends_ `true` ? `TransactionSerialized`\<`GetTransactionType`\<`transaction`\>\> : \`0x$\{string\}\`\>;`signTypedData`: \<`typedData`, `primaryType`\>(`parameters`) => `Promise`\<\`0x$\{string\}\`\>;`source`: `"privateKey"`;`type`: `"local"`; \}
+• **params.account**: \`0x$\{string\}\` \| `object`
 
 #### Returns
 
@@ -79,9 +71,7 @@ Adds an EVM chain to the wallet.
 
 ###### Parameters
 
-###### args
-
-`AddChainParameters`
+• **args**: `AddChainParameters`
 
 AddChainParameters
 
@@ -107,17 +97,11 @@ await client.addChain({ chain: optimism });
 
 Flags for batch settings.
 
-###### batch.multicall?
+##### batch.multicall?
 
-> `optional` **multicall**: `boolean` \| \{`batchSize`: `number`;`wait`: `number`; \}
+> `optional` **multicall**: `boolean` \| `object`
 
 Toggle to enable `eth_call` multicall aggregation.
-
-###### Type declaration
-
-`boolean`
-
-\{`batchSize`: `number`;`wait`: `number`; \}
 
 ##### cacheTime
 
@@ -127,15 +111,9 @@ Time (in ms) that cached data will remain in memory.
 
 ##### ccipRead?
 
-> `optional` **ccipRead**: `false` \| \{`request`: (`parameters`) => `Promise`\<\`0x$\{string\}\`\>; \}
+> `optional` **ccipRead**: `false` \| `object`
 
 [CCIP Read](https://eips.ethereum.org/EIPS/eip-3668) configuration.
-
-###### Type declaration
-
-`false`
-
-\{`request`: (`parameters`) => `Promise`\<\`0x$\{string\}\`\>; \}
 
 ##### chain
 
@@ -160,9 +138,7 @@ Deploys a contract to the network, given bytecode and constructor arguments.
 
 ###### Parameters
 
-###### args
-
-`DeployContractParameters`\<`abi`, `undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`\>
+• **args**: `DeployContractParameters`\<`abi`, `undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`\>
 
 DeployContractParameters
 
@@ -201,9 +177,7 @@ const hash = await client.deployContract({
 
 ###### Parameters
 
-###### fn
-
-(`client`) => `client`
+• **fn**
 
 ###### Returns
 
@@ -314,7 +288,7 @@ Frequency (in ms) for polling enabled actions & events. Defaults to 4_000 millis
 
 ##### prepareTransactionRequest()
 
-> **prepareTransactionRequest**: \<`request`, `chainOverride`, `accountOverride`\>(`args`) => `Promise`\<\{ \[K in string \| number \| symbol\]: (UnionRequiredBy\<Extract\<UnionOmit\<(...), (...)\> & ((...) extends (...) ? (...) : (...)) & ((...) extends (...) ? (...) : (...)), IsNever\<(...)\> extends true ? unknown : ExactPartial\<(...)\>\> & \{ chainId?: number \}, ParameterTypeToParameters\<request\["parameters"\] extends readonly PrepareTransactionRequestParameterType\[\] ? any\[any\]\[number\] : "nonce" \| "fees" \| "gas" \| "blobVersionedHashes" \| "chainId" \| "type"\>\> & (unknown extends request\["kzg"\] ? \{\} : Pick\<request, "kzg"\>))\[K\] \}\>
+> **prepareTransactionRequest**: \<`request`, `chainOverride`, `accountOverride`\>(`args`) => `Promise`\<\{ \[K in string \| number \| symbol\]: (UnionRequiredBy\<Extract\<UnionOmit\<(...), (...)\> & ((...) extends (...) ? (...) : (...)) & ((...) extends (...) ? (...) : (...)), IsNever\<(...)\> extends true ? unknown : ExactPartial\<(...)\>\> & Object, ParameterTypeToParameters\<request\["parameters"\] extends readonly PrepareTransactionRequestParameterType\[\] ? any\[any\]\[number\] : "nonce" \| "fees" \| "gas" \| "blobVersionedHashes" \| "chainId" \| "type"\>\> & (unknown extends request\["kzg"\] ? Object : Pick\<request, "kzg"\>))\[K\] \}\>
 
 Prepares a transaction request for signing.
 
@@ -330,15 +304,13 @@ Prepares a transaction request for signing.
 
 ###### Parameters
 
-###### args
-
-`PrepareTransactionRequestParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`, `accountOverride`, `request`\>
+• **args**: `PrepareTransactionRequestParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`, `accountOverride`, `request`\>
 
 PrepareTransactionRequestParameters
 
 ###### Returns
 
-`Promise`\<\{ \[K in string \| number \| symbol\]: (UnionRequiredBy\<Extract\<UnionOmit\<(...), (...)\> & ((...) extends (...) ? (...) : (...)) & ((...) extends (...) ? (...) : (...)), IsNever\<(...)\> extends true ? unknown : ExactPartial\<(...)\>\> & \{ chainId?: number \}, ParameterTypeToParameters\<request\["parameters"\] extends readonly PrepareTransactionRequestParameterType\[\] ? any\[any\]\[number\] : "nonce" \| "fees" \| "gas" \| "blobVersionedHashes" \| "chainId" \| "type"\>\> & (unknown extends request\["kzg"\] ? \{\} : Pick\<request, "kzg"\>))\[K\] \}\>
+`Promise`\<\{ \[K in string \| number \| symbol\]: (UnionRequiredBy\<Extract\<UnionOmit\<(...), (...)\> & ((...) extends (...) ? (...) : (...)) & ((...) extends (...) ? (...) : (...)), IsNever\<(...)\> extends true ? unknown : ExactPartial\<(...)\>\> & Object, ParameterTypeToParameters\<request\["parameters"\] extends readonly PrepareTransactionRequestParameterType\[\] ? any\[any\]\[number\] : "nonce" \| "fees" \| "gas" \| "blobVersionedHashes" \| "chainId" \| "type"\>\> & (unknown extends request\["kzg"\] ? Object : Pick\<request, "kzg"\>))\[K\] \}\>
 
 The transaction request. PrepareTransactionRequestReturnType
 
@@ -425,13 +397,11 @@ Requests permissions for a wallet.
 
 ###### Parameters
 
-###### args
+• **args**
 
 RequestPermissionsParameters
 
-###### eth_accounts
-
-`Record`\<`string`, `any`\>
+• **args.eth_accounts**: `Record`\<`string`, `any`\>
 
 ###### Returns
 
@@ -465,9 +435,7 @@ Sends a **signed** transaction to the network
 
 ###### Parameters
 
-###### args
-
-`SendRawTransactionParameters`
+• **args**: `SendRawTransactionParameters`
 
 ###### Returns
 
@@ -513,9 +481,7 @@ Creates, signs, and sends a new transaction to the network.
 
 ###### Parameters
 
-###### args
-
-`SendTransactionParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`, `request`\>
+• **args**: `SendTransactionParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`, `request`\>
 
 SendTransactionParameters
 
@@ -577,9 +543,7 @@ With the calculated signature, you can:
 
 ###### Parameters
 
-###### args
-
-`SignMessageParameters`\<`undefined` \| `Account`\>
+• **args**: `SignMessageParameters`\<`undefined` \| `Account`\>
 
 SignMessageParameters
 
@@ -640,9 +604,7 @@ Signs a transaction.
 
 ###### Parameters
 
-###### args
-
-`SignTransactionParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`, `request`\>
+• **args**: `SignTransactionParameters`\<`undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`, `request`\>
 
 SignTransactionParameters
 
@@ -701,15 +663,13 @@ Signs typed data and calculates an Ethereum-specific signature in [EIP-191 forma
 
 ###### Type Parameters
 
-• **typedData** _extends_ \{`[key: `uint248[${string}]`]`: `undefined`; `[key: `uint240[${string}]`]`: `undefined`; `[key: `uint232[${string}]`]`: `undefined`; `[key: `uint224[${string}]`]`: `undefined`; `[key: `uint216[${string}]`]`: `undefined`; `[key: `uint208[${string}]`]`: `undefined`; `[key: `uint200[${string}]`]`: `undefined`; `[key: `uint192[${string}]`]`: `undefined`; `[key: `uint184[${string}]`]`: `undefined`; `[key: `uint176[${string}]`]`: `undefined`; `[key: `uint168[${string}]`]`: `undefined`; `[key: `uint160[${string}]`]`: `undefined`; `[key: `uint152[${string}]`]`: `undefined`; `[key: `uint144[${string}]`]`: `undefined`; `[key: `uint136[${string}]`]`: `undefined`; `[key: `uint128[${string}]`]`: `undefined`; `[key: `uint120[${string}]`]`: `undefined`; `[key: `uint112[${string}]`]`: `undefined`; `[key: `uint104[${string}]`]`: `undefined`; `[key: `uint96[${string}]`]`: `undefined`; `[key: `uint88[${string}]`]`: `undefined`; `[key: `uint80[${string}]`]`: `undefined`; `[key: `uint72[${string}]`]`: `undefined`; `[key: `uint64[${string}]`]`: `undefined`; `[key: `uint56[${string}]`]`: `undefined`; `[key: `uint48[${string}]`]`: `undefined`; `[key: `uint40[${string}]`]`: `undefined`; `[key: `uint32[${string}]`]`: `undefined`; `[key: `uint24[${string}]`]`: `undefined`; `[key: `uint16[${string}]`]`: `undefined`; `[key: `uint[${string}]`]`: `undefined`; `[key: `int256[${string}]`]`: `undefined`; `[key: `int248[${string}]`]`: `undefined`; `[key: `int240[${string}]`]`: `undefined`; `[key: `int232[${string}]`]`: `undefined`; `[key: `int224[${string}]`]`: `undefined`; `[key: `int216[${string}]`]`: `undefined`; `[key: `int208[${string}]`]`: `undefined`; `[key: `int200[${string}]`]`: `undefined`; `[key: `int192[${string}]`]`: `undefined`; `[key: `int184[${string}]`]`: `undefined`; `[key: `int176[${string}]`]`: `undefined`; `[key: `int168[${string}]`]`: `undefined`; `[key: `int160[${string}]`]`: `undefined`; `[key: `int152[${string}]`]`: `undefined`; `[key: `int144[${string}]`]`: `undefined`; `[key: `int136[${string}]`]`: `undefined`; `[key: `int128[${string}]`]`: `undefined`; `[key: `int120[${string}]`]`: `undefined`; `[key: `int112[${string}]`]`: `undefined`; `[key: `int104[${string}]`]`: `undefined`; `[key: `int96[${string}]`]`: `undefined`; `[key: `int88[${string}]`]`: `undefined`; `[key: `int80[${string}]`]`: `undefined`; `[key: `int72[${string}]`]`: `undefined`; `[key: `int64[${string}]`]`: `undefined`; `[key: `int56[${string}]`]`: `undefined`; `[key: `int48[${string}]`]`: `undefined`; `[key: `int40[${string}]`]`: `undefined`; `[key: `int32[${string}]`]`: `undefined`; `[key: `int24[${string}]`]`: `undefined`; `[key: `int16[${string}]`]`: `undefined`; `[key: `int8[${string}]`]`: `undefined`; `[key: `int[${string}]`]`: `undefined`; `[key: `bytes31[${string}]`]`: `undefined`; `[key: `bytes30[${string}]`]`: `undefined`; `[key: `bytes29[${string}]`]`: `undefined`; `[key: `bytes28[${string}]`]`: `undefined`; `[key: `bytes27[${string}]`]`: `undefined`; `[key: `bytes26[${string}]`]`: `undefined`; `[key: `bytes25[${string}]`]`: `undefined`; `[key: `bytes24[${string}]`]`: `undefined`; `[key: `bytes22[${string}]`]`: `undefined`; `[key: `bytes21[${string}]`]`: `undefined`; `[key: `bytes20[${string}]`]`: `undefined`; `[key: `bytes19[${string}]`]`: `undefined`; `[key: `bytes17[${string}]`]`: `undefined`; `[key: `bytes16[${string}]`]`: `undefined`; `[key: `bytes15[${string}]`]`: `undefined`; `[key: `bytes14[${string}]`]`: `undefined`; `[key: `bytes13[${string}]`]`: `undefined`; `[key: `bytes12[${string}]`]`: `undefined`; `[key: `bytes11[${string}]`]`: `undefined`; `[key: `bytes10[${string}]`]`: `undefined`; `[key: `bytes9[${string}]`]`: `undefined`; `[key: `bytes8[${string}]`]`: `undefined`; `[key: `bytes7[${string}]`]`: `undefined`; `[key: `bytes6[${string}]`]`: `undefined`; `[key: `bytes4[${string}]`]`: `undefined`; `[key: `bytes3[${string}]`]`: `undefined`; `[key: `bytes2[${string}]`]`: `undefined`; `[key: `bytes23[${string}]`]`: `undefined`; `[key: `bytes5[${string}]`]`: `undefined`; `[key: `bytes18[${string}]`]`: `undefined`; `[key: `bytes1[${string}]`]`: `undefined`; `[key: `bytes[${string}]`]`: `undefined`; `[key: `uint8[${string}]`]`: `undefined`; `[key: `bool[${string}]`]`: `undefined`; `[key: `bytes32[${string}]`]`: `undefined`; `[key: `uint256[${string}]`]`: `undefined`; `[key: `address[${string}]`]`: `undefined`; `[key: `function[${string}]`]`: `undefined`; `[key: `string[${string}]`]`: `undefined`; `[key: string]`: readonly `TypedDataParameter`[]; `address`: `undefined`;`bool`: `undefined`;`bytes`: `undefined`;`bytes1`: `undefined`;`bytes10`: `undefined`;`bytes11`: `undefined`;`bytes12`: `undefined`;`bytes13`: `undefined`;`bytes14`: `undefined`;`bytes15`: `undefined`;`bytes16`: `undefined`;`bytes17`: `undefined`;`bytes18`: `undefined`;`bytes19`: `undefined`;`bytes2`: `undefined`;`bytes20`: `undefined`;`bytes21`: `undefined`;`bytes22`: `undefined`;`bytes23`: `undefined`;`bytes24`: `undefined`;`bytes25`: `undefined`;`bytes26`: `undefined`;`bytes27`: `undefined`;`bytes28`: `undefined`;`bytes29`: `undefined`;`bytes3`: `undefined`;`bytes30`: `undefined`;`bytes31`: `undefined`;`bytes32`: `undefined`;`bytes4`: `undefined`;`bytes5`: `undefined`;`bytes6`: `undefined`;`bytes7`: `undefined`;`bytes8`: `undefined`;`bytes9`: `undefined`;`int104`: `undefined`;`int112`: `undefined`;`int120`: `undefined`;`int128`: `undefined`;`int136`: `undefined`;`int144`: `undefined`;`int152`: `undefined`;`int16`: `undefined`;`int160`: `undefined`;`int168`: `undefined`;`int176`: `undefined`;`int184`: `undefined`;`int192`: `undefined`;`int200`: `undefined`;`int208`: `undefined`;`int216`: `undefined`;`int224`: `undefined`;`int232`: `undefined`;`int24`: `undefined`;`int240`: `undefined`;`int248`: `undefined`;`int256`: `undefined`;`int32`: `undefined`;`int40`: `undefined`;`int48`: `undefined`;`int56`: `undefined`;`int64`: `undefined`;`int72`: `undefined`;`int8`: `undefined`;`int80`: `undefined`;`int88`: `undefined`;`int96`: `undefined`;`string`: `undefined`;`uint104`: `undefined`;`uint112`: `undefined`;`uint120`: `undefined`;`uint128`: `undefined`;`uint136`: `undefined`;`uint144`: `undefined`;`uint152`: `undefined`;`uint16`: `undefined`;`uint160`: `undefined`;`uint168`: `undefined`;`uint176`: `undefined`;`uint184`: `undefined`;`uint192`: `undefined`;`uint200`: `undefined`;`uint208`: `undefined`;`uint216`: `undefined`;`uint224`: `undefined`;`uint232`: `undefined`;`uint24`: `undefined`;`uint240`: `undefined`;`uint248`: `undefined`;`uint256`: `undefined`;`uint32`: `undefined`;`uint40`: `undefined`;`uint48`: `undefined`;`uint56`: `undefined`;`uint64`: `undefined`;`uint72`: `undefined`;`uint8`: `undefined`;`uint80`: `undefined`;`uint88`: `undefined`;`uint96`: `undefined`; \} \| \{\}
+• **typedData** _extends_ `object` \| `object`
 
 • **primaryType** _extends_ `string`
 
 ###### Parameters
 
-###### args
-
-`SignTypedDataParameters`\<`typedData`, `primaryType`, `undefined` \| `Account`\>
+• **args**: `SignTypedDataParameters`\<`typedData`, `primaryType`, `undefined` \| `Account`\>
 
 SignTypedDataParameters
 
@@ -818,9 +778,7 @@ Switch the target chain in a wallet.
 
 ###### Parameters
 
-###### args
-
-`SwitchChainParameters`
+• **args**: `SwitchChainParameters`
 
 SwitchChainParameters
 
@@ -870,9 +828,7 @@ Adds an EVM chain to the wallet.
 
 ###### Parameters
 
-###### args
-
-`WatchAssetParams`
+• **args**: `WatchAssetParams`
 
 WatchAssetParameters
 
@@ -929,9 +885,7 @@ Internally, uses a [Wallet Client](https://viem.sh/docs/clients/wallet) to call 
 
 ###### Parameters
 
-###### args
-
-`WriteContractParameters`\<`abi`, `functionName`, `args`, `undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`\>
+• **args**: `WriteContractParameters`\<`abi`, `functionName`, `args`, `undefined` \| `Chain`, `undefined` \| `Account`, `chainOverride`\>
 
 WriteContractParameters
 
@@ -983,7 +937,7 @@ const hash = await client.writeContract(request)
 
 #### Defined in
 
-packages/core/src/client.ts:42
+[packages/core/src/client.ts:42](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/client.ts#L42)
 
 ---
 
@@ -995,11 +949,9 @@ Creates an account from a private key.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### privateKey
-
-\`0x$\{string\}\`
+• **params.privateKey?**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -1017,9 +969,7 @@ PrivateKeyAccount
 
 ###### Parameters
 
-###### parameters
-
-`Authorization`
+• **parameters**: `Authorization`
 
 ###### Returns
 
@@ -1039,11 +989,9 @@ PrivateKeyAccount
 
 ###### Parameters
 
-###### parameters
+• **parameters**
 
-###### hash
-
-\`0x$\{string\}\`
+• **parameters.hash**: \`0x$\{string\}\`
 
 ###### Returns
 
@@ -1055,11 +1003,9 @@ PrivateKeyAccount
 
 ###### Parameters
 
-###### \_\_namedParameters
+• **\_\_namedParameters**
 
-###### message
-
-`SignableMessage`
+• **\_\_namedParameters.message**: `SignableMessage`
 
 ###### Returns
 
@@ -1077,15 +1023,11 @@ PrivateKeyAccount
 
 ###### Parameters
 
-###### transaction
+• **transaction**: `transaction`
 
-`transaction`
+• **options?**
 
-###### options?
-
-###### serializer
-
-`serializer`
+• **options.serializer?**: `serializer`
 
 ###### Returns
 
@@ -1097,15 +1039,13 @@ PrivateKeyAccount
 
 ###### Type Parameters
 
-• **typedData** _extends_ `Record`\<`string`, `unknown`\> \| \{`[key: `uint248[${string}]`]`: `undefined`; `[key: `uint240[${string}]`]`: `undefined`; `[key: `uint232[${string}]`]`: `undefined`; `[key: `uint224[${string}]`]`: `undefined`; `[key: `uint216[${string}]`]`: `undefined`; `[key: `uint208[${string}]`]`: `undefined`; `[key: `uint200[${string}]`]`: `undefined`; `[key: `uint192[${string}]`]`: `undefined`; `[key: `uint184[${string}]`]`: `undefined`; `[key: `uint176[${string}]`]`: `undefined`; `[key: `uint168[${string}]`]`: `undefined`; `[key: `uint160[${string}]`]`: `undefined`; `[key: `uint152[${string}]`]`: `undefined`; `[key: `uint144[${string}]`]`: `undefined`; `[key: `uint136[${string}]`]`: `undefined`; `[key: `uint128[${string}]`]`: `undefined`; `[key: `uint120[${string}]`]`: `undefined`; `[key: `uint112[${string}]`]`: `undefined`; `[key: `uint104[${string}]`]`: `undefined`; `[key: `uint96[${string}]`]`: `undefined`; `[key: `uint88[${string}]`]`: `undefined`; `[key: `uint80[${string}]`]`: `undefined`; `[key: `uint72[${string}]`]`: `undefined`; `[key: `uint64[${string}]`]`: `undefined`; `[key: `uint56[${string}]`]`: `undefined`; `[key: `uint48[${string}]`]`: `undefined`; `[key: `uint40[${string}]`]`: `undefined`; `[key: `uint32[${string}]`]`: `undefined`; `[key: `uint24[${string}]`]`: `undefined`; `[key: `uint16[${string}]`]`: `undefined`; `[key: `uint[${string}]`]`: `undefined`; `[key: `int256[${string}]`]`: `undefined`; `[key: `int248[${string}]`]`: `undefined`; `[key: `int240[${string}]`]`: `undefined`; `[key: `int232[${string}]`]`: `undefined`; `[key: `int224[${string}]`]`: `undefined`; `[key: `int216[${string}]`]`: `undefined`; `[key: `int208[${string}]`]`: `undefined`; `[key: `int200[${string}]`]`: `undefined`; `[key: `int192[${string}]`]`: `undefined`; `[key: `int184[${string}]`]`: `undefined`; `[key: `int176[${string}]`]`: `undefined`; `[key: `int168[${string}]`]`: `undefined`; `[key: `int160[${string}]`]`: `undefined`; `[key: `int152[${string}]`]`: `undefined`; `[key: `int144[${string}]`]`: `undefined`; `[key: `int136[${string}]`]`: `undefined`; `[key: `int128[${string}]`]`: `undefined`; `[key: `int120[${string}]`]`: `undefined`; `[key: `int112[${string}]`]`: `undefined`; `[key: `int104[${string}]`]`: `undefined`; `[key: `int96[${string}]`]`: `undefined`; `[key: `int88[${string}]`]`: `undefined`; `[key: `int80[${string}]`]`: `undefined`; `[key: `int72[${string}]`]`: `undefined`; `[key: `int64[${string}]`]`: `undefined`; `[key: `int56[${string}]`]`: `undefined`; `[key: `int48[${string}]`]`: `undefined`; `[key: `int40[${string}]`]`: `undefined`; `[key: `int32[${string}]`]`: `undefined`; `[key: `int24[${string}]`]`: `undefined`; `[key: `int16[${string}]`]`: `undefined`; `[key: `int8[${string}]`]`: `undefined`; `[key: `int[${string}]`]`: `undefined`; `[key: `bytes31[${string}]`]`: `undefined`; `[key: `bytes30[${string}]`]`: `undefined`; `[key: `bytes29[${string}]`]`: `undefined`; `[key: `bytes28[${string}]`]`: `undefined`; `[key: `bytes27[${string}]`]`: `undefined`; `[key: `bytes26[${string}]`]`: `undefined`; `[key: `bytes25[${string}]`]`: `undefined`; `[key: `bytes24[${string}]`]`: `undefined`; `[key: `bytes22[${string}]`]`: `undefined`; `[key: `bytes21[${string}]`]`: `undefined`; `[key: `bytes20[${string}]`]`: `undefined`; `[key: `bytes19[${string}]`]`: `undefined`; `[key: `bytes17[${string}]`]`: `undefined`; `[key: `bytes16[${string}]`]`: `undefined`; `[key: `bytes15[${string}]`]`: `undefined`; `[key: `bytes14[${string}]`]`: `undefined`; `[key: `bytes13[${string}]`]`: `undefined`; `[key: `bytes12[${string}]`]`: `undefined`; `[key: `bytes11[${string}]`]`: `undefined`; `[key: `bytes10[${string}]`]`: `undefined`; `[key: `bytes9[${string}]`]`: `undefined`; `[key: `bytes8[${string}]`]`: `undefined`; `[key: `bytes7[${string}]`]`: `undefined`; `[key: `bytes6[${string}]`]`: `undefined`; `[key: `bytes4[${string}]`]`: `undefined`; `[key: `bytes3[${string}]`]`: `undefined`; `[key: `bytes2[${string}]`]`: `undefined`; `[key: `bytes23[${string}]`]`: `undefined`; `[key: `bytes5[${string}]`]`: `undefined`; `[key: `bytes18[${string}]`]`: `undefined`; `[key: `bytes1[${string}]`]`: `undefined`; `[key: `bytes[${string}]`]`: `undefined`; `[key: `uint8[${string}]`]`: `undefined`; `[key: `bool[${string}]`]`: `undefined`; `[key: `bytes32[${string}]`]`: `undefined`; `[key: `uint256[${string}]`]`: `undefined`; `[key: `address[${string}]`]`: `undefined`; `[key: `function[${string}]`]`: `undefined`; `[key: `string[${string}]`]`: `undefined`; `[key: string]`: readonly `TypedDataParameter`[]; `address`: `undefined`;`bool`: `undefined`;`bytes`: `undefined`;`bytes1`: `undefined`;`bytes10`: `undefined`;`bytes11`: `undefined`;`bytes12`: `undefined`;`bytes13`: `undefined`;`bytes14`: `undefined`;`bytes15`: `undefined`;`bytes16`: `undefined`;`bytes17`: `undefined`;`bytes18`: `undefined`;`bytes19`: `undefined`;`bytes2`: `undefined`;`bytes20`: `undefined`;`bytes21`: `undefined`;`bytes22`: `undefined`;`bytes23`: `undefined`;`bytes24`: `undefined`;`bytes25`: `undefined`;`bytes26`: `undefined`;`bytes27`: `undefined`;`bytes28`: `undefined`;`bytes29`: `undefined`;`bytes3`: `undefined`;`bytes30`: `undefined`;`bytes31`: `undefined`;`bytes32`: `undefined`;`bytes4`: `undefined`;`bytes5`: `undefined`;`bytes6`: `undefined`;`bytes7`: `undefined`;`bytes8`: `undefined`;`bytes9`: `undefined`;`int104`: `undefined`;`int112`: `undefined`;`int120`: `undefined`;`int128`: `undefined`;`int136`: `undefined`;`int144`: `undefined`;`int152`: `undefined`;`int16`: `undefined`;`int160`: `undefined`;`int168`: `undefined`;`int176`: `undefined`;`int184`: `undefined`;`int192`: `undefined`;`int200`: `undefined`;`int208`: `undefined`;`int216`: `undefined`;`int224`: `undefined`;`int232`: `undefined`;`int24`: `undefined`;`int240`: `undefined`;`int248`: `undefined`;`int256`: `undefined`;`int32`: `undefined`;`int40`: `undefined`;`int48`: `undefined`;`int56`: `undefined`;`int64`: `undefined`;`int72`: `undefined`;`int8`: `undefined`;`int80`: `undefined`;`int88`: `undefined`;`int96`: `undefined`;`string`: `undefined`;`uint104`: `undefined`;`uint112`: `undefined`;`uint120`: `undefined`;`uint128`: `undefined`;`uint136`: `undefined`;`uint144`: `undefined`;`uint152`: `undefined`;`uint16`: `undefined`;`uint160`: `undefined`;`uint168`: `undefined`;`uint176`: `undefined`;`uint184`: `undefined`;`uint192`: `undefined`;`uint200`: `undefined`;`uint208`: `undefined`;`uint216`: `undefined`;`uint224`: `undefined`;`uint232`: `undefined`;`uint24`: `undefined`;`uint240`: `undefined`;`uint248`: `undefined`;`uint256`: `undefined`;`uint32`: `undefined`;`uint40`: `undefined`;`uint48`: `undefined`;`uint56`: `undefined`;`uint64`: `undefined`;`uint72`: `undefined`;`uint8`: `undefined`;`uint80`: `undefined`;`uint88`: `undefined`;`uint96`: `undefined`; \}
+• **typedData** _extends_ `Record`\<`string`, `unknown`\> \| `object`
 
 • **primaryType** _extends_ `string` \| `number` \| `symbol` = keyof `typedData`
 
 ###### Parameters
 
-###### parameters
-
-`TypedDataDefinition`\<`typedData`, `primaryType`\>
+• **parameters**: `TypedDataDefinition`\<`typedData`, `primaryType`\>
 
 ###### Returns
 
@@ -1125,4 +1065,4 @@ PrivateKeyAccount
 
 #### Defined in
 
-packages/core/src/client.ts:36
+[packages/core/src/client.ts:36](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/client.ts#L36)

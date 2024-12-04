@@ -1,4 +1,4 @@
-[**@jpyc/sdk-core**](../README.md)
+[**@jpyc/sdk-core**](../README.md) • **Docs**
 
 ---
 
@@ -16,15 +16,11 @@ Returns allowance of a spender over owner's tokens (for transferring).
 
 #### Parameters
 
-##### params
+• **params**
 
-###### owner
+• **params.owner**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
-
-###### spender
-
-\`0x$\{string\}\`
+• **params.spender**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -34,7 +30,7 @@ spender allowance
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:49
+[packages/core/src/interfaces/jpyc.ts:49](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L49)
 
 ---
 
@@ -46,15 +42,11 @@ Sets allowance of a spender over owner's tokens.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### spender
+• **params.spender**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -64,7 +56,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:177
+[packages/core/src/interfaces/jpyc.ts:177](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L177)
 
 ---
 
@@ -76,11 +68,9 @@ Returns balance of an account.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### account
-
-\`0x$\{string\}\`
+• **params.account**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -90,7 +80,7 @@ account balance
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:40
+[packages/core/src/interfaces/jpyc.ts:40](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L40)
 
 ---
 
@@ -102,27 +92,17 @@ Cancels authorization.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### authorizer
+• **params.authorizer**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.nonce**: \`0x$\{string\}\`
 
-###### nonce
+• **params.r**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.s**: \`0x$\{string\}\`
 
-###### r
-
-\`0x$\{string\}\`
-
-###### s
-
-\`0x$\{string\}\`
-
-###### v
-
-`Uint8`
+• **params.v**: `Uint8`
 
 #### Returns
 
@@ -132,7 +112,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:162
+[packages/core/src/interfaces/jpyc.ts:162](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L162)
 
 ---
 
@@ -144,15 +124,11 @@ Configures a minter.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### minter
+• **params.minter**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
-
-###### minterAllowedAmount
-
-`Uint256`
+• **params.minterAllowedAmount**: `Uint256`
 
 #### Returns
 
@@ -162,7 +138,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:70
+[packages/core/src/interfaces/jpyc.ts:70](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L70)
 
 ---
 
@@ -174,15 +150,11 @@ Decreases allowance.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### decrement
+• **params.decrement**: `Uint256`
 
-`Uint256`
-
-###### spender
-
-\`0x$\{string\}\`
+• **params.spender**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -192,7 +164,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:195
+[packages/core/src/interfaces/jpyc.ts:195](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L195)
 
 ---
 
@@ -204,15 +176,11 @@ Increases allowance.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### increment
+• **params.increment**: `Uint256`
 
-`Uint256`
-
-###### spender
-
-\`0x$\{string\}\`
+• **params.spender**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -222,7 +190,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:186
+[packages/core/src/interfaces/jpyc.ts:186](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L186)
 
 ---
 
@@ -234,11 +202,9 @@ Returns true if the given address is a minter.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### account
-
-\`0x$\{string\}\`
+• **params.account**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -248,7 +214,7 @@ true if minter, false otherwise
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:17
+[packages/core/src/interfaces/jpyc.ts:17](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L17)
 
 ---
 
@@ -260,15 +226,11 @@ Mints tokens.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### amount
+• **params.amount**: `Uint256`
 
-`Uint256`
-
-###### to
-
-\`0x$\{string\}\`
+• **params.to**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -278,7 +240,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:79
+[packages/core/src/interfaces/jpyc.ts:79](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L79)
 
 ---
 
@@ -290,11 +252,9 @@ Returns allowance of a minter (for minting).
 
 #### Parameters
 
-##### params
+• **params**
 
-###### minter
-
-\`0x$\{string\}\`
+• **params.minter**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -304,7 +264,7 @@ minter allowance
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:25
+[packages/core/src/interfaces/jpyc.ts:25](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L25)
 
 ---
 
@@ -316,11 +276,9 @@ Returns nonce for EIP2612's `permit`.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### owner
-
-\`0x$\{string\}\`
+• **params.owner**: \`0x$\{string\}\`
 
 #### Returns
 
@@ -330,7 +288,7 @@ owner nonce
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:57
+[packages/core/src/interfaces/jpyc.ts:57](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L57)
 
 ---
 
@@ -342,35 +300,21 @@ Sets allowance of a spender over owner's tokens, given owner's signed approval.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### deadline
+• **params.deadline**: `Uint256`
 
-`Uint256`
+• **params.owner**: \`0x$\{string\}\`
 
-###### owner
+• **params.r**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.s**: \`0x$\{string\}\`
 
-###### r
+• **params.spender**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.v**: `Uint8`
 
-###### s
-
-\`0x$\{string\}\`
-
-###### spender
-
-\`0x$\{string\}\`
-
-###### v
-
-`Uint8`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -380,7 +324,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:209
+[packages/core/src/interfaces/jpyc.ts:209](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L209)
 
 ---
 
@@ -392,43 +336,25 @@ Receives tokens with authorization.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### from
+• **params.from**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.nonce**: \`0x$\{string\}\`
 
-###### nonce
+• **params.r**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.s**: \`0x$\{string\}\`
 
-###### r
+• **params.to**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.v**: `Uint8`
 
-###### s
+• **params.validAfter**: `Uint256`
 
-\`0x$\{string\}\`
+• **params.validBefore**: `Uint256`
 
-###### to
-
-\`0x$\{string\}\`
-
-###### v
-
-`Uint8`
-
-###### validAfter
-
-`Uint256`
-
-###### validBefore
-
-`Uint256`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -438,7 +364,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:140
+[packages/core/src/interfaces/jpyc.ts:140](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L140)
 
 ---
 
@@ -456,7 +382,7 @@ total supply
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:32
+[packages/core/src/interfaces/jpyc.ts:32](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L32)
 
 ---
 
@@ -468,15 +394,11 @@ Transfers tokens (directly).
 
 #### Parameters
 
-##### params
+• **params**
 
-###### to
+• **params.to**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -486,7 +408,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:88
+[packages/core/src/interfaces/jpyc.ts:88](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L88)
 
 ---
 
@@ -498,19 +420,13 @@ Transfers tokens (from spender).
 
 #### Parameters
 
-##### params
+• **params**
 
-###### from
+• **params.from**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.to**: \`0x$\{string\}\`
 
-###### to
-
-\`0x$\{string\}\`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -520,7 +436,7 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:98
+[packages/core/src/interfaces/jpyc.ts:98](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L98)
 
 ---
 
@@ -532,43 +448,25 @@ Transfers tokens with authorization.
 
 #### Parameters
 
-##### params
+• **params**
 
-###### from
+• **params.from**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.nonce**: \`0x$\{string\}\`
 
-###### nonce
+• **params.r**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.s**: \`0x$\{string\}\`
 
-###### r
+• **params.to**: \`0x$\{string\}\`
 
-\`0x$\{string\}\`
+• **params.v**: `Uint8`
 
-###### s
+• **params.validAfter**: `Uint256`
 
-\`0x$\{string\}\`
+• **params.validBefore**: `Uint256`
 
-###### to
-
-\`0x$\{string\}\`
-
-###### v
-
-`Uint8`
-
-###### validAfter
-
-`Uint256`
-
-###### validBefore
-
-`Uint256`
-
-###### value
-
-`Uint256`
+• **params.value**: `Uint256`
 
 #### Returns
 
@@ -578,4 +476,4 @@ transaction hash
 
 #### Defined in
 
-packages/core/src/interfaces/jpyc.ts:114
+[packages/core/src/interfaces/jpyc.ts:114](https://github.com/jcam1/sdks/blob/1659b7e6716057ee71757832a574d1003deb70f2/packages/core/src/interfaces/jpyc.ts#L114)

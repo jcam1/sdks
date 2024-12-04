@@ -1,4 +1,4 @@
-[**@jpyc/sdk-core**](README.md)
+[**@jpyc/sdk-core**](README.md) • **Docs**
 
 ---
 
