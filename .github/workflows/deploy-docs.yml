@@ -39,7 +39,6 @@ jobs:
         run: |
           yarn run format docs
           yarn workspace @jpyc/sdk-core run format
-          yarn workspace @jpyc/sdk-v1 run format
 
       - name: Generate documentation
         run: |
