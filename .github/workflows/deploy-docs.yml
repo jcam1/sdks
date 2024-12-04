@@ -2,7 +2,9 @@ name: Deploy Documentation
 
 on:
   push:
-    branches: ['develop']
+    branches:
+      - develop
+      - 59-enable-auto-deployments-of-docsspecs
     paths:
       - 'docs/**'
       - 'packages/*/src/**'
