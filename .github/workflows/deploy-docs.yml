@@ -49,24 +49,13 @@ jobs:
             exit 1
           }
 
-      - name: Verify documentation
-        run: |
-          echo "Verifying documentation directories..."
-          ls -la docs/
-          if [ ! -d "docs/core" ]; then
-            echo "Documentation directories are missing!"
-            echo "Contents of docs directory:"
-            ls -la docs/
-            exit 1
-          fi
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './docs'
+          path: './docs/core-html'
 
   deploy:
     needs: build
