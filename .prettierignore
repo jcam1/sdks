@@ -1,0 +1,9 @@
+.gitkeep
+.env*
+*.lock
+dist
+cache
+artifacts
+node_modules
+JPYCv2
+docs/core-html/
