@@ -2,7 +2,9 @@ name: deploy documentation
 
 on:
   push:
-    branches: ['develop']
+    branches:
+      - develop
+      - 59-enable-auto-deployments-of-docsspecs
     paths:
       - 'docs/**'
       - 'packages/*/src/**'
@@ -42,22 +44,12 @@ jobs:
           yarn workspace @jpyc/sdk-v1 run format
 
       - name: Generate documentation
-        run: |
-          echo "Generating documentation..."
-          set -x
-          yarn docs || {
-            echo "Documentation generation failed"
-            exit 1
-          }
+        run: yarn docs
 
       - name: Verify documentation
         run: |
-          echo "Verifying documentation directories..."
-          ls -la docs/
           if [ ! -d "docs/core" ] || [ ! -d "docs/v1" ]; then
             echo "Documentation directories are missing!"
-            echo "Contents of docs directory:"
-            ls -la docs/
             exit 1
           fi
 
@@ -67,7 +59,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './docs'
+          path: ./docs
 
   deploy:
     needs: build
