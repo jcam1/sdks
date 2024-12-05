@@ -36,9 +36,7 @@
     "lint:dry-run": "eslint ./src",
     "format": "prettier --write .",
     "format:dry-run": "prettier --check .",
-    "docs": "yarn docs:md && yarn docs:html",
-    "docs:md": "typedoc --plugin typedoc-plugin-markdown --out ../../docs/core",
-    "docs:html": "typedoc --out ../../docs/core-html"
+    "docs": "typedoc"
   },
   "dependencies": {
     "dotenv": "^16.4.6",
