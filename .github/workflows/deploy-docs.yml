@@ -53,7 +53,7 @@ jobs:
         run: |
           echo "Verifying documentation directories..."
           ls -la docs/
-          if [ ! -d "docs/core" ]; then
+          if [ ! -d "docs/core" ] || [ ! -d "docs/v1" ]; then
             echo "Documentation directories are missing!"
             echo "Contents of docs directory:"
             ls -la docs/
