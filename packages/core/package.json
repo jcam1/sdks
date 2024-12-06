@@ -36,7 +36,7 @@
     "lint:dry-run": "eslint ./src",
     "format": "prettier --write .",
     "format:dry-run": "prettier --check .",
-    "docs": "yarn docs:md && yarn docs:html",
+    "docs": "run-p docs:md docs:html",
     "docs:md": "typedoc --plugin typedoc-plugin-markdown --out ../../docs/core/md",
     "docs:html": "typedoc --out ../../docs/core/html"
   },
@@ -55,6 +55,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "jest": "^29.7.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.4.1",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
