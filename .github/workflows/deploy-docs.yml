@@ -2,9 +2,9 @@ name: deploy documentation
 
 on:
   push:
-    branches: ['develop']
+    branches:
+      - 'main'
     paths:
-      - 'docs/**'
       - 'packages/*/src/**'
   workflow_dispatch:
 
@@ -26,14 +26,7 @@ jobs:
         with:
           submodules: 'recursive'
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.12.0'
-          cache: 'yarn'
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - uses: ./.github/actions/install-dependencies
 
       - name: Format documentation
         run: |
