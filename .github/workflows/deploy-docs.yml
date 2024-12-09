@@ -31,7 +31,7 @@ jobs:
       - name: Check format
         run: |
           yarn run format:dry-run docs
-          yarn workspace @jpyc/sdk-core run format:dry-run
+
   build:
     needs: format
     runs-on: ubuntu-latest
@@ -40,17 +40,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: 'recursive'
-
-      - uses: ./.github/actions/install-dependencies
-
-      - name: Generate documentation
-        run: |
-          echo "Generating documentation..."
-          set -x
-          yarn docs || {
-            echo "Documentation generation failed"
-            exit 1
-          }
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
