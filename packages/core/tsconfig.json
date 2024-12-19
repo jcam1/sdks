@@ -3,7 +3,7 @@
   "exclude": ["./src/**/*.test.ts", "node_modules", "dist"],
   "compilerOptions": {
     // output settings
-    "module": "commonjs",
+    "module": "ESNext",
     "rootDir": "./",
     "outDir": "./dist",
     "removeComments": true,
@@ -22,6 +22,7 @@
     // import settings
     "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     // strict options
     "strict": true,
