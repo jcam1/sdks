@@ -1,9 +1,11 @@
 import {
+  getRpcEndpoint,
   getSupportedChainNames,
   getSupportedNetworkNames,
   isValidChainName,
   isValidNetworkName,
 } from './chains';
+import { InvalidChainNameError, InvalidNetworkNameError } from './errors';
 
 describe('Unit tests of chain utility functions', () => {
   describe('Unit tests of getSupportedChainNames()', () => {
@@ -102,6 +104,37 @@ describe('Unit tests of chain utility functions', () => {
           networkName: networkName,
         }),
       ).toStrictEqual(false);
+    });
+  });
+
+  describe('Unit tests of getRpcEndpoint()', () => {
+    test('returns correct endpoint if supplied valid chain & network names', () => {
+      const chainName = 'ethereum';
+      const networkName = 'goerli';
+      const rpcEndpoint = getRpcEndpoint({ chainName: chainName, networkName: networkName });
+      expect(rpcEndpoint).toStrictEqual('https://rpc.ankr.com/eth_goerli');
+    });
+
+    test('throws an "InvalidNetworkNameError" if supplied invalid chain name', () => {
+      const chainName = 'invalidchain';
+      const networkName = 'goerli';
+      expect(() =>
+        getRpcEndpoint({
+          chainName: chainName,
+          networkName: networkName,
+        }),
+      ).toThrow(new InvalidChainNameError(chainName));
+    });
+
+    test('throws an "InvalidChainNameError" if supplied invalid network name', () => {
+      const chainName = 'ethereum';
+      const networkName = 'invalidnetwork';
+      expect(() =>
+        getRpcEndpoint({
+          chainName: chainName,
+          networkName: networkName,
+        }),
+      ).toThrow(new InvalidNetworkNameError(chainName, networkName));
     });
   });
 });

@@ -1,7 +1,7 @@
 import { getSupportedChainNames, getSupportedNetworkNames } from './';
 
 /**
- * Custom error abstract class
+ * Custom abstract error class
  */
 
 abstract class JpycSdkError extends Error {}

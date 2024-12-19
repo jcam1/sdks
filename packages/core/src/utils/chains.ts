@@ -13,6 +13,8 @@ import {
   shiden,
 } from 'viem/chains';
 
+import { InvalidChainNameError, InvalidNetworkNameError } from './errors';
+
 // Hardhat (local) network
 const hardhat = defineChain({
   id: 31337,
@@ -64,7 +66,7 @@ export function getSupportedChainNames(): string[] {
 }
 
 export function isValidChainName(params: { chainName: string }): boolean {
-  if (Object.keys(SUPPORTED_CHAINS).some((e) => e === params.chainName)) {
+  if (params.chainName in SUPPORTED_CHAINS) {
     return true;
   }
   return false;
@@ -77,9 +79,19 @@ export function getSupportedNetworkNames(params: { chainName: string }): string[
 export function isValidNetworkName(params: { chainName: string; networkName: string }): boolean {
   if (
     params.chainName in SUPPORTED_CHAINS &&
-    Object.keys(SUPPORTED_CHAINS[params.chainName]).some((e) => e === params.networkName)
+    params.networkName in SUPPORTED_CHAINS[params.chainName]
   ) {
     return true;
   }
   return false;
+}
+
+export function getRpcEndpoint(params: { chainName: string; networkName: string }): string {
+  if (!isValidChainName({ chainName: params.chainName })) {
+    throw new InvalidChainNameError(params.chainName);
+  }
+  if (!isValidNetworkName({ chainName: params.chainName, networkName: params.networkName })) {
+    throw new InvalidNetworkNameError(params.chainName, params.networkName);
+  }
+  return SUPPORTED_CHAINS[params.chainName][params.networkName].rpcUrls.default.http[0];
 }
