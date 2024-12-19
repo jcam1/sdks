@@ -4,8 +4,10 @@ import { privateKeyToAccount } from 'viem/accounts';
 import { ISdkClient } from './interfaces';
 import {
   Address,
+  Bytes32,
   ChainName,
   Endpoint,
+  getRpcEndpoint,
   InvalidChainNameError,
   InvalidNetworkNameError,
   isValidChainName,
@@ -21,7 +23,7 @@ export class SdkClient implements ISdkClient {
   private account: PrivateKeyAccount;
   private client: WalletClient;
 
-  constructor(params: { chainName: ChainName; networkName: NetworkName; rpcEndpoint: Endpoint }) {
+  constructor(params: { chainName: ChainName; networkName: NetworkName; rpcEndpoint?: Endpoint }) {
     if (!isValidChainName({ chainName: params.chainName })) {
       throw new InvalidChainNameError(params.chainName);
     }
@@ -30,16 +32,18 @@ export class SdkClient implements ISdkClient {
     }
     this.chainName = params.chainName;
     this.networkName = params.networkName;
-    this.rpcEndpoint = params.rpcEndpoint;
+    this.rpcEndpoint =
+      params.rpcEndpoint ??
+      getRpcEndpoint({ chainName: params.chainName, networkName: params.networkName });
   }
 
-  createPrivateKeyAccount(params: { privateKey?: Address }): PrivateKeyAccount {
-    this.account = privateKeyToAccount(params.privateKey ?? (process.env.PRIVATE_KEY as Address));
+  createPrivateKeyAccount(params: { privateKey?: Bytes32 }): PrivateKeyAccount {
+    this.account = privateKeyToAccount(params.privateKey ?? (process.env.PRIVATE_KEY as Bytes32));
 
     return this.account;
   }
 
-  createLocalClient(params: { account: Address | PrivateKeyAccount }): WalletClient {
+  createClient(params: { account: Address | PrivateKeyAccount }): WalletClient {
     this.client = createWalletClient({
       account: params.account,
       chain: SUPPORTED_CHAINS[this.chainName][this.networkName],
