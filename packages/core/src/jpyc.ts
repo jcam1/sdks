@@ -17,6 +17,7 @@ export class JPYC implements IJPYC {
     process.env.SDK_ENV === 'local' ? LOCAL_PROXY_ADDRESS : V2_PROXY_ADDRESS;
   private readonly contractAbi: unknown[] = JPYC_V2_ABI;
   private readonly contract: GetContractReturnType<typeof this.contractAbi, WalletClient>;
+  private readonly DECIMALS = 18;
 
   constructor(params: { client: WalletClient }) {
     if (!isValidAddress({ address: this.contractAddress })) {
@@ -53,8 +54,9 @@ export class JPYC implements IJPYC {
 
   async balanceOf(params: { account: Address }): Promise<Uint256> {
     const resp = await this.contract.read.balanceOf([params.account]);
-
-    return Uint256.from((resp as bigint).toString());
+    const rawBalance = BigInt(resp.toString());
+    const adjustedBalance = rawBalance / BigInt(10 ** this.DECIMALS);
+    return Uint256.from(adjustedBalance.toString());
   }
 
   async allowance(params: { owner: Address; spender: Address }): Promise<Uint256> {
@@ -98,7 +100,9 @@ export class JPYC implements IJPYC {
   }
 
   async transfer(params: { to: Address; value: Uint256 }): Promise<Hash> {
-    const args = [params.to, params.value];
+    const rawValue = BigInt(params.value.toString());
+    const adjustedValue = rawValue * BigInt(10 ** this.DECIMALS);
+    const args = [params.to, Uint256.from(adjustedValue.toString())];
 
     try {
       await this.contract.simulate.transfer(args);
