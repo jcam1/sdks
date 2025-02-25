@@ -2,7 +2,7 @@ import { Chain, defineChain } from 'viem';
 import {
   mainnet,
   goerli,
-  baseSepolia,
+  sepolia,
   polygon,
   polygonAmoy,
   gnosis,
@@ -37,7 +37,7 @@ export const SUPPORTED_CHAINS: Record<string, Record<string, Chain>> = {
   ethereum: {
     mainnet: mainnet,
     goerli: goerli,
-    sepolia: baseSepolia,
+    sepolia: sepolia,
   },
   polygon: {
     mainnet: polygon,
