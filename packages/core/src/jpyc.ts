@@ -54,7 +54,7 @@ export class JPYC implements IJPYC {
 
   async balanceOf(params: { account: Address }): Promise<Uint256> {
     const resp = await this.contract.read.balanceOf([params.account]);
-    const rawBalance = BigInt(resp.toString());
+    const rawBalance = BigInt((resp as bigint).toString());
     const adjustedBalance = rawBalance / BigInt(10 ** this.DECIMALS);
     return Uint256.from(adjustedBalance.toString());
   }
