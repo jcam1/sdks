@@ -22,14 +22,14 @@ export interface IJPYC {
    * @param minter - Minter address
    * @returns minter allowance
    */
-  minterAllowance(params: { minter: Address }): Promise<Uint256>;
+  minterAllowance(params: { minter: Address }): Promise<number>;
 
   /**
    * Returns total supply of JPYC tokens.
    *
    * @returns total supply
    */
-  totalSupply(): Promise<Uint256>;
+  totalSupply(): Promise<number>;
 
   /**
    * Returns balance of an account.
@@ -37,7 +37,7 @@ export interface IJPYC {
    * @param account - Account address
    * @returns account balance
    */
-  balanceOf(params: { account: Address }): Promise<Uint256>;
+  balanceOf(params: { account: Address }): Promise<number>;
 
   /**
    * Returns allowance of a spender over owner's tokens (for transferring).
@@ -46,7 +46,7 @@ export interface IJPYC {
    * @param spender - Spender address
    * @returns spender allowance
    */
-  allowance(params: { owner: Address; spender: Address }): Promise<Uint256>;
+  allowance(params: { owner: Address; spender: Address }): Promise<number>;
 
   /**
    * Returns nonce for EIP2612's `permit`.
@@ -67,7 +67,7 @@ export interface IJPYC {
    * @param minterAllowedAmount - Minter allowance
    * @returns transaction hash
    */
-  configureMinter(params: { minter: Address; minterAllowedAmount: Uint256 }): Promise<Hash>;
+  configureMinter(params: { minter: Address; minterAllowedAmount: number }): Promise<Hash>;
 
   /**
    * Mints tokens.
@@ -76,7 +76,7 @@ export interface IJPYC {
    * @param amount - Amount of tokens to mint
    * @returns transaction hash
    */
-  mint(params: { to: Address; amount: Uint256 }): Promise<Hash>;
+  mint(params: { to: Address; amount: number }): Promise<Hash>;
 
   /**
    * Transfers tokens (directly).
@@ -85,7 +85,7 @@ export interface IJPYC {
    * @param value - Amount of tokens to transfer
    * @returns transaction hash
    */
-  transfer(params: { to: Address; value: Uint256 }): Promise<Hash>;
+  transfer(params: { to: Address; value: number }): Promise<Hash>;
 
   /**
    * Transfers tokens (from spender).
@@ -95,7 +95,7 @@ export interface IJPYC {
    * @param value - Amount of tokens to transfer
    * @returns transaction hash
    */
-  transferFrom(params: { from: Address; to: Address; value: Uint256 }): Promise<Hash>;
+  transferFrom(params: { from: Address; to: Address; value: number }): Promise<Hash>;
 
   /**
    * Transfers tokens with authorization.
@@ -114,7 +114,7 @@ export interface IJPYC {
   transferWithAuthorization(params: {
     from: Address;
     to: Address;
-    value: Uint256;
+    value: number;
     validAfter: Uint256;
     validBefore: Uint256;
     nonce: Bytes32;
@@ -140,7 +140,7 @@ export interface IJPYC {
   receiveWithAuthorization(params: {
     from: Address;
     to: Address;
-    value: Uint256;
+    value: number;
     validAfter: Uint256;
     validBefore: Uint256;
     nonce: Bytes32;
@@ -174,7 +174,7 @@ export interface IJPYC {
    * @param value - Amount of allowance
    * @returns transaction hash
    */
-  approve(params: { spender: Address; value: Uint256 }): Promise<Hash>;
+  approve(params: { spender: Address; value: number }): Promise<Hash>;
 
   /**
    * Increases allowance.
@@ -183,7 +183,7 @@ export interface IJPYC {
    * @param increment - Amount of allowance to increase
    * @returns transaction hash
    */
-  increaseAllowance(params: { spender: Address; increment: Uint256 }): Promise<Hash>;
+  increaseAllowance(params: { spender: Address; increment: number }): Promise<Hash>;
 
   /**
    * Decreases allowance.
@@ -192,7 +192,7 @@ export interface IJPYC {
    * @param increment - Amount of allowance to decrease
    * @returns transaction hash
    */
-  decreaseAllowance(params: { spender: Address; decrement: Uint256 }): Promise<Hash>;
+  decreaseAllowance(params: { spender: Address; decrement: number }): Promise<Hash>;
 
   /**
    * Sets allowance of a spender over owner's tokens, given owner's signed approval.
@@ -209,7 +209,7 @@ export interface IJPYC {
   permit(params: {
     owner: Address;
     spender: Address;
-    value: Uint256;
+    value: number;
     deadline: Uint256;
     v: Uint8;
     r: Bytes32;

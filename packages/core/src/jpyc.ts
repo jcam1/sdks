@@ -4,11 +4,14 @@ import { getContract, GetContractReturnType, Hash, WalletClient } from 'viem';
 import { IJPYC, JPYC_V2_ABI } from './interfaces';
 import {
   Address,
+  addDecimals,
   Bytes32,
   InvalidAddressError,
   InvalidTransactionError,
   isValidAddress,
   LOCAL_PROXY_ADDRESS,
+  removeDecimals,
+  toUint256,
   V2_PROXY_ADDRESS,
 } from './utils';
 
@@ -17,7 +20,6 @@ export class JPYC implements IJPYC {
     process.env.SDK_ENV === 'local' ? LOCAL_PROXY_ADDRESS : V2_PROXY_ADDRESS;
   private readonly contractAbi: unknown[] = JPYC_V2_ABI;
   private readonly contract: GetContractReturnType<typeof this.contractAbi, WalletClient>;
-  private readonly DECIMALS = 18;
 
   constructor(params: { client: WalletClient }) {
     if (!isValidAddress({ address: this.contractAddress })) {
@@ -31,21 +33,6 @@ export class JPYC implements IJPYC {
   }
 
   /**
-   * Helper functions for decimal handling
-   */
-
-  private fromOnChainValue(value: bigint): Uint256 {
-    const adjustedValue = value / BigInt(10 ** this.DECIMALS);
-    return Uint256.from(adjustedValue.toString());
-  }
-
-  private toOnChainValue(value: Uint256): Uint256 {
-    const rawValue = BigInt(value.toString());
-    const adjustedValue = rawValue * BigInt(10 ** this.DECIMALS);
-    return Uint256.from(adjustedValue.toString());
-  }
-
-  /**
    * View Functions
    */
 
@@ -55,42 +42,42 @@ export class JPYC implements IJPYC {
     return resp as boolean;
   }
 
-  async minterAllowance(params: { minter: Address }): Promise<Uint256> {
+  async minterAllowance(params: { minter: Address }): Promise<number> {
     const resp = await this.contract.read.minterAllowance([params.minter]);
 
-    return this.fromOnChainValue(resp as bigint);
+    return addDecimals(Uint256.from(resp as string));
   }
 
-  async totalSupply(): Promise<Uint256> {
+  async totalSupply(): Promise<number> {
     const resp = await this.contract.read.totalSupply();
 
-    return this.fromOnChainValue(resp as bigint);
+    return addDecimals(Uint256.from(resp as string));
   }
 
-  async balanceOf(params: { account: Address }): Promise<Uint256> {
+  async balanceOf(params: { account: Address }): Promise<number> {
     const resp = await this.contract.read.balanceOf([params.account]);
 
-    return this.fromOnChainValue(resp as bigint);
+    return addDecimals(Uint256.from(resp as string));
   }
 
-  async allowance(params: { owner: Address; spender: Address }): Promise<Uint256> {
+  async allowance(params: { owner: Address; spender: Address }): Promise<number> {
     const resp = await this.contract.read.allowance([params.owner, params.spender]);
 
-    return this.fromOnChainValue(resp as bigint);
+    return addDecimals(Uint256.from(resp as string));
   }
 
   async nonces(params: { owner: Address }): Promise<Uint256> {
     const resp = await this.contract.read.nonces([params.owner]);
 
-    return Uint256.from((resp as bigint).toString());
+    return toUint256(resp as bigint);
   }
 
   /**
-   * Regular Functions
+   * Mutation Functions
    */
 
-  async configureMinter(params: { minter: Address; minterAllowedAmount: Uint256 }): Promise<Hash> {
-    const args = [params.minter, params.minterAllowedAmount];
+  async configureMinter(params: { minter: Address; minterAllowedAmount: number }): Promise<Hash> {
+    const args = [params.minter, removeDecimals(params.minterAllowedAmount)];
 
     try {
       await this.contract.simulate.configureMinter(args);
@@ -101,9 +88,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.configureMinter(args);
   }
 
-  async mint(params: { to: Address; amount: Uint256 }): Promise<Hash> {
-    const adjustedAmount = this.toOnChainValue(params.amount);
-    const args = [params.to, adjustedAmount];
+  async mint(params: { to: Address; amount: number }): Promise<Hash> {
+    const args = [params.to, removeDecimals(params.amount)];
 
     try {
       await this.contract.simulate.mint(args);
@@ -114,9 +100,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.mint(args);
   }
 
-  async transfer(params: { to: Address; value: Uint256 }): Promise<Hash> {
-    const adjustedValue = this.toOnChainValue(params.value);
-    const args = [params.to, adjustedValue];
+  async transfer(params: { to: Address; value: number }): Promise<Hash> {
+    const args = [params.to, removeDecimals(params.value)];
 
     try {
       await this.contract.simulate.transfer(args);
@@ -127,9 +112,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.transfer(args);
   }
 
-  async transferFrom(params: { from: Address; to: Address; value: Uint256 }): Promise<Hash> {
-    const adjustedValue = this.toOnChainValue(params.value);
-    const args = [params.from, params.to, adjustedValue];
+  async transferFrom(params: { from: Address; to: Address; value: number }): Promise<Hash> {
+    const args = [params.from, params.to, removeDecimals(params.value)];
 
     try {
       await this.contract.simulate.transferFrom(args);
@@ -143,7 +127,7 @@ export class JPYC implements IJPYC {
   async transferWithAuthorization(params: {
     from: Address;
     to: Address;
-    value: Uint256;
+    value: number;
     validAfter: Uint256;
     validBefore: Uint256;
     nonce: Bytes32;
@@ -151,11 +135,10 @@ export class JPYC implements IJPYC {
     r: Bytes32;
     s: Bytes32;
   }): Promise<Hash> {
-    const adjustedValue = this.toOnChainValue(params.value);
     const args = [
       params.from,
       params.to,
-      adjustedValue,
+      removeDecimals(params.value),
       params.validAfter,
       params.validBefore,
       params.nonce,
@@ -176,7 +159,7 @@ export class JPYC implements IJPYC {
   async receiveWithAuthorization(params: {
     from: Address;
     to: Address;
-    value: Uint256;
+    value: number;
     validAfter: Uint256;
     validBefore: Uint256;
     nonce: Bytes32;
@@ -184,11 +167,10 @@ export class JPYC implements IJPYC {
     r: Bytes32;
     s: Bytes32;
   }): Promise<Hash> {
-    const adjustedValue = this.toOnChainValue(params.value);
     const args = [
       params.from,
       params.to,
-      adjustedValue,
+      removeDecimals(params.value),
       params.validAfter,
       params.validBefore,
       params.nonce,
@@ -224,9 +206,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.cancelAuthorization(args);
   }
 
-  async approve(params: { spender: Address; value: Uint256 }): Promise<Hash> {
-    const adjustedValue = this.toOnChainValue(params.value);
-    const args = [params.spender, adjustedValue];
+  async approve(params: { spender: Address; value: number }): Promise<Hash> {
+    const args = [params.spender, removeDecimals(params.value)];
 
     try {
       await this.contract.simulate.approve(args);
@@ -237,9 +218,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.approve(args);
   }
 
-  async increaseAllowance(params: { spender: Address; increment: Uint256 }): Promise<Hash> {
-    const adjustedIncrement = this.toOnChainValue(params.increment);
-    const args = [params.spender, adjustedIncrement];
+  async increaseAllowance(params: { spender: Address; increment: number }): Promise<Hash> {
+    const args = [params.spender, removeDecimals(params.increment)];
 
     try {
       await this.contract.simulate.increaseAllowance(args);
@@ -250,9 +230,8 @@ export class JPYC implements IJPYC {
     return await this.contract.write.increaseAllowance(args);
   }
 
-  async decreaseAllowance(params: { spender: Address; decrement: Uint256 }): Promise<Hash> {
-    const adjustedDecrement = this.toOnChainValue(params.decrement);
-    const args = [params.spender, adjustedDecrement];
+  async decreaseAllowance(params: { spender: Address; decrement: number }): Promise<Hash> {
+    const args = [params.spender, removeDecimals(params.decrement)];
 
     try {
       await this.contract.simulate.decreaseAllowance(args);
@@ -266,17 +245,16 @@ export class JPYC implements IJPYC {
   async permit(params: {
     owner: Address;
     spender: Address;
-    value: Uint256;
+    value: number;
     deadline: Uint256;
     v: Uint8;
     r: Bytes32;
     s: Bytes32;
   }): Promise<Hash> {
-    const adjustedValue = this.toOnChainValue(params.value);
     const args = [
       params.owner,
       params.spender,
-      adjustedValue,
+      removeDecimals(params.value),
       params.deadline,
       params.v,
       params.r,
