@@ -4,7 +4,7 @@ import { getContract, GetContractReturnType, Hash, WalletClient } from 'viem';
 import { IJPYC, JPYC_V2_ABI } from './interfaces';
 import {
   Address,
-  addDecimals,
+  restoreDecimals,
   Bytes32,
   InvalidAddressError,
   InvalidTransactionError,
@@ -45,25 +45,25 @@ export class JPYC implements IJPYC {
   async minterAllowance(params: { minter: Address }): Promise<number> {
     const resp = await this.contract.read.minterAllowance([params.minter]);
 
-    return addDecimals(Uint256.from(resp as string));
+    return restoreDecimals(Uint256.from(resp as string));
   }
 
   async totalSupply(): Promise<number> {
     const resp = await this.contract.read.totalSupply();
 
-    return addDecimals(Uint256.from(resp as string));
+    return restoreDecimals(Uint256.from(resp as string));
   }
 
   async balanceOf(params: { account: Address }): Promise<number> {
     const resp = await this.contract.read.balanceOf([params.account]);
 
-    return addDecimals(Uint256.from(resp as string));
+    return restoreDecimals(Uint256.from(resp as string));
   }
 
   async allowance(params: { owner: Address; spender: Address }): Promise<number> {
     const resp = await this.contract.read.allowance([params.owner, params.spender]);
 
-    return addDecimals(Uint256.from(resp as string));
+    return restoreDecimals(Uint256.from(resp as string));
   }
 
   async nonces(params: { owner: Address }): Promise<Uint256> {

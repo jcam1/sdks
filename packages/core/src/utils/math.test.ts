@@ -1,6 +1,6 @@
 import { Uint256 } from 'soltypes';
 
-import { toUint256, removeDecimals, addDecimals } from './math';
+import { toUint256, removeDecimals, restoreDecimals } from './math';
 
 describe('Unit tests of toUint256()', () => {
   test('converts bigint to uint256 value', () => {
@@ -24,9 +24,9 @@ describe('Unit tests of removeDecimals()', () => {
   });
 });
 
-describe('Unit tests of addDecimals()', () => {
-  test('adds decimal places to bigint', () => {
-    const res = addDecimals(Uint256.from('100'));
+describe('Unit tests of restoreDecimals()', () => {
+  test('restores decimal places to bigint', () => {
+    const res = restoreDecimals(Uint256.from('100'));
     expect(typeof res).toBe('number');
     expect(res).toStrictEqual(0.0000000000000001);
   });
