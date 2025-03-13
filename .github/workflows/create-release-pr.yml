@@ -1,4 +1,4 @@
-name: create a release pr from `develop` to `main`
+name: create release prs
 
 on:
   push:

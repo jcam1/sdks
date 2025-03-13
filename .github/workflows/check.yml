@@ -1,11 +1,14 @@
-name: static checks
+name: run static checks
 
 on:
+  push:
+    branches:
+      - main
+      - develop
   pull_request:
     branches:
       - main
       - develop
-    types: [opened, synchronize, reopened, closed]
 
 jobs:
   detect-changes:
@@ -43,7 +46,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/install-dependencies
       - name: Format
-        run: yarn run format:dry-run .github docs README.md
+        run: yarn format:dry-run .github docs README.md
 
   check-core:
     needs: detect-changes
@@ -57,10 +60,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/install-dependencies
       - name: Compile
-        run: yarn run compile
+        run: yarn compile
       - name: Lint
-        run: yarn run lint:dry-run
+        run: yarn lint:dry-run
       - name: Format
-        run: yarn run format:dry-run
+        run: yarn format:dry-run
       - name: Run tests
-        run: yarn run test
+        run: yarn test
