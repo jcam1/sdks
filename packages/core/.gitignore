@@ -1,0 +1,21 @@
+# node
+node_modules
+
+# envs
+.env
+
+# TypeChain files
+/typechain
+/typechain-types
+
+# solidity-coverage files
+/coverage
+/coverage.json
+
+# Hardhat files
+/cache
+/artifacts
+!/artifacts/JPYCv2/contracts/v1/FiatTokenV1.sol/FiatTokenV1.json
+
+# Hardhat Ignition default folder for deployments against a local node
+ignition/deployments/chain-31337
