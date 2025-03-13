@@ -4,40 +4,42 @@
 ![build](https://github.com/jcam1/sdks/actions/workflows/check.yml/badge.svg)
 [![npm version](https://badge.fury.io/js/@jpyc%2Fsdk-core.svg)](https://badge.fury.io/js/@jpyc%2Fsdk-core)
 
-JPYC core SDK implements interfaces to interact with [JPYCv2 contracts](https://github.com/jcam1/JPYCv2) on different chains. Supported chains are Ethereum, Polygon, Gnosis, Avalanche, Astar and Shiden.
+JPYC core SDK implements NodeJS interfaces to interact with [JPYCv2 contracts](https://github.com/jcam1/JPYCv2) on different chains. Currently, we're supporting Ethereum, Polygon, Gnosis, Avalanche, Astar and Shiden.
 
-## 💡 How to Use
+## 💡 Usage
 
-Please follow the following steps to configure the SDK.
+Please follow the following steps to configure SDK.
 
-#### 1. Install Packages
+### 1. Installation
 
-Install packages.
+Install NPM package.
 
 ```sh
 # yarn
 $ yarn add @jpyc/sdk-core
+```
 
+```sh
 # npm
 $ npm i @jpyc/sdk-core
 ```
 
-#### 2. Set Environment Variables
+### 2. Environment Variables
 
 Some data, such as configuration variables (e.g., chain name) or sensitive data (e.g., private key), are embedded as environment variables. You need to set the following environment variables.
 
 |              Variable | Description & Instructions                                                                                                        |
 | --------------------: | :-------------------------------------------------------------------------------------------------------------------------------- |
-|             `SDK_ENV` | SDK environment. Set to `local` for local environment or any other sensible string for production environment.                    |
+|             `SDK_ENV` | SDK environment. Set to `local` for local environment or any other sensible name for production environment.                      |
 |          `CHAIN_NAME` | Chain name. Set to one of the following\: `local`, `ethereum`, `polygon`, `gnosis`, `avalanche`, `astar` or `shiden`.             |
 |        `NETWORK_NAME` | Network name within the specified chain. Set to one of the following\: `mainnet`, `goerli`, `sepolia`, `amoy`, `chiado` or `fuji` |
 |        `RPC_ENDPOINT` | RPC endpoint to send transactions.                                                                                                |
 |         `PRIVATE_KEY` | Private key of an account.                                                                                                        |
 | `LOCAL_PROXY_ADDRESS` | Proxy contract address in local environment.                                                                                      |
 
-#### 3. Instantiate SDK
+### 3. SDK Instantiation
 
-Initialize an SDK instance that implements abstracted interfaces to the JPYCv2 contracts.
+Initialize an SDK instance.
 
 ```ts
 import {
@@ -71,7 +73,7 @@ export const jpyc: IJPYC = new JPYC({
 });
 ```
 
-#### 4. Use SDK
+### 4. SDK Usage
 
 Use the initialized SDK wherever you would like.
 
@@ -91,16 +93,18 @@ For your reference, we provide code examples in the separate [`sdk-examples` rep
 
 The following commands are available as yarn scripts for local development & testing.
 
-|          Command | Description                                           |
-| ---------------: | :---------------------------------------------------- |
-|        `compile` | Compile (transpile) SDK                               |
-|           `test` | Run unit tests (using jest)                           |
-|           `lint` | Run Eslint                                            |
-|   `lint:dry-run` | Run Eslint without fixing                             |
-|         `format` | Run Prettier                                          |
-| `format:dry-run` | Run Prettier without fixing                           |
-|           `docs` | Generate Markdown documents from TSDoc-style comments |
+|          Command | Description                                            |
+| ---------------: | :----------------------------------------------------- |
+|        `compile` | Compile (transpile) SDK                                |
+|           `test` | Run unit tests (using jest)                            |
+|           `lint` | Run Eslint                                             |
+|   `lint:dry-run` | Run Eslint without fixing                              |
+|         `format` | Run Prettier                                           |
+| `format:dry-run` | Run Prettier without fixing                            |
+|           `docs` | Generate developer documents in both Markdown and HTML |
+|        `docs:md` | Generate developer documents in Markdown               |
+|      `docs:html` | Generate developer documents in HTML                   |
 
 ## 📚 Documentation
 
-You can find the auto-generated documentation of this SDK [here](../../docs/core/globals.md).
+You can find the auto-generated developer documents [here](https://jcam1.github.io/sdks/).
