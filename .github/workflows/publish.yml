@@ -1,12 +1,11 @@
 name: publish packages to npm registry
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types: [closed]
     paths:
-      - 'packages/core/**'
+      - 'packages/**'
 
 jobs:
   detect-changes:
@@ -79,7 +78,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/install-dependencies
       - name: Build package
-        run: yarn run compile
+        run: yarn compile
       - uses: ./.github/actions/publish-package
         with:
           working-directory: ./packages/core
